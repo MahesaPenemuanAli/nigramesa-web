@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Materi - Nigramesa</title>
+    
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS KHUSUS LIBRARY DETAIL -->
+    <link rel="stylesheet" href="library-detail.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="site-header">
+        <div class="container header-wrap">
+            <a href="index.html" class="logo"><i class="fas fa-leaf"></i> Nigramesa</a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li><a href="katalog.html" class="nav-link">Katalog</a></li>
+                    <li><a href="care.html" class="nav-link">Perawatan</a></li>
+                    <li><a href="library.html" class="nav-link active">Perpustakaan</a></li>
+                    <li><a href="webinar.html" class="nav-link">Webinar</a></li>
+                    <li><a href="about.html" class="nav-link">Tentang</a></li>
+                </ul>
+            </nav>
+            <div class="desktop-auth">
+                <a href="login.html" class="btn btn-tertiary">Masuk</a>
+                <a href="register.html" class="btn btn-primary">Daftar</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            
+            <!-- BREADCRUMB -->
+            <div class="lib-breadcrumb">
+                <a href="index.html">Beranda</a> <span>/</span> 
+                <a href="library.html">Perpustakaan</a> <span>/</span> 
+                <a href="#">E-Book</a> <span>/</span>
+                <span style="color:var(--text-main);">Ensiklopedia Hama & Penyakit</span>
+            </div>
+
+            <!-- KONTEN UTAMA (GRID 2 KOLOM) -->
+            <div class="lib-detail-wrapper">
+                
+                <!-- KIRI: COVER & META -->
+                <aside class="lib-sidebar-left">
+                    <div class="lib-cover-box">
+                        <img src="https://images.pexels.com/photos/1181373/pexels-photo-1181373.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cover Buku" class="lib-cover-img">
+                        
+                        <div class="lib-meta-info">
+                            <div class="meta-row">
+                                <span class="meta-label">Penerbit</span>
+                                <span class="meta-val">AgroMedia Pustaka</span>
+                            </div>
+                            <div class="meta-row">
+                                <span class="meta-label">Tahun Terbit</span>
+                                <span class="meta-val">2024</span>
+                            </div>
+                            <div class="meta-row">
+                                <span class="meta-label">Halaman</span>
+                                <span class="meta-val">120 Hal</span>
+                            </div>
+                            <div class="meta-row">
+                                <span class="meta-label">Bahasa</span>
+                                <span class="meta-val">Indonesia</span>
+                            </div>
+                            <div class="meta-row">
+                                <span class="meta-label">Ukuran File</span>
+                                <span class="meta-val">5.2 MB (PDF)</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- KANAN: DETAIL KONTEN -->
+                <div class="lib-main-content">
+                    <span class="lib-type-badge">E-Book Premium</span>
+                    <h1 class="lib-title">Ensiklopedia Hama & Penyakit Tanaman Cabai</h1>
+                    <div class="lib-author">
+                        <i class="fas fa-user-edit"></i>
+                        <span>Ditulis oleh <strong>Dr. Ir. Budi Santoso, M.Sc.</strong></span>
+                    </div>
+
+                    <!-- Tombol Aksi -->
+                    <div class="lib-actions">
+                        <button class="btn-read-online" onclick="alert('Membuka PDF Reader...')">
+                            <i class="fas fa-book-open"></i> Baca Online
+                        </button>
+                        <button class="btn-download" onclick="alert('Mengunduh file...')">
+                            <i class="fas fa-download"></i> Unduh PDF
+                        </button>
+                    </div>
+
+                    <!-- Deskripsi -->
+                    <div class="lib-desc-section">
+                        <h3>Sinopsis Buku</h3>
+                        <p class="lib-desc-text">
+                            Tanaman cabai merupakan komoditas hortikultura yang memiliki nilai ekonomi tinggi, namun juga rentan terhadap berbagai serangan organisme pengganggu tanaman (OPT). Buku ini hadir sebagai panduan komprehensif bagi petani, mahasiswa pertanian, dan praktisi agribisnis untuk mengenali musuh-musuh tanaman cabai.<br><br>
+                            
+                            Dilengkapi dengan ratusan foto makro berwarna, pembaca akan diajak untuk mengidentifikasi gejala serangan hama thrips, kutu daun, tungau, hingga penyakit layu bakteri dan antraknosa secara akurat. Tidak hanya identifikasi, buku ini juga menawarkan solusi pengendalian hama terpadu (PHT) yang ramah lingkungan.
+                        </p>
+
+                        <!-- Daftar Isi -->
+                        <div class="toc-box">
+                            <h4>Daftar Isi</h4>
+                            <ul class="toc-list">
+                                <li><span>BAB 1: Pengantar Hama & Penyakit</span> <span class="toc-page">Hal 5</span></li>
+                                <li><span>BAB 2: Hama Penghisap Daun (Thrips & Aphids)</span> <span class="toc-page">Hal 18</span></li>
+                                <li><span>BAB 3: Penyakit Layu Fusarium vs Bakteri</span> <span class="toc-page">Hal 42</span></li>
+                                <li><span>BAB 4: Virus Kuning (Gemini Virus)</span> <span class="toc-page">Hal 60</span></li>
+                                <li><span>BAB 5: Strategi Pengendalian Organik</span> <span class="toc-page">Hal 85</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- MATERI SERUPA (CARD KOTAK) -->
+            <div class="related-section">
+                <div class="section-head-simple">
+                    <h3>Materi Serupa</h3>
+                    <a href="library.html" class="link-arrow">Lihat Semua</a>
+                </div>
+
+                <div class="related-grid">
+                    
+                    <!-- Item 1 -->
+                    <div class="lib-card-box">
+                        <div class="lib-thumb-box">
+                            <span class="type-badge-box bg-book">E-Book</span>
+                            <img src="https://images.pexels.com/photos/2886937/pexels-photo-2886937.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cover">
+                        </div>
+                        <div class="lib-content-box">
+                            <div class="lib-meta-box"><span><i class="far fa-file-pdf"></i> 45 Hal</span></div>
+                            <h3>Modul Praktis: Hidroponik Rakit Apung</h3>
+                            <div class="lib-action-box"><a href="#" class="btn-text">Baca Detail <i class="fas fa-arrow-right"></i></a></div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="lib-card-box">
+                        <div class="lib-thumb-box">
+                            <span class="type-badge-box bg-jurnal">Jurnal</span>
+                            <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cover">
+                        </div>
+                        <div class="lib-content-box">
+                            <div class="lib-meta-box"><span><i class="fas fa-university"></i> IPB Press</span></div>
+                            <h3>Analisis Ekonomi Budidaya Cabai</h3>
+                            <div class="lib-action-box"><a href="#" class="btn-text">Baca Detail <i class="fas fa-arrow-right"></i></a></div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="lib-card-box">
+                        <div class="lib-thumb-box">
+                            <span class="type-badge-box bg-book">Artikel</span>
+                            <img src="https://images.pexels.com/photos/4207906/pexels-photo-4207906.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cover">
+                        </div>
+                        <div class="lib-content-box">
+                            <div class="lib-meta-box"><span><i class="far fa-clock"></i> 5 Menit</span></div>
+                            <h3>Resep Pupuk Organik Cair (POC)</h3>
+                            <div class="lib-action-box"><a href="#" class="btn-text">Baca Detail <i class="fas fa-arrow-right"></i></a></div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="lib-card-box">
+                        <div class="lib-thumb-box">
+                            <span class="type-badge-box bg-book">E-Book</span>
+                            <img src="https://images.pexels.com/photos/265216/pexels-photo-265216.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cover">
+                        </div>
+                        <div class="lib-content-box">
+                            <div class="lib-meta-box"><span><i class="far fa-file-pdf"></i> 80 Hal</span></div>
+                            <h3>Teknik Irigasi Tetes Lahan Kering</h3>
+                            <div class="lib-action-box"><a href="#" class="btn-text">Baca Detail <i class="fas fa-arrow-right"></i></a></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer id="contact" class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nigramesa. Semua Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

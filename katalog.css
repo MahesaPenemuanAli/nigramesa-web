@@ -1,0 +1,194 @@
+/* ==========================================================================
+   STYLE KHUSUS KATALOG (RE-DESIGN MODERN)
+   Pastikan style.css (Global) sudah dimuat sebelumnya di HTML
+   ========================================================================== */
+
+/* 1. HEADER HALAMAN KATALOG */
+.catalog-page-header {
+    background: var(--bg-soft); /* Warna abu lembut dari global */
+    padding: 60px 0 40px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+}
+
+.catalog-page-header h1 {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 15px;
+}
+
+.catalog-page-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* Search Bar Modern (Pill Shape) */
+.search-container {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 16px 25px 16px 55px;
+    border-radius: 50px;
+    border: 2px solid transparent; /* Border transparan untuk efek fokus */
+    background: white;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+    outline: none;
+    color: var(--text-main);
+}
+
+.search-container input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 4px 20px rgba(0, 184, 101, 0.2);
+}
+
+.search-icon-inside {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 1.2rem;
+}
+
+/* 2. LAYOUT UTAMA (GRID SYSTEM) */
+.catalog-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr; /* Sidebar 260px, Produk ambil sisanya */
+    gap: 40px;
+    align-items: start; /* Penting agar sidebar tidak melar ke bawah */
+    padding-bottom: 80px;
+}
+
+/* 3. SIDEBAR FILTER (STICKY) */
+.filter-sidebar {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    
+    /* Sticky Magic */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100px; /* Jarak dari atas saat scroll (sesuaikan tinggi navbar) */
+    z-index: 10;
+}
+
+.filter-group {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.filter-group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.filter-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--secondary);
+}
+
+/* Checkbox Style yang Lebih Rapi */
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    transition: 0.2s;
+}
+
+.filter-option:hover {
+    color: var(--primary);
+}
+
+.filter-option input[type="checkbox"] {
+    accent-color: var(--primary); /* Mewarnai checkbox native */
+    width: 16px;
+    height: 16px;
+}
+
+/* 4. GRID PRODUK */
+.product-grid {
+    display: grid;
+    /* Grid Responsif Otomatis */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+/* Kustomisasi Kartu Katalog */
+.catalog-card {
+    height: 100%; /* Agar semua kartu tingginya sama */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.catalog-card .card-image-wrapper {
+    height: 200px; /* Tinggi gambar fix agar rapi */
+    background: #f0f0f0;
+}
+
+.catalog-card .card-content {
+    padding: 20px;
+    flex-grow: 1; /* Isi kartu mengisi ruang kosong */
+    display: flex;
+    flex-direction: column;
+}
+
+.catalog-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.category-tag {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.catalog-card .price-row {
+    margin-top: auto; /* Harga selalu nempel di bawah */
+    padding-top: 15px;
+    border-top: 1px solid #f5f5f5;
+}
+
+/* 5. RESPONSIVE (HP & Tablet) */
+@media (max-width: 992px) {
+    .catalog-layout {
+        grid-template-columns: 1fr; /* Sidebar pindah ke atas/hilang */
+        gap: 30px;
+    }
+
+    .filter-sidebar {
+        position: relative; /* Tidak sticky lagi di mobile */
+        top: 0;
+        margin-bottom: 20px;
+    }
+    
+    .search-container {
+        padding: 0 20px; /* Padding kiri kanan di HP */
+    }
+}

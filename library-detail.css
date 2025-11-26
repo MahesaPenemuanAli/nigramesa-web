@@ -1,0 +1,204 @@
+/* ==========================================================================
+   STYLE KHUSUS HALAMAN DETAIL PERPUSTAKAAN (library-detail.html)
+   ========================================================================== */
+
+/* 1. HEADER & BREADCRUMB */
+.lib-breadcrumb {
+    padding: 20px 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+.lib-breadcrumb a { color: var(--text-muted); transition: 0.2s; }
+.lib-breadcrumb a:hover { color: var(--primary); }
+.lib-breadcrumb span { margin: 0 8px; color: #ccc; }
+
+/* 2. DETAIL UTAMA (Grid Split) */
+.lib-detail-wrapper {
+    display: grid;
+    grid-template-columns: 280px 1fr; /* Kiri: Cover, Kanan: Konten */
+    gap: 50px;
+    margin-bottom: 80px;
+    align-items: start;
+}
+
+/* KIRI: COVER BUKU */
+.lib-cover-box {
+    background: white;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    text-align: center;
+    position: sticky; top: 100px; /* Sticky saat scroll */
+}
+.lib-cover-img {
+    width: 100%; height: auto;
+    border-radius: 8px; display: block;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.lib-meta-info {
+    margin-top: 20px; text-align: left;
+    font-size: 0.9rem; color: var(--text-main);
+    border-top: 1px solid #f5f5f5; padding-top: 15px;
+}
+.meta-row {
+    display: flex; justify-content: space-between;
+    margin-bottom: 10px; border-bottom: 1px dashed #eee; padding-bottom: 5px;
+}
+.meta-row:last-child { border: none; }
+.meta-label { color: var(--text-muted); font-size: 0.85rem; }
+.meta-val { font-weight: 700; color: var(--secondary); text-align: right; }
+
+/* KANAN: KONTEN & DESKRIPSI */
+.lib-main-content {
+    background: white; padding: 40px;
+    border-radius: 20px; border: 1px solid #eee;
+}
+
+.lib-type-badge {
+    display: inline-block; padding: 6px 16px;
+    background: #e6fffa; color: var(--primary);
+    border-radius: 50px; font-size: 0.8rem; font-weight: 800;
+    margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;
+}
+
+.lib-title { font-size: 2.5rem; color: var(--secondary); margin-bottom: 10px; line-height: 1.2; }
+.lib-author {
+    font-size: 1.1rem; color: var(--text-muted); margin-bottom: 30px;
+    display: flex; align-items: center; gap: 10px;
+}
+.lib-author i { color: var(--primary); }
+
+/* Tombol Aksi */
+.lib-actions {
+    display: flex; gap: 15px; margin-bottom: 40px;
+    padding-bottom: 30px; border-bottom: 1px solid #eee;
+}
+.btn-read-online {
+    background: var(--primary); color: white;
+    padding: 12px 30px; border-radius: 50px; font-weight: 700;
+    display: inline-flex; align-items: center; gap: 10px;
+    box-shadow: 0 10px 20px rgba(0, 184, 101, 0.3);
+    transition: 0.3s; border: none; cursor: pointer; text-decoration: none;
+}
+.btn-read-online:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+.btn-download {
+    background: white; color: var(--secondary);
+    border: 2px solid #eee; padding: 12px 25px;
+    border-radius: 50px; font-weight: 700;
+    display: inline-flex; align-items: center; gap: 10px;
+    transition: 0.3s; cursor: pointer; text-decoration: none;
+}
+.btn-download:hover { border-color: var(--secondary); background: var(--bg-soft); }
+
+/* Teks Deskripsi & Daftar Isi */
+.lib-desc-section h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--secondary); }
+.lib-desc-text { font-size: 1.05rem; line-height: 1.8; color: var(--text-main); margin-bottom: 40px; text-align: justify; }
+
+.toc-box {
+    background: var(--bg-soft); padding: 30px; border-radius: 16px;
+}
+.toc-box h4 { font-size: 1.2rem; margin-bottom: 20px; color: var(--secondary); }
+.toc-list { list-style: none; padding: 0; }
+.toc-list li {
+    padding: 12px 0; border-bottom: 1px dashed #ccc;
+    color: var(--text-main); font-size: 0.95rem;
+    display: flex; justify-content: space-between;
+}
+.toc-page { color: var(--text-muted); font-family: monospace; font-weight: 700; }
+
+/* 3. MATERI SERUPA (CARD VERTIKAL / KOTAK) */
+.related-section {
+    padding-top: 60px; border-top: 1px solid #eee; margin-top: 60px;
+}
+.section-head-simple {
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;
+}
+.section-head-simple h3 { font-size: 1.8rem; margin: 0; color: var(--secondary); }
+
+/* Grid Kartu Kotak */
+.related-grid {
+    display: grid;
+    /* Membuat kolom otomatis dengan lebar min 220px */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+/* STYLE KARTU KOTAK (Menimpa style horizontal library.css) */
+.lib-card-box {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column; /* Pastikan Vertikal */
+    height: 100%;
+    position: relative;
+}
+
+.lib-card-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    border-color: var(--primary);
+}
+
+/* Gambar Kartu */
+.lib-thumb-box {
+    height: 220px; /* Tinggi gambar fix agar kotak rapi */
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.lib-thumb-box img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: 0.5s;
+}
+.lib-card-box:hover .lib-thumb-box img { transform: scale(1.1); }
+
+/* Badge Tipe di atas gambar */
+.type-badge-box {
+    position: absolute; top: 15px; left: 15px;
+    padding: 5px 12px; border-radius: 6px;
+    font-size: 0.7rem; font-weight: 800;
+    color: white; text-transform: uppercase; letter-spacing: 0.5px;
+    background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
+    z-index: 2;
+}
+.bg-book { background: var(--primary); }
+.bg-jurnal { background: var(--accent); color: var(--secondary); }
+
+/* Konten Kartu */
+.lib-content-box {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.lib-content-box h3 {
+    font-size: 1.1rem; margin-bottom: 10px;
+    line-height: 1.4; color: var(--secondary); font-weight: 700;
+}
+
+.lib-meta-box {
+    font-size: 0.85rem; color: var(--text-muted);
+    margin-bottom: 15px; display: flex; gap: 10px;
+}
+
+.lib-action-box { margin-top: auto; }
+.btn-text { 
+    color: var(--primary); font-weight: 700; font-size: 0.9rem; 
+    text-decoration: none; display: inline-flex; align-items: center; gap: 5px; 
+}
+.btn-text:hover { gap: 8px; text-decoration: underline; }
+
+/* RESPONSIF */
+@media (max-width: 900px) {
+    .lib-detail-wrapper { grid-template-columns: 1fr; gap: 30px; }
+    .lib-cover-box { position: static; max-width: 280px; margin: 0 auto; }
+    .lib-actions { flex-direction: column; }
+    .btn-read-online, .btn-download { width: 100%; justify-content: center; }
+}

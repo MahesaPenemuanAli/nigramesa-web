@@ -1,0 +1,132 @@
+/* ==========================================================================
+   STYLE KHUSUS HALAMAN STREAMING (streaming.html)
+   ========================================================================== */
+
+/* 1. LAYOUT UTAMA (Grid Player & Chat) */
+.stream-layout {
+    display: grid;
+    grid-template-columns: 1fr 350px; /* Kiri: Video, Kanan: Chat 350px */
+    gap: 30px;
+    margin-bottom: 60px;
+    align-items: start;
+}
+
+/* 2. VIDEO PLAYER AREA */
+.video-container {
+    background: #000;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9; /* Rasio standar video */
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.video-frame {
+    width: 100%; height: 100%; border: none;
+}
+
+.stream-info {
+    margin-top: 25px;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #eee;
+}
+
+.stream-tags { display: flex; gap: 10px; margin-bottom: 15px; }
+.tag-live { 
+    background: #ff4757; color: white; padding: 5px 12px; 
+    border-radius: 4px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase;
+    display: flex; align-items: center; gap: 6px;
+}
+.tag-cat {
+    background: var(--bg-soft); color: var(--secondary);
+    padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;
+}
+
+.stream-title { font-size: 1.8rem; margin-bottom: 10px; line-height: 1.3; color: var(--secondary); }
+.stream-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; display: flex; gap: 20px; }
+.stream-meta i { color: var(--primary); margin-right: 5px; }
+
+.host-profile {
+    display: flex; align-items: center; gap: 15px;
+    padding-top: 20px; border-top: 1px solid #eee; margin-top: 20px;
+}
+.host-img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+.host-info h4 { font-size: 1rem; margin-bottom: 2px; }
+.host-info span { font-size: 0.85rem; color: var(--text-muted); }
+.btn-follow { 
+    margin-left: auto; padding: 8px 20px; border-radius: 50px;
+    background: var(--bg-soft); color: var(--primary); font-weight: 600; border: none; cursor: pointer;
+}
+.btn-follow:hover { background: var(--primary); color: white; }
+
+/* Tab Menu di Bawah Video */
+.stream-tabs { display: flex; gap: 20px; border-bottom: 1px solid #eee; margin-top: 30px; margin-bottom: 20px; }
+.tab-btn-stream {
+    padding: 10px 0; background: none; border: none; font-size: 1rem; 
+    color: var(--text-muted); cursor: pointer; border-bottom: 2px solid transparent;
+}
+.tab-btn-stream.active { color: var(--primary); border-bottom-color: var(--primary); font-weight: 700; }
+
+.tab-content-stream { display: none; font-size: 0.95rem; line-height: 1.6; color: var(--text-main); }
+.tab-content-stream.active { display: block; }
+
+/* List Materi Download */
+.resource-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px; background: var(--bg-soft); border-radius: 8px; margin-bottom: 10px;
+}
+.res-name { font-weight: 600; display: flex; align-items: center; gap: 10px; }
+.res-name i { color: #e74c3c; } /* Merah untuk PDF icon */
+
+/* 3. LIVE CHAT AREA (Kanan) */
+.chat-container {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #eee;
+    height: 600px; /* Tinggi fix agar scroll */
+    display: flex;
+    flex-direction: column;
+    position: sticky; top: 100px;
+}
+
+.chat-header {
+    padding: 15px 20px; border-bottom: 1px solid #eee; font-weight: 700;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.chat-count { font-size: 0.8rem; color: var(--text-muted); font-weight: 400; }
+
+.chat-messages {
+    flex: 1; overflow-y: auto; padding: 15px;
+    display: flex; flex-direction: column; gap: 15px;
+}
+
+.chat-msg { display: flex; gap: 10px; align-items: flex-start; }
+.chat-avatar { width: 30px; height: 30px; border-radius: 50%; background: #ddd; }
+.chat-bubble { background: var(--bg-soft); padding: 8px 12px; border-radius: 10px; border-top-left-radius: 0; }
+.chat-user { font-size: 0.75rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 2px; }
+.chat-text { font-size: 0.85rem; margin: 0; line-height: 1.4; }
+
+.chat-input-area {
+    padding: 15px; border-top: 1px solid #eee;
+    display: flex; gap: 10px;
+}
+.chat-input {
+    flex: 1; padding: 10px 15px; border-radius: 20px; border: 1px solid #ddd; outline: none; font-size: 0.9rem;
+}
+.btn-send {
+    width: 40px; height: 40px; border-radius: 50%; border: none;
+    background: var(--primary); color: white; cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+
+/* 4. REKOMENDASI VIDEO (Bawah) */
+.related-videos { margin-top: 60px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; }
+
+/* Responsif */
+@media (max-width: 992px) {
+    .stream-layout { grid-template-columns: 1fr; } /* Chat pindah ke bawah */
+    .chat-container { height: 400px; position: static; }
+    .video-container { border-radius: 0; width: 100vw; margin-left: -24px; } /* Full width di mobile */
+}

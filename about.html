@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - Nigramesa</title> <!-- Ganti Title -->
+    
+    <!-- CSS UTAMA (Global) -->
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS KHUSUS TENTANG -->
+    <link rel="stylesheet" href="about.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+    <div class="container">
+        <a href="about.html" class="logo">
+            <i class="fas fa-leaf"></i> Nigramesa
+        </a>
+        <nav>
+            <ul>
+                <!-- Link ke Beranda -->
+                <li><a href="index.html">Beranda</a></li>
+                
+                <!-- Link ke Katalog (Belanja) -->
+                <li><a href="katalog.html">Katalog</a></li>
+                
+                <!-- Link ke Panduan Perawatan -->
+                <li><a href="care.html">Perawatan</a></li>
+                
+                <!-- Link ke Perpustakaan Digital -->
+                <li><a href="library.html">Perpustakaan</a></li>
+                
+                <!-- Link ke Webinar (Masih di halaman depan, gunakan ID) -->
+                <li><a href="webinar.html">Webinar</a></li>
+                
+                <!-- Link ke Tentang Kami -->
+                <li><a href="about.html">Tentang</a></li>
+            </ul>
+        </nav>
+        <div class="nav-auth">
+            <a href="login.html" class="btn btn-tertiary">Masuk</a>
+            <a href="register.html" class="btn btn-primary">Daftar</a>
+        </div>
+        
+    </div>
+</header>
+    <main>
+        
+        <!-- 1. HERO HEADER "CERITA KAMI" -->
+        <section id="about-hero">
+            <div class="container">
+                <span class="badge-hero" style="border-color: rgba(255,255,255,0.5);">Perjalanan Kami</span>
+                <h1>Mendigitalkan <br>Pertanian Indonesia</h1>
+                <p>Kami percaya teknologi dapat menjembatani kesenjangan antara <br>petani lokal dan pasar global yang adil.</p>
+                <div class="divider-small"></div>
+            </div>
+        </section>
+
+        <!-- 2. Visi & Misi -->
+        <section class="section-bg-alt">
+            <div class="container">
+                <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px;">
+                    <div class="card" style="padding: 40px; border-left: 5px solid var(--primary);">
+                        <div class="icon-wrapper-small"><i class="fas fa-eye"></i></div>
+                        <h3 style="font-size: 1.8rem; margin-bottom: 15px;">Visi Kami</h3>
+                        <p style="font-size: 1.1rem;">Menciptakan ekosistem pertanian yang mandiri, di mana setiap petani memiliki akses yang sama terhadap teknologi, modal, dan pasar.</p>
+                    </div>
+                    <div class="card" style="padding: 40px; border-left: 5px solid var(--accent);">
+                        <div class="icon-wrapper-small" style="background: rgba(255, 180, 0, 0.1); color: var(--accent);"><i class="fas fa-rocket"></i></div>
+                        <h3 style="font-size: 1.8rem; margin-bottom: 15px;">Misi Kami</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 15px; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 12px;"></i> Memotong rantai pasok yang panjang.</li>
+                            <li style="margin-bottom: 15px; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 12px;"></i> Menyediakan edukasi gratis berkualitas.</li>
+                            <li style="display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 12px;"></i> Menjamin kualitas produk organik.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Tim Kami -->
+        <section id="team">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Tim Inti Kami</h2>
+                    <p>Para profesional di balik inovasi Nigramesa</p> <!-- Ganti Teks -->
+                </div>
+                <div class="team-grid">
+                    <!-- 1. CEO -->
+                    <div class="card team-card">
+                        <div class="team-img-box">
+                            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600" alt="CEO">
+                        </div>
+                        <div class="card-content text-center">
+                            <h3>Mahesa P. Ali</h3>
+                            <span class="role-badge">Chief Executive Officer</span>
+                            <p class="team-desc">Pakar agronomi dengan 15 tahun pengalaman memimpin inisiatif pertanian modern.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2. CTO -->
+                    <div class="card team-card">
+                        <div class="team-img-box">
+                            <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=600" alt="CTO">
+                        </div>
+                        <div class="card-content text-center">
+                            <h3>Ingrid Theresia</h3>
+                            <span class="role-badge">Chief Technology Officer</span>
+                            <p class="team-desc">Ahli teknologi yang bersemangat membangun platform digital untuk dampak sosial.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 3. Head of Operations -->
+                    <div class="card team-card">
+                        <div class="team-img-box">
+                            <img src="https://images.pexels.com/photos/3778603/pexels-photo-3778603.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Ops">
+                        </div>
+                        <div class="card-content text-center">
+                            <h3>Rimma Nababan</h3>
+                            <span class="role-badge">Head of Operations</span>
+                            <p class="team-desc">Mengelola logistik dan kemitraan petani untuk memastikan kualitas produk terbaik.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 4. Head of Marketing -->
+                    <div class="card team-card">
+                        <div class="team-img-box">
+                            <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Marketing">
+                        </div>
+                        <div class="card-content text-center">
+                            <h3>Zaskiana Citra</h3>
+                            <span class="role-badge">Head of Marketing</span>
+                            <p class="team-desc">Membangun kemitraan strategis dan menceritakan kisah sukses petani lokal.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 5. Lead Agronomist -->
+                    <div class="card team-card">
+                        <div class="team-img-box">
+                            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Agronomist">
+                        </div>
+                        <div class="card-content text-center">
+                            <h3>Nicolas Prasetyo</h3>
+                            <span class="role-badge">Lead Agronomist</span>
+                            <p class="team-desc">Memimpin tim edukasi dan riset untuk pengembangan varietas bibit unggul.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Section Alamat Kami -->
+        <section id="location" class="section-bg-alt">
+            <div class="container">
+                <div class="location-wrapper">
+                    <div class="location-info">
+                        <span class="badge-hero" style="background: rgba(0, 184, 101, 0.1); color: var(--primary); border:none;">Kantor Pusat</span>
+                        <h2>Kunjungi Kami</h2>
+                        <p class="location-desc">Diskusikan kebutuhan pertanian Anda secara langsung dengan tim ahli kami.</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                                <div>
+                                    <h4>Alamat</h4>
+                                    <p>Gedung Tani Center, Lt. 3<br>Jl. Pertanian Raya No. 88, Pasar Minggu<br>Jakarta Selatan, 12550</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon-box"><i class="fas fa-clock"></i></div>
+                                <div>
+                                    <h4>Jam Operasional</h4>
+                                    <p>Senin - Jumat: 09.00 - 17.00 WIB</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+                                <div>
+                                    <h4>Telepon</h4>
+                                    <p>+62 21 7890 1234</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-wrapper">
+                        <div class="map-frame">
+                            <img src="https://images.pexels.com/photos/2952871/pexels-photo-2952871.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Peta Lokasi" class="map-img">
+                            <div class="map-pin">
+                                <i class="fas fa-map-pin"></i>
+                                <span>Nigramesa HQ</span> <!-- Ganti Teks -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="logo-footer">Nigramesa</a> <!-- Ganti Logo Footer -->
+                    <p>Platform digital pertanian terlengkap di Indonesia.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="katalog.html">Katalog</a></li>
+                        <li><a href="#care">Perawatan</a></li>
+                        <li><a href="#library">Perpustakaan</a></li>
+                        <li><a href="#webinar">Webinar</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Bantuan</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Pengiriman</a></li>
+                        <li><a href="#">Cara Bayar</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Berlangganan</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email Anda">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nigramesa. Semua Hak Cipta Dilindungi.</p> <!-- Ganti Copyright -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- WIDGET CHAT -->
+    <input type="checkbox" id="chat-toggle">
+    <label for="chat-toggle" class="chat-btn-label">
+        <i class="fas fa-comment-dots icon-open"></i>
+        <i class="fas fa-times icon-close"></i>
+        <span class="notification-badge">1</span>
+    </label>
+    <div class="chat-popup">
+        <div class="chat-header-box">
+            <div class="agent-profile">
+                <div class="agent-img">
+                    <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=150" alt="CS">
+                    <span class="online-status"></span>
+                </div>
+                <div class="agent-info">
+                    <h4>Sarah - CS Nigramesa</h4> <!-- Ganti Nama CS -->
+                    <p>Online • Siap Membantu</p>
+                </div>
+            </div>
+            <button class="header-options"><i class="fas fa-ellipsis-v"></i></button>
+        </div>
+        <div class="chat-body-box">
+            <div class="time-divider">Hari Ini</div>
+            <div class="message received">
+                <p>Halo! Selamat datang di Nigramesa 🌱<br>Ada yang bisa saya bantu?</p>
+                <span class="time">09:41</span>
+            </div>
+            <div class="message sent">
+                <p>Saya mau tanya soal stok pupuk.</p>
+                <span class="time">09:42</span>
+            </div>
+        </div>
+        <div class="chat-footer-box">
+            <input type="text" id="chatInput" placeholder="Tulis pesan...">
+            <button id="sendBtn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+</body>
+</html>

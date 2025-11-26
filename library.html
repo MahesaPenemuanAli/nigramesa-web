@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan - Nigramesa</title>
+    
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS KHUSUS LIBRARY -->
+    <link rel="stylesheet" href="library.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="container">
+            <a href="library.html" class="logo">
+                <i class="fas fa-leaf"></i> Nigramesa
+            </a>
+            <nav>
+                <ul>
+                    <!-- Link ke Beranda -->
+                    <li><a href="index.html">Beranda</a></li>
+                    
+                    <!-- Link ke Katalog (Belanja) -->
+                    <li><a href="katalog.html">Katalog</a></li>
+                    
+                    <!-- Link ke Panduan Perawatan -->
+                    <li><a href="care.html">Perawatan</a></li>
+                    
+                    <!-- Link ke Perpustakaan Digital -->
+                    <li><a href="library.html">Perpustakaan</a></li>
+                    
+                    <!-- Link ke Webinar (Masih di halaman depan, gunakan ID) -->
+                    <li><a href="webinar.html">Webinar</a></li>
+                    
+                    <!-- Link ke Tentang Kami -->
+                    <li><a href="about.html">Tentang</a></li>
+                </ul>
+            </nav>
+            <div class="nav-auth">
+                <a href="login.html" class="btn btn-tertiary">Masuk</a>
+                <a href="register.html" class="btn btn-primary">Daftar</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        
+        <!-- 1. HERO SECTION (SIMPEL & ELEGAN) -->
+        <section class="lib-hero">
+            <div class="lib-hero-content">
+                <h1>Pusat Pengetahuan Tani</h1>
+                <p>Koleksi literatur pertanian terlengkap untuk menunjang kesuksesan panen Anda.</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="library-layout">
+                
+                <!-- 2. SIDEBAR FILTER (KIRI) -->
+                <aside class="lib-sidebar">
+                    <!-- Search Kecil -->
+                    <div class="side-search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Cari judul materi...">
+                    </div>
+
+                    <div class="filter-block">
+                        <div class="filter-head">Format Materi</div>
+                        <div class="check-group">
+                            <label class="check-label"><input type="checkbox" checked> Semua</label>
+                            <label class="check-label"><input type="checkbox"> E-Book (PDF)</label>
+                            <label class="check-label"><input type="checkbox"> Jurnal Ilmiah</label>
+                            <label class="check-label"><input type="checkbox"> Artikel Panduan</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-block">
+                        <div class="filter-head">Topik Pertanian</div>
+                        <div class="check-group">
+                            <label class="check-label"><input type="checkbox"> Hidroponik</label>
+                            <label class="check-label"><input type="checkbox"> Organik</label>
+                            <label class="check-label"><input type="checkbox"> Hama & Penyakit</label>
+                            <label class="check-label"><input type="checkbox"> Agribisnis</label>
+                            <label class="check-label"><input type="checkbox"> Tanaman Hias</label>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- 3. DAFTAR MATERI (KANAN - LIST HORIZONTAL) -->
+                <div class="materials-list">
+                    
+                    <div class="section-header" style="margin-bottom: 30px; align-items: center;">
+                        <h2>Materi Terbaru</h2>
+                        <p style="font-size: 0.9rem; margin: 0;">Menampilkan 1-5 dari 42 materi</p>
+                    </div>
+
+                    <div class="materials-grid">
+                        
+                        <!-- Item 1 -->
+                        <div class="mat-card">
+                            <div class="mat-thumb">
+                                <span class="mat-type">E-Book</span>
+                                <img src="https://images.pexels.com/photos/1181373/pexels-photo-1181373.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cover">
+                            </div>
+                            <div class="mat-content">
+                                <div class="mat-meta">
+                                    <span><i class="far fa-calendar"></i> Nov 2025</span>
+                                    <span><i class="far fa-file-pdf"></i> 120 Hal</span>
+                                </div>
+                                <h3>Ensiklopedia Hama & Penyakit Tanaman Cabai</h3>
+                                <p class="mat-desc">Panduan visual lengkap untuk mengidentifikasi hama thrips, kutu daun, dan jamur pada tanaman cabai serta cara penanganan organiknya.</p>
+                                <div class="mat-actions">
+                                    <a href="library-detail.html" class="btn-read">Baca Sekarang <i class="fas fa-arrow-right"></i></a>
+                                    <a href="library-detail.html" style="color: #999;"><i class="far fa-bookmark"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="mat-card">
+                            <div class="mat-thumb">
+                                <span class="mat-type" style="background: #e67e22;">Jurnal</span>
+                                <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cover">
+                            </div>
+                            <div class="mat-content">
+                                <div class="mat-meta">
+                                    <span><i class="far fa-user"></i> Dr. Ir. Budi Santoso</span>
+                                    <span><i class="fas fa-university"></i> IPB Press</span>
+                                </div>
+                                <h3>Analisis Ekonomi Budidaya Porang 2025-2030</h3>
+                                <p class="mat-desc">Data riset mendalam mengenai proyeksi harga ekspor porang ke pasar Jepang dan China dalam 5 tahun kedepan.</p>
+                                <div class="mat-actions">
+                                    <a href="#" class="btn-read">Unduh PDF <i class="fas fa-download"></i></a>
+                                    <a href="#" style="color: #999;"><i class="far fa-bookmark"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="mat-card">
+                            <div class="mat-thumb">
+                                <span class="mat-type">E-Book</span>
+                                <img src="https://images.pexels.com/photos/2886937/pexels-photo-2886937.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cover">
+                            </div>
+                            <div class="mat-content">
+                                <div class="mat-meta">
+                                    <span><i class="far fa-calendar"></i> Okt 2025</span>
+                                    <span><i class="far fa-file-alt"></i> 45 Hal</span>
+                                </div>
+                                <h3>Modul Praktis: Hidroponik Rakit Apung</h3>
+                                <p class="mat-desc">Teknik termudah dan termurah untuk memulai kebun sayur di lahan sempit perkotaan tanpa listrik.</p>
+                                <div class="mat-actions">
+                                    <a href="#" class="btn-read">Baca Sekarang <i class="fas fa-arrow-right"></i></a>
+                                    <a href="#" style="color: #999;"><i class="far fa-bookmark"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="mat-card">
+                            <div class="mat-thumb">
+                                <span class="mat-type" style="background: #3498db;">Artikel</span>
+                                <img src="https://images.pexels.com/photos/4207906/pexels-photo-4207906.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cover">
+                            </div>
+                            <div class="mat-content">
+                                <div class="mat-meta">
+                                    <span><i class="far fa-clock"></i> 5 Menit Baca</span>
+                                    <span><i class="fas fa-tag"></i> Pupuk</span>
+                                </div>
+                                <h3>Resep Pupuk Organik Cair (POC) dari Limbah Dapur</h3>
+                                <p class="mat-desc">Langkah demi langkah fermentasi sisa sayuran menjadi nutrisi cair super untuk tanaman hias Anda.</p>
+                                <div class="mat-actions">
+                                    <a href="#" class="btn-read">Baca Artikel <i class="fas fa-arrow-right"></i></a>
+                                    <a href="#" style="color: #999;"><i class="far fa-bookmark"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <a href="#" class="page-btn active">1</a>
+                        <a href="#" class="page-btn">2</a>
+                        <a href="#" class="page-btn">3</a>
+                        <a href="#" class="page-btn"><i class="fas fa-chevron-right"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER (KONSISTEN) -->
+    <footer id="contact" class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="logo-footer">Nigramesa</a>
+                    <p>Platform digital pertanian terlengkap di Indonesia.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="katalog.html">Katalog</a></li>
+                        <li><a href="index.html#care">Perawatan</a></li>
+                        <li><a href="library.html">Perpustakaan</a></li>
+                        <li><a href="index.html#webinar">Webinar</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Bantuan</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Pengiriman</a></li>
+                        <li><a href="#">Cara Bayar</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Berlangganan</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email Anda">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nigramesa. Semua Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

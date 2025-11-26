@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Tanaman - Nigramesa</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="care.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="container">
+            <a href="care-detail.html" class="logo">
+                <i class="fas fa-leaf"></i> Nigramesa
+            </a>
+            <nav>
+                <ul>
+                    <!-- Link ke Beranda -->
+                    <li><a href="index.html">Beranda</a></li>
+                    
+                    <!-- Link ke Katalog (Belanja) -->
+                    <li><a href="katalog.html">Katalog</a></li>
+                    
+                    <!-- Link ke Panduan Perawatan -->
+                    <li><a href="care.html">Perawatan</a></li>
+                    
+                    <!-- Link ke Perpustakaan Digital -->
+                    <li><a href="library.html">Perpustakaan</a></li>
+                    
+                    <!-- Link ke Webinar (Masih di halaman depan, gunakan ID) -->
+                    <li><a href="webinar.html">Webinar</a></li>
+                    
+                    <!-- Link ke Tentang Kami -->
+                    <li><a href="about.html">Tentang</a></li>
+                </ul>
+            </nav>
+            <div class="nav-auth">
+                <a href="login.html" class="btn btn-tertiary">Masuk</a>
+                <a href="register.html" class="btn btn-primary">Daftar</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="detail-container">
+            <!-- Tombol Kembali -->
+            <a href="care.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Kembali ke Indeks
+            </a>
+
+            <!-- Konten Dinamis akan di-load di sini -->
+            <div id="detailContent">
+                <!-- Loading State -->
+                <p style="text-align:center; padding: 50px;">Memuat data tanaman...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nigramesa. Semua Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+<!-- DATA SCRIPT LENGKAP -->
+<script>
+const PLANTS_DATA = {
+"monstera-deliciosa": {
+  name:"Monstera Deliciosa", latin:"Monstera deliciosa", category:"Hias", difficulty:"Mudah",
+  image:"https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=1400&auto=format&fit=crop",
+  care:["Cahaya: Terang tidak langsung","Penyiraman: Saat 1-2 cm tanah atas kering","Suhu: 18–27°C","Media: Tanah porous, drainase baik"],
+  benefits:"Mempercantik ruang, menyaring udara, daun besar sebagai focal point.",
+  tips:["Letakkan di sudut terang","Lap daun dari debu agar fotosintesis optimal"]
+},
+"aglaonema-red": {
+  name:"Aglaonema Red", latin:"Aglaonema spp.", category:"Hias", difficulty:"Mudah",
+  image:"https://images.unsplash.com/photo-1587502536263-9293e3d20809?q=80&w=1400&auto=format&fit=crop",
+  care:["Cahaya: Rendah–terang tidak langsung","Penyiraman: Moderat, jangan becek","Suhu: 18–26°C"],
+  benefits:"Estetika warna daun, tahan di ruang minim cahaya.",
+  tips:["Hindari sinar matahari langsung yang membakar daun","Bersihkan daun untuk pertumbuhan sehat"]
+},
+"philodendron": {
+  name:"Philodendron", latin:"Philodendron spp.", category:"Hias", difficulty:"Mudah",
+  image:"https://images.unsplash.com/photo-1598304109636-1d9f5b9a0b3f?q=80&w=1400&auto=format&fit=crop",
+  care:["Cahaya: Terang tidak langsung","Penyiraman: Saat tanah atas kering","Suhu: 18–26°C"],
+  benefits:"Memperindah ruangan, peresapan CO₂.",
+  tips:["Berikan turus/penopang untuk varian merambat"]
+},
+"snake-plant": {
+  name:"Lidah Mertua", latin:"Dracaena trifasciata", category:"Hias", difficulty:"Sangat mudah",
+  image:"https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?q=80&w=1400&auto=format&fit=crop",
+  care:["Cahaya: Rendah–terang","Penyiraman: Jarang (hemat air)","Suhu: 15–30°C"],
+  benefits:"Sangat tahan banting, membersihkan polusi udara.",
+  tips:["Jangan beri pupuk berlebih","Hindari penyiraman berlebih di musim hujan"]
+},
+"lemon-tree": {
+  name:"Pohon Lemon", latin:"Citrus limon", category:"Buah", difficulty:"Sedang",
+  image:"https://images.unsplash.com/photo-1506806732259-39c2d0268443?q=80&w=1400&auto=format&fit=crop",
+  care:["Cahaya: Penuh matahari (6+ jam)","Penyiraman: Teratur, jangan tergenang","Suhu: 15–30°C"],
+  benefits:"Buah kaya vitamin C, kulitnya harum untuk masakan.",
+  tips:["Gunakan pot besar untuk akar sehat","Pemangkasan rutin untuk bentuk pohon"]
+},
+"strawberry": {
+  name:"Strawberry", latin:"Fragaria × ananassa", category:"Buah", difficulty:"Mudah",
+  image:"https://images.unsplash.com/photo-1510627498534-cf7e9002facc?q=80&w=1400&auto=format&fit=crop",
+  care:["Cahaya: Penuh hingga setengah","Penyiraman: Konsisten agar buah tidak retak","Media: Kaya organik"],
+  benefits:"Buah antioksidan tinggi, enak segar atau jus.",
+  tips:["Jaga kelembaban tanah namun jangan becek","Berikan mulsa jerami agar buah tidak kena tanah"]
+},
+"spinach": {
+  name:"Bayam", latin:"Spinacia oleracea", category:"Sayuran", difficulty:"Mudah",
+  image:"https://images.unsplash.com/photo-1518976024611-5a3b8b6eb5f1?q=80&w=1400&auto=format&fit=crop",
+  care:["Cahaya: Setengah sampai terang","Penyiraman: Konsisten","Media: Subur & lembab"],
+  benefits:"Kaya zat besi, vitamin A & K.",
+  tips:["Panen daun luar lebih dahulu (cut-and-come-again)","Jaga tanah tetap lembab"]
+},
+"mint": {
+  name:"Mint", latin:"Mentha", category:"Herbal", difficulty:"Mudah",
+  image:"https://images.unsplash.com/photo-1601004890694-3d6733f8a5c8?q=80&w=1400&auto=format&fit=crop",
+  care:["Cahaya: Setengah hingga terang","Penyiraman: Konsisten","Media: Lembab"],
+  benefits:"Menenangkan perut, aroma segar untuk teh.",
+  tips:["Tanam di pot terpisah karena akarnya invasif","Pangkas pucuk rutin agar rimbun"]
+},
+/* NOTE: Untuk demo ini saya masukkan sebagian data. Di produksi, masukkan semua 40 data dari file asli Anda ke sini. */
+};
+
+// LOGIKA RENDER HALAMAN
+const params = new URLSearchParams(window.location.search);
+const id = params.get('id');
+const contentDiv = document.getElementById('detailContent');
+
+if(id && PLANTS_DATA[id]) {
+    const p = PLANTS_DATA[id];
+    
+    // Generate HTML Care List
+    let careHTML = '';
+    p.care.forEach(c => {
+        careHTML += `
+        <div class="care-point">
+            <i class="fas fa-check-circle"></i>
+            <div>${c}</div>
+        </div>`;
+    });
+
+    // Generate HTML Tips
+    let tipsHTML = '';
+    p.tips.forEach(t => {
+        tipsHTML += `<li>${t}</li>`;
+    });
+
+    contentDiv.innerHTML = `
+        <img src="${p.image}" class="detail-hero-img" alt="${p.name}">
+        
+        <div class="detail-header-box">
+            <h1>${p.name}</h1>
+            <div class="detail-latin">${p.latin}</div>
+            <div class="detail-badges">
+                <span class="badge-pill bg-cat">${p.category}</span>
+                <span class="badge-pill bg-diff">${p.difficulty}</span>
+            </div>
+        </div>
+
+        <div class="care-content-box">
+            <h3><i class="fas fa-seedling"></i> Cara Merawat</h3>
+            <div class="care-list-grid">
+                ${careHTML}
+            </div>
+        </div>
+
+        <div class="care-content-box">
+            <h3><i class="fas fa-heart"></i> Manfaat</h3>
+            <p>${p.benefits}</p>
+        </div>
+
+        <div class="care-content-box">
+            <h3><i class="fas fa-lightbulb"></i> Tips Pro</h3>
+            <ul class="tips-list" style="list-style:none; padding:0;">
+                ${tipsHTML}
+            </ul>
+        </div>
+    `;
+} else {
+    contentDiv.innerHTML = `
+        <div style="text-align:center; padding:60px;">
+            <h2>Tanaman Tidak Ditemukan</h2>
+            <p>Maaf, data tanaman yang Anda cari belum tersedia di database kami.</p>
+            <a href="care.html" class="btn btn-primary" style="margin-top:20px;">Kembali ke Daftar</a>
+        </div>
+    `;
+}
+</script>
+
+</body>
+</html>

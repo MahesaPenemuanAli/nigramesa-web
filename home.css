@@ -1,0 +1,220 @@
+/* ==========================================================================
+   STYLE KHUSUS BERANDA (index.html)
+   Berisi: Hero Slider, Kartu Fitur (Bulat), Produk, Scroll Berita
+   ========================================================================== */
+
+/* 1. HERO SECTION (SLIDER) */
+#hero {
+  width: 100%; height: 600px; position: relative; overflow: hidden;
+}
+.hero-slide {
+  display: flex; align-items: center; justify-content: flex-start;
+  background-size: cover; background-position: center; background-repeat: no-repeat;
+  position: relative; width: 100%; height: 100%;
+}
+.hero-slide::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.1) 100%);
+  z-index: 1;
+}
+.hero-slide .container { position: relative; z-index: 2; color: white; }
+.badge-hero {
+  display: inline-block; padding: 6px 16px; background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px); border-radius: 30px; font-size: 0.85rem; font-weight: 700;
+  margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.3); color: #fff; letter-spacing: 0.5px;
+}
+#hero h1 { font-size: 3.5rem; color: white; margin-bottom: 20px; line-height: 1.1; }
+#hero p { font-size: 1.2rem; color: rgba(255,255,255,0.9); max-width: 600px; margin-bottom: 35px; }
+.hero-buttons { display: flex; gap: 15px; }
+
+/* Gambar Background */
+.hero-slide-1 { background-image: url('https://images.pexels.com/photos/974314/pexels-photo-974314.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); }
+.hero-slide-2 { background-image: url('https://images.pexels.com/photos/2132227/pexels-photo-2132227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); }
+
+/* Navigasi Swiper */
+.swiper-pagination-bullet { width: 12px; height: 12px; background: white; opacity: 0.5; }
+.swiper-pagination-bullet-active { opacity: 1; background: var(--primary); transform: scale(1.2); }
+
+/* 2. FITUR UTAMA (Ikon Bulat Besar) */
+.feature-card {
+  text-align: center; padding: 40px 24px; background: var(--bg-white);
+  border-radius: var(--radius-md); box-shadow: var(--shadow-sm); transition: 0.3s;
+  border: 1px solid rgba(0,0,0,0.03);
+}
+.feature-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+.icon-wrapper {
+  width: 70px; height: 70px; background: rgba(0, 184, 101, 0.1); color: var(--primary);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem; margin: 0 auto 20px; transition: 0.3s;
+}
+.feature-card:hover .icon-wrapper { background: var(--primary); color: white; transform: rotateY(180deg); }
+
+/* 3. PRODUK & KATALOG */
+.product-img-box { position: relative; overflow: hidden; height: 220px; width: 100%; }
+.wishlist-btn {
+  position: absolute; top: 15px; right: 15px; width: 35px; height: 35px;
+  border-radius: 50%; background: white; border: none; color: var(--text-muted);
+  box-shadow: var(--shadow-sm); cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: 0.2s; z-index: 2;
+}
+.wishlist-btn:hover { color: #ff4757; transform: scale(1.1); }
+.rating { color: var(--accent); font-size: 0.85rem; margin-bottom: 8px; font-weight: 600; }
+.price-row {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: auto; padding-top: 15px; border-top: 1px solid #eee;
+}
+.product-price { color: var(--primary); font-weight: 800; font-size: 1.1rem; margin: 0; }
+.btn-cart {
+  width: 35px; height: 35px; border-radius: 8px; background: var(--bg-soft);
+  color: var(--secondary); border: none; cursor: pointer; transition: 0.3s;
+  display: flex; align-items: center; justify-content: center;
+}
+.btn-cart:hover { background: var(--primary); color: white; }
+
+/* 4. SCROLL BERITA (Horizontal & Mini Cards) */
+.horizontal-scroll-wrapper {
+  display: flex; 
+  overflow-x: auto; 
+  gap: 20px; 
+  padding: 10px 5px 30px 5px;
+  scroll-snap-type: x mandatory; 
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox: Sembunyikan scrollbar */
+}
+.horizontal-scroll-wrapper::-webkit-scrollbar { display: none; } /* Chrome: Sembunyikan scrollbar */
+
+/* Desain Kartu Berita Mini */
+.news-card-mini {
+    min-width: 240px; /* Ukuran lebih kecil agar muat 5 */
+    max-width: 240px;
+    scroll-snap-align: start;
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    border: 1px solid #f0f0f0;
+}
+.news-card-mini:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.news-card-mini .card-image {
+    height: 140px; /* Gambar lebih pendek */
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-content-mini {
+    padding: 15px;
+}
+
+.news-date-mini {
+    font-size: 0.7rem;
+    color: var(--primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.news-card-mini h4 {
+    font-size: 1rem;
+    margin: 0;
+    color: var(--secondary);
+    line-height: 1.4;
+}
+
+/* 5. BANNER CTA ABOUT (PARALLAX + GLASSMORPHISM) - BARU */
+#about-banner {
+    padding: 120px 0;
+    /* Gambar kebun/petani yang menginspirasi */
+    background-image: url('https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Kunci efek parallax di sini */
+    position: relative;
+    color: white;
+}
+
+/* Overlay Gelap agar tulisan terbaca */
+#about-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(14, 28, 20, 0.6); /* Warna hijau gelap transparan */
+    backdrop-filter: blur(2px);
+}
+
+.banner-glass-box {
+    position: relative; /* Agar berada di atas overlay */
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1); /* Efek Kaca */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 50px 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+.banner-glass-box h2 {
+    color: white;
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.banner-glass-box p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.15rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.banner-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-outline-white {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    border: 2px solid rgba(255,255,255,0.8);
+    color: white;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.btn-outline-white:hover {
+    background: white;
+    color: var(--primary);
+    border-color: white;
+}
+
+/* 6. RESPONSIF KHUSUS BERANDA */
+@media (max-width: 992px) {
+  #hero h1 { font-size: 3rem; }
+}
+@media (max-width: 768px) {
+  #hero { height: auto; min-height: 500px; }
+  #hero h1 { font-size: 2.2rem; }
+  .hero-slide { padding: 40px 0; text-align: center; justify-content: center; }
+  .hero-buttons { flex-direction: column; width: 100%; }
+  .btn { width: 100%; }
+  .horizontal-scroll-wrapper { padding-bottom: 20px; }
+  
+  /* Reset Parallax di Mobile agar tidak berat */
+  #about-banner { background-attachment: scroll; }
+  .banner-actions { flex-direction: column; }
+  .banner-glass-box h2 { font-size: 2rem; }
+}

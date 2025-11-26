@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aglaonema Red Kochin - Nigramesa</title>
+    
+    <!-- CSS UTAMA & DETAIL -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="product-detail.css">
+    
+    <!-- Font & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR (Sama dengan file lain) -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf"></i> Nigramesa
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="katalog.html" class="active">Katalog</a></li>
+                    <li><a href="care.html">Perawatan</a></li>
+                    <li><a href="library.html">Perpustakaan</a></li>
+                    <li><a href="webinar.html">Webinar</a></li>
+                    <li><a href="about.html">Tentang</a></li>
+                </ul>
+            </nav>
+            <div class="nav-auth">
+                <a href="checkout.html" class="btn btn-tertiary"><i class="fas fa-shopping-cart"></i> (2)</a>
+                <a href="login.html" class="btn btn-primary">Masuk</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        
+        <div class="container">
+            <!-- BREADCRUMB -->
+            <div class="breadcrumb">
+                <a href="index.html">Beranda</a> <span>/</span> 
+                <a href="katalog.html">Katalog</a> <span>/</span> 
+                <a href="#">Tanaman Hias</a> <span>/</span> 
+                <span style="color:var(--text-main);">Aglaonema Red Kochin</span>
+            </div>
+
+            <!-- DETAIL PRODUK UTAMA -->
+            <div class="product-detail-wrapper">
+                
+                <!-- Kiri: Galeri -->
+                <div class="product-gallery">
+                    <div class="main-image-box">
+                        <img src="https://images.pexels.com/photos/7663988/pexels-photo-7663988.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Aglaonema" class="main-image" id="mainImg">
+                    </div>
+                    <!-- Thumbnail Statis (Hanya tampilan, fungsi klik dihapus sesuai permintaan tanpa JS) -->
+                    <div class="thumbnail-list">
+                        <div class="thumb-item active">
+                            <img src="https://images.pexels.com/photos/7663988/pexels-photo-7663988.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Thumb 1">
+                        </div>
+                        <div class="thumb-item">
+                            <img src="https://images.pexels.com/photos/3097770/pexels-photo-3097770.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Thumb 2">
+                        </div>
+                        <div class="thumb-item">
+                            <img src="https://images.pexels.com/photos/4503734/pexels-photo-4503734.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Thumb 3">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kanan: Informasi -->
+                <div class="product-info-side">
+                    <div class="product-badges">
+                        <span class="badge-status">Stok Tersedia</span>
+                        <span class="badge-rating"><i class="fas fa-star"></i> 4.8 (50 Ulasan)</span>
+                    </div>
+                    
+                    <h1 class="product-title">Aglaonema Red Kochin</h1>
+                    <div class="product-price">Rp 75.000</div>
+                    
+                    <p class="product-desc">
+                        Aglaonema Red Kochin adalah tanaman hias populer yang dikenal dengan warna daun merah menyala yang eksotis. Sangat cocok untuk mempercantik ruangan indoor maupun teras rumah Anda. Perawatannya mudah dan tahan terhadap kondisi minim cahaya.
+                    </p>
+
+                    <!-- Varian Pot -->
+                    <div class="variant-option">
+                        <span class="variant-label">Pilih Ukuran Pot:</span>
+                        <button class="size-btn active">Standard (15cm)</button>
+                        <button class="size-btn">Jumbo (25cm) +20rb</button>
+                    </div>
+
+                    <!-- Tombol Aksi -->
+                    <div class="product-actions">
+                        <div class="qty-input">
+                            <button class="qty-btn">-</button>
+                            <input type="text" value="1" class="qty-val" readonly>
+                            <button class="qty-btn">+</button>
+                        </div>
+                        <!-- TOMBOL BELI MENGARAH KE CHECKOUT -->
+                        <a href="checkout.html" class="btn-add-cart">
+                            <i class="fas fa-shopping-bag" style="margin-right:8px;"></i> Beli Sekarang
+                        </a>
+                        <button class="btn-wish"><i class="far fa-heart"></i></button>
+                    </div>
+
+                    <!-- Fitur Layanan -->
+                    <div class="service-features">
+                        <div class="service-item"><i class="fas fa-truck"></i> Pengiriman Cepat</div>
+                        <div class="service-item"><i class="fas fa-shield-alt"></i> Garansi Hidup 7 Hari</div>
+                        <div class="service-item"><i class="fas fa-headset"></i> Konsultasi Gratis</div>
+                        <div class="service-item"><i class="fas fa-box-open"></i> Packing Aman</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- TABS DESKRIPSI & ULASAN (Statik: Semua konten ditampilkan berurutan agar tetap terlihat tanpa JS) -->
+        <section class="details-tab-section">
+            <div class="container">
+                
+                <!-- Judul Bagian -->
+                <div class="section-header text-center" style="margin-bottom: 30px;">
+                    <h2>Informasi Lengkap</h2>
+                </div>
+
+                <!-- Konten 1: Deskripsi -->
+                <div class="tab-content active" style="display: block; margin-bottom: 40px;">
+                    <h3 style="margin-bottom: 15px; color: var(--secondary);">Deskripsi Produk</h3>
+                    <p>Aglaonema, atau yang sering disebut Sri Rejeki, adalah tanaman hias daun yang sangat populer di Indonesia. Varian <strong>Red Kochin</strong> memiliki ciri khas daun berwarna merah dominan dengan tepian hijau yang kontras.</p>
+                    <br>
+                    <h4 style="margin-bottom: 10px;">Kenapa Memilih Tanaman Ini?</h4>
+                    <ul style="margin-left: 20px; line-height: 1.8;">
+                        <li><strong>Estetika Tinggi:</strong> Warna merahnya memberikan nuansa segar dan mewah pada ruangan.</li>
+                        <li><strong>Perawatan Mudah:</strong> Tidak rewel, cukup siram 2-3 kali seminggu.</li>
+                        <li><strong>Air Purifier:</strong> Mampu menyerap polutan berbahaya seperti benzena dan formaldehida dari udara.</li>
+                    </ul>
+                </div>
+
+                <!-- Konten 2: Spesifikasi -->
+                <div class="tab-content active" style="display: block; margin-bottom: 40px;">
+                    <h3 style="margin-bottom: 15px; color: var(--secondary);">Spesifikasi Teknis</h3>
+                    <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow-sm);">
+                        <tr style="border-bottom: 1px solid #eee;"><td style="padding: 15px; font-weight:600; width: 40%;">Tinggi Tanaman</td><td style="padding: 15px;">20 - 30 cm</td></tr>
+                        <tr style="border-bottom: 1px solid #eee;"><td style="padding: 15px; font-weight:600;">Kebutuhan Cahaya</td><td style="padding: 15px;">Teduh / Indoor (Indirect Light)</td></tr>
+                        <tr style="border-bottom: 1px solid #eee;"><td style="padding: 15px; font-weight:600;">Penyiraman</td><td style="padding: 15px;">2-3 Hari Sekali</td></tr>
+                        <tr style="border-bottom: 1px solid #eee;"><td style="padding: 15px; font-weight:600;">Asal Bibit</td><td style="padding: 15px;">Pemisahan Rumpun</td></tr>
+                    </table>
+                </div>
+
+                <!-- Konten 3: Ulasan -->
+                <div class="tab-content active" style="display: block;">
+                    <h3 style="margin-bottom: 20px; color: var(--secondary);">Ulasan Pembeli</h3>
+                    
+                    <div class="review-summary">
+                        <span class="big-rating">4.8</span>
+                        <div class="stars-yellow">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p style="color:var(--text-muted);">Berdasarkan 50 ulasan pembeli</p>
+                    </div>
+
+                    <div class="review-list">
+                        <!-- Review 1 -->
+                        <div class="review-item">
+                            <div class="review-header">
+                                <span class="reviewer-name">Budi Santoso</span>
+                                <span class="review-date">2 Hari lalu</span>
+                            </div>
+                            <div class="stars-yellow" style="font-size: 0.8rem; margin-bottom: 8px;">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">Tanamannya sampai dengan segar banget! Packing kayunya aman, daun tidak ada yang sobek. Recommended seller!</p>
+                        </div>
+
+                        <!-- Review 2 -->
+                        <div class="review-item">
+                            <div class="review-header">
+                                <span class="reviewer-name">Siti Aminah</span>
+                                <span class="review-date">1 Minggu lalu</span>
+                            </div>
+                            <div class="stars-yellow" style="font-size: 0.8rem; margin-bottom: 8px;">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <p class="review-text">Bagus warnanya merah merona. Cuma pengiriman agak terlambat sehari dari ekspedisi. Tapi tanaman aman.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nigramesa. Semua Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

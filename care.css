@@ -1,0 +1,217 @@
+/* ==========================================================================
+   STYLE KHUSUS HALAMAN PERAWATAN (care.html & care-detail.html)
+   Menggunakan variabel dari style.css utama
+   ========================================================================== */
+
+/* 1. CARE HEADER (Search & Filter) */
+.care-header-section {
+    background: linear-gradient(135deg, var(--primary) 0%, #2ecc71 100%);
+    padding: 60px 0 40px;
+    text-align: center;
+    color: white;
+    border-radius: 0 0 30px 30px;
+    margin-bottom: 40px;
+}
+
+.care-header-section h1 {
+    color: white;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.care-header-section p {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* Search Box Putih */
+.care-search {
+    max-width: 500px;
+    margin: 0 auto 30px;
+    position: relative;
+}
+.care-search input {
+    width: 100%;
+    padding: 15px 25px 15px 50px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    font-size: 1rem;
+}
+.care-search i {
+    position: absolute;
+    left: 20px; top: 50%; transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+/* Kategori Filter (Pills) */
+.care-cats {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.care-cat-btn {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+.care-cat-btn:hover, .care-cat-btn.active {
+    background: white;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* 2. GRID TANAMAN (Care Card) */
+.care-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+    padding-bottom: 60px;
+}
+
+/* Override card style khusus untuk halaman care */
+.care-card-item {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: 0.3s;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+}
+.care-card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+}
+
+.care-thumb {
+    height: 160px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.care-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.care-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: var(--secondary);
+}
+
+.care-info p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.care-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background: var(--bg-soft);
+    color: var(--primary);
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-top: auto;
+    width: fit-content;
+}
+
+/* 3. DETAIL PAGE STYLES */
+.detail-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--text-muted); font-weight: 600;
+    margin-bottom: 20px; transition: 0.2s;
+}
+.back-link:hover { color: var(--primary); transform: translateX(-5px); }
+
+.detail-hero-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 30px;
+}
+
+.detail-header-box {
+    text-align: center; margin-bottom: 40px;
+}
+.detail-header-box h1 { font-size: 2.5rem; color: var(--secondary); margin-bottom: 10px; }
+.detail-latin { font-style: italic; color: var(--text-muted); font-size: 1.2rem; }
+.detail-badges { margin-top: 15px; display: flex; justify-content: center; gap: 10px; }
+.badge-pill { padding: 6px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+.bg-cat { background: var(--bg-soft); color: var(--secondary); }
+.bg-diff { background: #e6fffa; color: var(--primary-dark); border: 1px solid #b2f5ea; }
+
+/* Tabs Style */
+.care-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+.care-tab-btn {
+    background: none; border: none;
+    font-size: 1rem; font-weight: 600; color: var(--text-muted);
+    cursor: pointer; padding: 8px 15px; border-radius: 8px;
+    transition: 0.2s;
+}
+.care-tab-btn:hover, .care-tab-btn.active {
+    background: var(--bg-soft); color: var(--primary);
+}
+
+/* Content Box */
+.care-content-box {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-sm);
+}
+.care-content-box h3 { margin-bottom: 20px; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+
+.care-list-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+}
+.care-point {
+    display: flex; align-items: start; gap: 12px;
+    padding: 15px; background: var(--bg-soft); border-radius: 12px;
+}
+.care-point i { color: var(--primary); font-size: 1.2rem; margin-top: 3px; }
+.care-point strong { display: block; color: var(--secondary); font-size: 0.9rem; margin-bottom: 2px; }
+.care-point span { font-size: 0.9rem; color: var(--text-muted); }
+
+.tips-list li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+.tips-list li::before { content: '•'; color: var(--accent); font-weight: bold; position: absolute; left: 0; }
+
+@media (max-width: 768px) {
+    .care-list-grid { grid-template-columns: 1fr; }
+    .detail-hero-img { height: 250px; }
+}

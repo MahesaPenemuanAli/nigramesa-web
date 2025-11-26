@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Nigramesa</title>
+    
+    <!-- CSS UTAMA -->
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS CHECKOUT -->
+    <link rel="stylesheet" href="checkout.css">
+    
+    <!-- Leaflet CSS (Untuk Peta) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
+    <!-- Font & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf"></i> Nigramesa
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="katalog.html">Katalog</a></li>
+                    <li><a href="care.html">Perawatan</a></li>
+                    <li><a href="library.html">Perpustakaan</a></li>
+                    <li><a href="webinar.html">Webinar</a></li>
+                    <li><a href="about.html">Tentang</a></li>
+                </ul>
+            </nav>
+            <div class="nav-auth">
+                <a href="login.html" class="btn btn-tertiary">Masuk</a>
+                <a href="register.html" class="btn btn-primary">Daftar</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="checkout-section">
+        <div class="container">
+            
+            <!-- Judul Halaman & Tombol Kembali -->
+            <div style="margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                <div>
+                    <h1 style="font-size:2rem; color:var(--secondary); margin-bottom: 5px;">Selesaikan Pesanan</h1>
+                    <p style="color:var(--text-muted);">Lengkapi detail pengiriman dan pembayaran Anda.</p>
+                </div>
+                <!-- TOMBOL KEMBALI KE KATALOG -->
+                <a href="katalog.html" class="btn btn-white" style="font-size: 0.9rem;">
+                    <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Lanjut Belanja
+                </a>
+            </div>
+
+            <form class="checkout-layout">
+                
+                <!-- KOLOM KIRI: DETAIL PENGIRIMAN -->
+                <div class="checkout-left">
+                    
+                    <!-- 1. Info Kontak -->
+                    <div class="checkout-card">
+                        <h3 class="checkout-title"><i class="far fa-id-card"></i> Informasi Kontak</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Nama Depan</label>
+                                <input type="text" class="form-input" placeholder="Contoh: Budi">
+                            </div>
+                            <div class="form-group">
+                                <label>Nama Belakang</label>
+                                <input type="text" class="form-input" placeholder="Contoh: Santoso">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Nomor WhatsApp (Aktif)</label>
+                            <input type="tel" class="form-input" placeholder="0812xxxx">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-input" placeholder="email@anda.com">
+                        </div>
+                    </div>
+
+                    <!-- 2. Alamat & Peta -->
+                    <div class="checkout-card">
+                        <h3 class="checkout-title"><i class="fas fa-map-marker-alt"></i> Alamat Pengiriman</h3>
+                        
+                        <!-- Peta Interaktif -->
+                        <div class="form-group">
+                            <label>Pin Lokasi Tepat</label>
+                            <div class="map-container">
+                                <div id="map"></div>
+                            </div>
+                            <div class="map-instruction">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Geser penanda (pin) biru di peta ke lokasi rumah Anda untuk akurasi pengiriman.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Alamat Lengkap</label>
+                            <textarea class="form-input" rows="3" placeholder="Nama Jalan, Nomor Rumah, RT/RW, Kelurahan..."></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Kota/Kabupaten</label>
+                                <input type="text" class="form-input" placeholder="Contoh: Bogor">
+                            </div>
+                            <div class="form-group">
+                                <label>Kode Pos</label>
+                                <input type="text" class="form-input" placeholder="16xxx">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Metode Pembayaran -->
+                    <div class="checkout-card">
+                        <h3 class="checkout-title"><i class="far fa-credit-card"></i> Pembayaran</h3>
+                        <div class="payment-options">
+                            
+                            <!-- Opsi 1 -->
+                            <div>
+                                <input type="radio" name="payment" id="pay-qris" class="payment-radio" checked>
+                                <label for="pay-qris" class="payment-label">
+                                    <div class="pay-info"><i class="fas fa-qrcode pay-icon"></i> QRIS (GoPay/OVO/Dana)</div>
+                                    <i class="far fa-check-circle" style="color:var(--primary);"></i>
+                                </label>
+                            </div>
+
+                            <!-- Opsi 2 -->
+                            <div>
+                                <input type="radio" name="payment" id="pay-bank" class="payment-radio">
+                                <label for="pay-bank" class="payment-label">
+                                    <div class="pay-info"><i class="fas fa-university pay-icon"></i> Transfer Bank (BCA/Mandiri)</div>
+                                    <i class="far fa-check-circle" style="color:var(--primary);"></i>
+                                </label>
+                            </div>
+
+                            <!-- Opsi 3 -->
+                            <div>
+                                <input type="radio" name="payment" id="pay-cod" class="payment-radio">
+                                <label for="pay-cod" class="payment-label">
+                                    <div class="pay-info"><i class="fas fa-truck pay-icon"></i> Bayar di Tempat (COD)</div>
+                                    <i class="far fa-check-circle" style="color:var(--primary);"></i>
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- KOLOM KANAN: RINGKASAN (Sticky) -->
+                <div class="checkout-right">
+                    <div class="checkout-card order-summary">
+                        <h3 class="checkout-title">Ringkasan Pesanan</h3>
+                        
+                        <!-- Item Cart (Contoh) -->
+                        <div class="cart-item">
+                            <img src="https://images.pexels.com/photos/7663988/pexels-photo-7663988.jpeg?auto=compress&cs=tinysrgb&w=200" class="cart-thumb">
+                            <div class="cart-details">
+                                <h4>Aglaonema Red Kochin</h4>
+                                <p>1 x Rp 75.000</p>
+                            </div>
+                            <div class="cart-price">Rp 75.000</div>
+                        </div>
+
+                        <div class="cart-item">
+                            <img src="https://images.pexels.com/photos/6231828/pexels-photo-6231828.jpeg?auto=compress&cs=tinysrgb&w=200" class="cart-thumb">
+                            <div class="cart-details">
+                                <h4>Pupuk Organik Cair</h4>
+                                <p>2 x Rp 25.000</p>
+                            </div>
+                            <div class="cart-price">Rp 50.000</div>
+                        </div>
+
+                        <!-- Hitungan -->
+                        <div class="summary-row">
+                            <span>Subtotal Produk</span>
+                            <span>Rp 125.000</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Ongkos Kirim</span>
+                            <span>Rp 15.000</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Biaya Layanan</span>
+                            <span>Rp 1.000</span>
+                        </div>
+                        
+                        <div class="summary-row total">
+                            <span>Total Bayar</span>
+                            <span style="color:var(--primary);">Rp 141.000</span>
+                        </div>
+
+                        <button type="button" class="btn-checkout" onclick="alert('Pesanan berhasil dibuat! Silakan cek email Anda.')">
+                            Buat Pesanan <i class="fas fa-arrow-right" style="margin-left:5px;"></i>
+                        </button>
+
+                        <p style="font-size:0.8rem; color:var(--text-muted); text-align:center; margin-top:15px;">
+                            <i class="fas fa-lock"></i> Pembayaran Aman & Terenkripsi
+                        </p>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nigramesa. Semua Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LEAFLET JS (Logic Peta) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <script>
+        // 1. Inisialisasi Peta (Default: Jakarta/Monas)
+        // Koordinat awal bisa diubah sesuai target pasar (misal Bogor: -6.5971, 106.8060)
+        var map = L.map('map').setView([-6.2088, 106.8456], 13);
+
+        // 2. Tambahkan Tile Layer (Peta Jalan OpenStreetMap)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // 3. Tambahkan Marker yang Bisa Digeser (Draggable)
+        var marker = L.marker([-6.2088, 106.8456], {
+            draggable: true
+        }).addTo(map);
+
+        // 4. Event saat marker digeser
+        marker.on('dragend', function(event) {
+            var position = marker.getLatLng();
+            console.log("Lokasi Baru: " + position.lat + ", " + position.lng);
+            // Di sini nanti bisa ditambahkan logika untuk mengisi input koordinat tersembunyi
+            // document.getElementById('lat').value = position.lat;
+            // document.getElementById('lng').value = position.lng;
+        });
+
+        // 5. Event saat peta diklik (Pindah marker ke lokasi klik)
+        map.on('click', function(e) {
+            marker.setLatLng(e.latlng);
+        });
+    </script>
+
+</body>
+</html>

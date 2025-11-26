@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk - Nigramesa</title>
+    
+    <link rel="stylesheet" href="auth.css">
+    
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="auth-container">
+        
+        <!-- Sisi Kiri (Gambar) -->
+        <div class="auth-visual">
+            <div class="visual-content">
+                <a href="index.html" class="auth-logo">
+                    <i class="fas fa-leaf"></i> Nigramesa
+                </a>
+            </div>
+            <div class="visual-content quote-box">
+                <h2>"Pertanian adalah harapan bagi kehidupan masa depan."</h2>
+                <p>Bergabunglah dengan ribuan petani modern lainnya.</p>
+            </div>
+        </div>
+
+        <!-- Sisi Kanan (Form) -->
+        <div class="auth-form-side">
+            <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
+            
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <h1>Selamat Datang!</h1>
+                    <p>Belum punya akun? <a href="register.html">Daftar Gratis</a></p>
+                </div>
+
+                <form action="index.html"> <!-- Action dummy ke index -->
+                    
+                    <div class="input-group">
+                        <label for="email">Alamat Email</label>
+                        <input type="email" id="email" class="input-field" placeholder="contoh@email.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Kata Sandi</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="password" class="input-field" placeholder="Masukkan kata sandi" required>
+                            <i class="far fa-eye toggle-password"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <label class="remember-me">
+                            <input type="checkbox"> Ingat Saya
+                        </label>
+                        <a href="#" class="forgot-link">Lupa Sandi?</a>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Masuk Sekarang</button>
+                </form>
+
+                <div class="divider"><span>Atau masuk dengan</span></div>
+
+                <button class="social-btn">
+                    <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="Google">
+                    Masuk dengan Google
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

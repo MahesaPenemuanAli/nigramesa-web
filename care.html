@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Perawatan - Nigramesa</title>
+    
+    <!-- CSS GLOBAL (Wajib) -->
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS KHUSUS CARE -->
+    <link rel="stylesheet" href="care.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="container">
+            <a href="care.html" class="logo">
+                <i class="fas fa-leaf"></i> Nigramesa
+            </a>
+            <nav>
+                <ul>
+                    <!-- Link ke Beranda -->
+                    <li><a href="index.html">Beranda</a></li>
+                    
+                    <!-- Link ke Katalog (Belanja) -->
+                    <li><a href="katalog.html">Katalog</a></li>
+                    
+                    <!-- Link ke Panduan Perawatan -->
+                    <li><a href="care.html">Perawatan</a></li>
+                    
+                    <!-- Link ke Perpustakaan Digital -->
+                    <li><a href="library.html">Perpustakaan</a></li>
+                    
+                    <!-- Link ke Webinar (Masih di halaman depan, gunakan ID) -->
+                    <li><a href="webinar.html">Webinar</a></li>
+                    
+                    <!-- Link ke Tentang Kami -->
+                    <li><a href="about.html">Tentang</a></li>
+                </ul>
+            </nav>
+            <div class="nav-auth">
+                <a href="login.html" class="btn btn-tertiary">Masuk</a>
+                <a href="register.html" class="btn btn-primary">Daftar</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- HEADER SECTION -->
+        <section class="care-header-section">
+            <div class="container">
+                <h1>Ensiklopedia Tanaman</h1>
+                <p>Panduan lengkap cara merawat 40+ jenis tanaman hias, buah, dan sayur.</p>
+                
+                <div class="care-search">
+                    <i class="fas fa-search"></i>
+                    <input id="searchInput" type="text" placeholder="Cari nama tanaman (cth: Monstera, Jahe)...">
+                </div>
+
+                <div class="care-cats" id="categoryBtns">
+                    <button class="care-cat-btn active" data-cat="All">Semua</button>
+                    <button class="care-cat-btn" data-cat="Hias">Tanaman Hias</button>
+                    <button class="care-cat-btn" data-cat="Buah">Buah-buahan</button>
+                    <button class="care-cat-btn" data-cat="Sayuran">Sayuran</button>
+                    <button class="care-cat-btn" data-cat="Herbal">Herbal & Obat</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- GRID CONTENT -->
+        <div class="container">
+            <div class="care-grid" id="plantGrid">
+                <!-- Item akan digenerate oleh Javascript dibawah -->
+                <!-- Contoh Struktur Item (untuk referensi):
+                <a href="care-detail.html?id=monstera" class="care-card-item" data-cat="Hias">
+                    <img src="..." class="care-thumb">
+                    <div class="care-info">
+                        <h3>Monstera</h3>
+                        <p>Tanaman hias tropis daun berlubang.</p>
+                        <span class="care-tag">Hias</span>
+                    </div>
+                </a> 
+                -->
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nigramesa. Semua Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+<!-- DATA SCRIPT (Sama dengan yang Anda berikan, tapi diadaptasi) -->
+<script>
+/* DATABASE TANAMAN (Diambil dari file Anda) */
+const PLANTS_DB = [
+  /* -- HIAS -- */
+  { id:"monstera-deliciosa", name:"Monstera Deliciosa", desc:"Tanaman hias tropis daun berlubang.", cat:"Hias", img:"https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=600&auto=format&fit=crop" },
+  { id:"aglaonema-red", name:"Aglaonema Red", desc:"Daun merah menarik, cocok indoor.", cat:"Hias", img:"https://images.unsplash.com/photo-1587502536263-9293e3d20809?q=80&w=600&auto=format&fit=crop" },
+  { id:"philodendron", name:"Philodendron", desc:"Mudah dirawat, daun lebar.", cat:"Hias", img:"https://images.unsplash.com/photo-1598304109636-1d9f5b9a0b3f?q=80&w=600&auto=format&fit=crop" },
+  { id:"snake-plant", name:"Lidah Mertua", desc:"Tahan kering, pembersih udara.", cat:"Hias", img:"https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?q=80&w=600&auto=format&fit=crop" },
+  { id:"pothos", name:"Sirih Gading (Pothos)", desc:"Merambat, cocok pot gantung.", cat:"Hias", img:"https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=600&auto=format&fit=crop" },
+  { id:"fiddle-leaf-fig", name:"Ketapang Biola", desc:"Ikonik, butuh cahaya terang.", cat:"Hias", img:"https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=600&auto=format&fit=crop" },
+  { id:"zz-plant", name:"ZZ Plant", desc:"Tahan minim cahaya.", cat:"Hias", img:"https://images.unsplash.com/photo-1582719478250-5635f6f4b6d7?q=80&w=600&auto=format&fit=crop" },
+  { id:"rubber-plant", name:"Karet Kebo", desc:"Daun besar mengkilap.", cat:"Hias", img:"https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=600&auto=format&fit=crop" },
+  { id:"peace-lily", name:"Peace Lily", desc:"Bunga putih, filter udara.", cat:"Hias", img:"https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=600&auto=format&fit=crop" },
+  
+  /* -- BUAH -- */
+  { id:"lemon-tree", name:"Pohon Lemon", desc:"Buah asam segar kaya vitamin C.", cat:"Buah", img:"https://images.unsplash.com/photo-1506806732259-39c2d0268443?q=80&w=600&auto=format&fit=crop" },
+  { id:"strawberry", name:"Strawberry", desc:"Buah manis, bisa di pot.", cat:"Buah", img:"https://images.unsplash.com/photo-1510627498534-cf7e9002facc?q=80&w=600&auto=format&fit=crop" },
+  { id:"banana", name:"Pisang", desc:"Perlu ruang, panen banyak.", cat:"Buah", img:"https://images.unsplash.com/photo-1574226516831-e292c1e4b6f7?q=80&w=600&auto=format&fit=crop" },
+  { id:"mango", name:"Mangga", desc:"Buah tropis manis.", cat:"Buah", img:"https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=600&auto=format&fit=crop" },
+  { id:"papaya", name:"Pepaya", desc:"Cepat panen, kaya serat.", cat:"Buah", img:"https://images.unsplash.com/photo-1592928303158-2b1d4d3d9a5a?q=80&w=600&auto=format&fit=crop" },
+  { id:"avocado", name:"Alpukat", desc:"Lemak sehat, butuh waktu.", cat:"Buah", img:"https://images.unsplash.com/photo-1484981184820-2e84ea0b53b6?q=80&w=600&auto=format&fit=crop" },
+  { id:"chili", name:"Cabai Rawit", desc:"Pedas, mudah tumbuh.", cat:"Buah", img:"https://images.unsplash.com/photo-1584308972272-9c03c13bd2ef?q=80&w=600&auto=format&fit=crop" },
+  { id:"tomato", name:"Tomat Cherry", desc:"Buah sayur serbaguna.", cat:"Buah", img:"https://images.unsplash.com/photo-1506806732259-39c2d0268443?q=80&w=600&auto=format&fit=crop" },
+
+  /* -- SAYURAN -- */
+  { id:"spinach", name:"Bayam", desc:"Hijau penuh zat besi.", cat:"Sayuran", img:"https://images.unsplash.com/photo-1518976024611-5a3b8b6eb5f1?q=80&w=600&auto=format&fit=crop" },
+  { id:"kale", name:"Kale", desc:"Superfood kaya vitamin.", cat:"Sayuran", img:"https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=600&auto=format&fit=crop" },
+  { id:"lettuce", name:"Selada", desc:"Daun renyah untuk salad.", cat:"Sayuran", img:"https://images.unsplash.com/photo-1542444459-db5a9e4a3a6a?q=80&w=600&auto=format&fit=crop" },
+  { id:"cucumber", name:"Mentimun", desc:"Segar, butuh rambatan.", cat:"Sayuran", img:"https://images.unsplash.com/photo-1524594154904-3a39b7d6b5c0?q=80&w=600&auto=format&fit=crop" },
+  { id:"carrot", name:"Wortel", desc:"Akar bergizi, tanah gembur.", cat:"Sayuran", img:"https://images.unsplash.com/photo-1506806732259-39c2d0268443?q=80&w=600&auto=format&fit=crop" },
+  { id:"potato", name:"Kentang", desc:"Umbi karbohidrat.", cat:"Sayuran", img:"https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=600&auto=format&fit=crop" },
+  { id:"broccoli", name:"Brokoli", desc:"Vitamin C dan serat.", cat:"Sayuran", img:"https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=600&auto=format&fit=crop" },
+
+  /* -- HERBAL -- */
+  { id:"mint", name:"Mint", desc:"Aroma segar untuk teh.", cat:"Herbal", img:"https://images.unsplash.com/photo-1601004890694-3d6733f8a5c8?q=80&w=600&auto=format&fit=crop" },
+  { id:"basil", name:"Basil", desc:"Wangi khas Italia.", cat:"Herbal", img:"https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=600&auto=format&fit=crop" },
+  { id:"rosemary", name:"Rosemary", desc:"Aromatik kuat.", cat:"Herbal", img:"https://images.unsplash.com/photo-1579532539112-850c6e4e2d80?q=80&w=600&auto=format&fit=crop" },
+  { id:"ginger", name:"Jahe", desc:"Hangat untuk tubuh.", cat:"Herbal", img:"https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=600&auto=format&fit=crop" },
+  { id:"turmeric", name:"Kunyit", desc:"Anti-inflamasi alami.", cat:"Herbal", img:"https://images.unsplash.com/photo-1592928303158-2b1d4d3d9a5a?q=80&w=600&auto=format&fit=crop" }
+];
+
+/* LOGIKA RENDER & FILTER */
+const grid = document.getElementById('plantGrid');
+const btns = document.querySelectorAll('.care-cat-btn');
+const searchInput = document.getElementById('searchInput');
+
+function render(filterCat = 'All', filterText = '') {
+    grid.innerHTML = '';
+    const filtered = PLANTS_DB.filter(p => {
+        const matchCat = filterCat === 'All' || p.cat === filterCat;
+        const matchText = p.name.toLowerCase().includes(filterText.toLowerCase());
+        return matchCat && matchText;
+    });
+
+    if(filtered.length === 0) {
+        grid.innerHTML = '<p style="grid-column:1/-1; text-align:center; color:#777;">Tidak ada tanaman yang cocok.</p>';
+        return;
+    }
+
+    filtered.forEach(p => {
+        const card = document.createElement('a');
+        card.className = 'care-card-item';
+        card.href = `care-detail.html?id=${p.id}`;
+        card.innerHTML = `
+            <img src="${p.img}" class="care-thumb" loading="lazy">
+            <div class="care-info">
+                <h3>${p.name}</h3>
+                <p>${p.desc}</p>
+                <span class="care-tag">${p.cat}</span>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+}
+
+// Event Listeners
+btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        render(btn.dataset.cat, searchInput.value);
+    });
+});
+
+searchInput.addEventListener('input', (e) => {
+    const activeCat = document.querySelector('.care-cat-btn.active').dataset.cat;
+    render(activeCat, e.target.value);
+});
+
+// Initial Load
+render();
+</script>
+
+</body>
+</html>
