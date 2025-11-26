@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katalog Tanaman - Nigramesa</title>
     
-    <!-- 1. STYLE GLOBAL -->
+    <!-- 1. STYLE GLOBAL (TIDAK DIUBAH) -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- 2. STYLE KHUSUS KATALOG -->
+    <!-- 2. STYLE KHUSUS KATALOG (DIUPDATE) -->
     <link rel="stylesheet" href="katalog.css">
     
     <!-- Font & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-    <!-- NAVBAR -->
+    <!-- NAVBAR (Sama seperti sebelumnya) -->
     <header>
         <div class="container">
             <a href="index.html" class="logo">
@@ -36,7 +36,6 @@
                 </ul>
             </nav>
             <div class="nav-auth">
-                <!-- LINK KE CHECKOUT (Icon Keranjang) -->
                 <a href="checkout.html" class="btn btn-tertiary" title="Lihat Keranjang">
                     <i class="fas fa-shopping-cart"></i> <span style="font-size: 0.8rem; vertical-align: top;">(2)</span>
                 </a>
@@ -49,13 +48,18 @@
         
         <!-- HEADER HALAMAN & PENCARIAN -->
         <section class="catalog-page-header">
-            <div class="container">
-                <h1>Koleksi Tanaman Hias</h1>
-                <p>Temukan tanaman yang cocok untuk mempercantik rumah & kebun Anda.</p>
+            <!-- Dekorasi Background CSS Murni -->
+            <div class="bg-decoration"></div>
+            
+            <div class="container relative-content">
+                <span class="badge-header">New Collection</span>
+                <h1>Temukan Tanaman Impianmu</h1>
+                <p>Hadirkan kesegaran alam ke dalam sudut ruangan favorit Anda.</p>
                 
                 <div class="search-container">
                     <i class="fas fa-search search-icon-inside"></i>
-                    <input type="text" placeholder="Cari nama tanaman, pot, atau pupuk...">
+                    <input type="text" placeholder="Cari Monstera, Kaktus, atau Pot...">
+                    <button class="search-btn">Cari</button>
                 </div>
             </div>
         </section>
@@ -68,157 +72,241 @@
                 <aside class="filter-sidebar">
                     <div class="filter-group">
                         <h4 class="filter-title">Kategori</h4>
-                        <label class="filter-option"><input type="checkbox" checked> Semua Tanaman</label>
-                        <label class="filter-option"><input type="checkbox"> Tanaman Indoor</label>
-                        <label class="filter-option"><input type="checkbox"> Tanaman Outdoor</label>
-                        <label class="filter-option"><input type="checkbox"> Bibit Sayur</label>
+                        <!-- Custom Checkbox CSS -->
+                        <label class="custom-check">
+                            <input type="checkbox" checked>
+                            <span class="checkmark"></span>
+                            Semua Tanaman
+                        </label>
+                        <label class="custom-check">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            Tanaman Indoor
+                        </label>
+                        <label class="custom-check">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            Tanaman Outdoor
+                        </label>
+                        <label class="custom-check">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            Bibit & Benih
+                        </label>
                     </div>
 
                     <div class="filter-group">
-                        <h4 class="filter-title">Harga</h4>
-                        <input type="range" min="0" max="500000" style="width: 100%;">
-                        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #718096; margin-top: 5px;">
-                            <span>Rp 0</span>
-                            <span>Rp 500rb</span>
+                        <h4 class="filter-title">Filter Harga</h4>
+                        <div class="range-slider">
+                            <input type="range" min="0" max="100" value="50" class="slider">
+                            <div class="range-value">
+                                <span>Rp 15rb</span>
+                                <span>Rp 500rb+</span>
+                            </div>
                         </div>
+                    </div>
+
+                    <!-- Banner Promo Kecil di Sidebar -->
+                    <div class="sidebar-promo">
+                        <i class="fas fa-shipping-fast"></i>
+                        <p>Gratis Ongkir min. belanja <strong>Rp 100rb</strong></p>
                     </div>
                 </aside>
 
-                <!-- 2. GRID PRODUK -->
-                <div class="product-grid">
+                <!-- AREA KONTEN KANAN (GRID + PAGINATION) -->
+                <div class="content-area">
                     
-                    <!-- Produk 1 -->
-                    <div class="card catalog-card">
-                        <div class="card-image-wrapper">
-                            <!-- Link Gambar ke Detail -->
-                            <a href="product-detail.html">
-                                <img src="https://images.pexels.com/photos/7663988/pexels-photo-7663988.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Aglaonema" class="card-image">
+                    <!-- 2. GRID PRODUK -->
+                    <div class="product-grid">
+
+                        <!-- Produk 5 -->
+                        <div class="card catalog-card">
+                            <div class="card-image-wrapper">
+                                <img src="https://images.pexels.com/photos/6231828/pexels-photo-6231828.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pupuk" class="card-image">
+                                <div class="wishlist-toggle">
+                                    <input type="checkbox" id="wish5">
+                                    <label for="wish5"><i class="fas fa-heart"></i></label>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <span class="category-tag">Perawatan</span>
+                                <h3><a href="#">Pupuk Organik Cair</a></h3>
+                                <div class="rating-small"><i class="fas fa-star text-warning"></i> 4.8 <span>(85 terjual)</span></div>
+                                <div class="price-row">
+                                    <span class="product-price">Rp 25.000</span>
+                                    <a href="checkout.html" class="btn-add-cart"><i class="fas fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Produk 6 -->
+                        <div class="card catalog-card">
+                            <div class="card-image-wrapper">
+                                <img src="https://images.pexels.com/photos/3354674/pexels-photo-3354674.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Bibit" class="card-image">
+                                <div class="wishlist-toggle">
+                                    <input type="checkbox" id="wish6">
+                                    <label for="wish6"><i class="fas fa-heart"></i></label>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <span class="category-tag">Benih Sayur</span>
+                                <h3><a href="#">Benih Cabai Rawit F1</a></h3>
+                                <div class="rating-small"><i class="fas fa-star text-warning"></i> 4.6 <span>(40 terjual)</span></div>
+                                <div class="price-row">
+                                    <span class="product-price">Rp 15.000</span>
+                                    <a href="checkout.html" class="btn-add-cart"><i class="fas fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <!-- Produk 1 -->
+                        <div class="card catalog-card">
+                            <div class="card-image-wrapper">
+                                <a href="product-detail.html">
+                                    <img src="https://images.pexels.com/photos/7663988/pexels-photo-7663988.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Aglaonema" class="card-image">
+                                </a>
+                                <span class="card-badge">Best Seller</span>
+                                
+                                <!-- Wishlist Toggle Tanpa JS -->
+                                <div class="wishlist-toggle">
+                                    <input type="checkbox" id="wish1">
+                                    <label for="wish1" title="Simpan ke Wishlist"><i class="fas fa-heart"></i></label>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <span class="category-tag">Indoor Plant</span>
+                                <h3><a href="product-detail.html">Aglaonema Red Kochin</a></h3>
+                                <div class="rating-small">
+                                    <i class="fas fa-star text-warning"></i> 4.8 <span>(50 terjual)</span>
+                                </div>
+                                <div class="price-row">
+                                    <div class="price-info">
+                                        <span class="price-old">Rp 95.000</span>
+                                        <span class="product-price">Rp 75.000</span>
+                                    </div>
+                                    <a href="checkout.html" class="btn-add-cart"><i class="fas fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Produk 2 -->
+                        <div class="card catalog-card">
+                            <div class="card-image-wrapper">
+                                <img src="https://images.pexels.com/photos/3097770/pexels-photo-3097770.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Monstera" class="card-image">
+                                <div class="wishlist-toggle">
+                                    <input type="checkbox" id="wish2">
+                                    <label for="wish2"><i class="fas fa-heart"></i></label>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <span class="category-tag">Indoor Plant</span>
+                                <h3><a href="#">Monstera Deliciosa</a></h3>
+                                <div class="rating-small"><i class="fas fa-star text-warning"></i> 5.0 <span>(120 terjual)</span></div>
+                                <div class="price-row">
+                                    <span class="product-price">Rp 150.000</span>
+                                    <a href="checkout.html" class="btn-add-cart"><i class="fas fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Produk 3 -->
+                        <div class="card catalog-card">
+                            <div class="card-image-wrapper">
+                                <img src="https://images.pexels.com/photos/1084199/pexels-photo-1084199.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Kaktus" class="card-image">
+                                <div class="wishlist-toggle">
+                                    <input type="checkbox" id="wish3">
+                                    <label for="wish3"><i class="fas fa-heart"></i></label>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <span class="category-tag">Outdoor / Desk</span>
+                                <h3><a href="#">Kaktus Mini Mix</a></h3>
+                                <div class="rating-small"><i class="fas fa-star text-warning"></i> 4.7 <span>(30 terjual)</span></div>
+                                <div class="price-row">
+                                    <span class="product-price">Rp 45.000</span>
+                                    <a href="checkout.html" class="btn-add-cart"><i class="fas fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Produk 4 -->
+                        <div class="card catalog-card">
+                            <div class="card-image-wrapper">
+                                <img src="https://images.pexels.com/photos/4503734/pexels-photo-4503734.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Lidah Mertua" class="card-image">
+                                <span class="card-badge bg-accent">Promo</span>
+                                <div class="wishlist-toggle">
+                                    <input type="checkbox" id="wish4">
+                                    <label for="wish4"><i class="fas fa-heart"></i></label>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <span class="category-tag">Air Purifier</span>
+                                <h3><a href="#">Sansevieria (Lidah Mertua)</a></h3>
+                                <div class="rating-small"><i class="fas fa-star text-warning"></i> 4.9 <span>(200 terjual)</span></div>
+                                <div class="price-row">
+                                    <span class="product-price">Rp 35.000</span>
+                                    <a href="checkout.html" class="btn-add-cart"><i class="fas fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- End Product Grid -->
+
+                    <!-- 3. PAGINATION (BARU) -->
+                    <div class="pagination-area">
+                        <div class="pagination">
+                            <!-- Link Aktif (Hijau Bulat) -->
+                            <a href="#" class="page-link active">1</a>
+                            <!-- Link Biasa (Putih Bulat) -->
+                            <a href="#" class="page-link">2</a>
+                            <a href="#" class="page-link">3</a>
+                            <!-- Tombol Next -->
+                            <a href="#" class="page-link next">
+                                <i class="fas fa-chevron-right"></i>
                             </a>
-                            <span class="card-badge">Terlaris</span>
-                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
                         </div>
-                        <div class="card-content">
-                            <span class="category-tag">Tanaman Hias</span>
-                            <!-- Link Judul ke Detail -->
-                            <h3><a href="product-detail.html">Aglaonema Red Kochin</a></h3>
-                            <div class="rating"><i class="fas fa-star"></i> 4.8 (50)</div>
-                            <div class="price-row">
-                                <span class="product-price">Rp 75.000</span>
-                                <!-- Tombol Detail (Icon Mata/Panah) -->
-                                <a href="product-detail.html" class="btn-cart" title="Lihat Detail"><i class="fas fa-shopping-bag"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Produk 2 -->
-                    <div class="card catalog-card">
-                        <div class="card-image-wrapper">
-                            <img src="https://images.pexels.com/photos/3097770/pexels-photo-3097770.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Monstera" class="card-image">
-                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                        </div>
-                        <div class="card-content">
-                            <span class="category-tag">Indoor</span>
-                            <h3>Monstera Deliciosa</h3>
-                            <div class="rating"><i class="fas fa-star"></i> 5.0 (120)</div>
-                            <div class="price-row">
-                                <span class="product-price">Rp 150.000</span>
-                                <a href="checkout.html" class="btn-cart"><i class="fas fa-shopping-bag"></i></a>
-                            </div>
-                        </div>
+                        
+                        <!-- Link Lihat Semua -->
+                        <a href="#" class="view-all-text">Lihat Semua Produk</a>
                     </div>
 
-                    <!-- Produk 3 -->
-                    <div class="card catalog-card">
-                        <div class="card-image-wrapper">
-                            <img src="https://images.pexels.com/photos/1084199/pexels-photo-1084199.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Kaktus" class="card-image">
-                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                        </div>
-                        <div class="card-content">
-                            <span class="category-tag">Outdoor</span>
-                            <h3>Kaktus Mini Mix</h3>
-                            <div class="rating"><i class="fas fa-star"></i> 4.7 (30)</div>
-                            <div class="price-row">
-                                <span class="product-price">Rp 45.000</span>
-                                <a href="checkout.html" class="btn-cart"><i class="fas fa-shopping-bag"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                </div> <!-- End Content Area -->
 
-                    <!-- Produk 4 -->
-                    <div class="card catalog-card">
-                        <div class="card-image-wrapper">
-                            <img src="https://images.pexels.com/photos/4503734/pexels-photo-4503734.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Lidah Mertua" class="card-image">
-                            <span class="card-badge" style="background: var(--accent);">Promo</span>
-                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                        </div>
-                        <div class="card-content">
-                            <span class="category-tag">Penyerap Polusi</span>
-                            <h3>Lidah Mertua (Sansevieria)</h3>
-                            <div class="rating"><i class="fas fa-star"></i> 4.9 (200)</div>
-                            <div class="price-row">
-                                <span class="product-price">Rp 35.000</span>
-                                <a href="checkout.html" class="btn-cart"><i class="fas fa-shopping-bag"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Produk 5 -->
-                    <div class="card catalog-card">
-                        <div class="card-image-wrapper">
-                            <img src="https://images.pexels.com/photos/6231828/pexels-photo-6231828.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Pupuk" class="card-image">
-                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                        </div>
-                        <div class="card-content">
-                            <span class="category-tag">Perawatan</span>
-                            <h3>Pupuk Organik Cair</h3>
-                            <div class="rating"><i class="fas fa-star"></i> 4.8 (85)</div>
-                            <div class="price-row">
-                                <span class="product-price">Rp 25.000</span>
-                                <a href="checkout.html" class="btn-cart"><i class="fas fa-shopping-bag"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Produk 6 -->
-                    <div class="card catalog-card">
-                        <div class="card-image-wrapper">
-                            <img src="https://images.pexels.com/photos/3354674/pexels-photo-3354674.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Bibit" class="card-image">
-                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                        </div>
-                        <div class="card-content">
-                            <span class="category-tag">Benih</span>
-                            <h3>Benih Cabai Rawit F1</h3>
-                            <div class="rating"><i class="fas fa-star"></i> 4.6 (40)</div>
-                            <div class="price-row">
-                                <span class="product-price">Rp 15.000</span>
-                                <a href="checkout.html" class="btn-cart"><i class="fas fa-shopping-bag"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- End Product Grid -->
             </div>
         </div>
 
         <!-- FITUR SPESIAL: FEATURED PLANT -->
-        <section style="background: white; padding: 60px 0; border-top: 1px solid #f0f0f0;">
+        <section class="featured-section">
             <div class="container">
-                <div class="section-header">
-                    <h2>Tanaman Pilihan Bulan Ini</h2>
-                    <a href="#" class="link-arrow">Lihat Detail Lengkap <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="card" style="flex-direction: row; height: auto; align-items: center; padding: 0;">
-                    <div style="width: 50%; height: 400px;">
-                        <img src="https://images.pexels.com/photos/533280/pexels-photo-533280.jpeg?auto=compress&cs=tinysrgb&w=800" style="width: 100%; height: 100%; object-fit: cover;" alt="Featured">
+                <div class="featured-card">
+                    <div class="featured-image">
+                        <img src="https://images.pexels.com/photos/533280/pexels-photo-533280.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Featured">
                     </div>
-                    <div style="width: 50%; padding: 40px;">
-                        <span class="category-tag" style="color: var(--primary); font-weight: bold;">Edisi Terbatas</span>
-                        <h2 style="font-size: 2rem; margin-bottom: 15px;">Tomat Ceri Organik</h2>
-                        <p style="margin-bottom: 20px;">Tanaman buah mungil yang mudah tumbuh di pot kecil sekalipun. Cocok untuk pemula yang ingin mulai berkebun di lahan sempit.</p>
-                        <div style="display: flex; gap: 20px; margin-bottom: 30px;">
-                            <div><i class="fas fa-sun" style="color: var(--accent);"></i> Full Sun</div>
-                            <div><i class="fas fa-tint" style="color: #3498db;"></i> 2x Seminggu</div>
+                    <div class="featured-content">
+                        <span class="tag-special">Edisi Terbatas</span>
+                        <h2>Paket Hemat: Urban Farming</h2>
+                        <p>Mulai kebun sayurmu sendiri dengan paket lengkap: Benih Tomat Ceri, Cabai, Bayam, plus media tanam dan pot biodegradable.</p>
+                        
+                        <div class="featured-specs">
+                            <div class="spec-item">
+                                <i class="fas fa-sun"></i>
+                                <span>Outdoor</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-tint"></i>
+                                <span>Mudah</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-leaf"></i>
+                                <span>Organik</span>
+                            </div>
                         </div>
-                        <!-- LINK KE CHECKOUT -->
-                        <a href="checkout.html" class="btn btn-primary">Beli Paket Benih</a>
+                        
+                        <div class="featured-action">
+                            <h3 class="price">Rp 125.000</h3>
+                            <a href="checkout.html" class="btn btn-primary">Beli Paket Sekarang</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -226,7 +314,7 @@
 
     </main>
 
-    <!-- FOOTER (KONSISTEN) -->
+    <!-- FOOTER -->
     <footer id="contact" class="site-footer">
         <div class="container">
             <div class="footer-top">

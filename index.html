@@ -13,13 +13,10 @@
     <!-- Font: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
 
@@ -47,34 +44,34 @@
     </header>
 
     <main>
-        <!-- 2. HERO SECTION (SLIDER) -->
-        <section id="hero" class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <!-- Slide 1 -->
-                <div class="swiper-slide hero-slide hero-slide-1">
-                    <div class="container">
-                        <span class="badge-hero">Solusi Pertanian #1</span>
-                        <h1>Tumbuh Bersama <br>Alam & Teknologi</h1>
-                        <p>Platform all-in-one untuk bibit unggul, pupuk organik, dan edukasi pertanian modern.</p>
-                        <div class="hero-buttons">
-                            <a href="katalog.html" class="btn btn-primary">Lihat Katalog <i class="fas fa-arrow-right"></i></a>
-                            <a href="care.html" class="btn btn-white">Panduan Perawatan</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Slide 2 -->
-                <div class="swiper-slide hero-slide hero-slide-2">
-                    <div class="container">
-                        <span class="badge-hero">Perpustakaan Digital</span>
-                        <h1>Akses Ilmu Tani <br>Tanpa Batas</h1>
-                        <p>Ribuan jurnal, e-book, dan artikel riset tersedia gratis untuk member Nigramesa.</p>
-                        <div class="hero-buttons">
-                            <a href="library.html" class="btn btn-primary">Buka Perpustakaan</a>
-                        </div>
+        <!-- 2. HERO SECTION (CSS ONLY SCROLL SNAP) -->
+        <section id="hero">
+            
+            <!-- Slide 1 -->
+            <div class="hero-slide hero-slide-1">
+                <div class="container">
+                    <span class="badge-hero"><i class="fas fa-star"></i> Solusi Pertanian #1</span>
+                    <h1>Tumbuh Bersama <br>Alam & Teknologi</h1>
+                    <p>Platform all-in-one untuk bibit unggul, pupuk organik, dan edukasi pertanian modern demi hasil panen maksimal.</p>
+                    <div class="hero-buttons">
+                        <a href="katalog.html" class="btn btn-primary">Lihat Katalog <i class="fas fa-arrow-right"></i></a>
+                        <a href="care.html" class="btn btn-white">Panduan Perawatan</a>
                     </div>
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
+
+            <!-- Slide 2 -->
+            <div class="hero-slide hero-slide-2">
+                <div class="container">
+                    <span class="badge-hero"><i class="fas fa-book-open"></i> Perpustakaan Digital</span>
+                    <h1>Akses Ilmu Tani <br>Tanpa Batas</h1>
+                    <p>Ribuan jurnal, e-book, dan artikel riset tersedia gratis untuk member Nigramesa.</p>
+                    <div class="hero-buttons">
+                        <a href="library.html" class="btn btn-primary">Buka Perpustakaan</a>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
         <!-- 3. FITUR UTAMA (EKOSISTEM) -->
@@ -121,15 +118,20 @@
         <section id="products" class="section-bg-alt">
             <div class="container">
                 <div class="section-header">
-                    <h2>Katalog Pilihan</h2>
+                    <div>
+                        <h2>Katalog Pilihan</h2>
+                        <p>Produk terlaris bulan ini</p>
+                    </div>
                     <a href="katalog.html" class="link-arrow">Lihat Semua Produk <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="content-grid">
-                    <!-- Produk 1 -->
+                    <!-- Produk 1: Bibit Cabai (Gambar Diperbaiki) -->
                     <div class="card product-card">
                         <div class="product-img-box">
-                            <img src="https://images.pexels.com/photos/3354674/pexels-photo-3354674.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Bibit" class="card-image">
+                            <!-- Gambar Cabai Merah -->
+                            <img src="https://images.pexels.com/photos/4022090/pexels-photo-4022090.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Bibit Cabai" class="card-image">
                             <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            <span class="card-badge" style="background: var(--accent);">Terlaris</span>
                         </div>
                         <div class="card-content">
                             <div class="rating"><i class="fas fa-star"></i> 4.9 (120)</div>
@@ -140,10 +142,12 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Produk 2 -->
+                    
+                    <!-- Produk 2: Pupuk (Link Gambar Diperbaiki) -->
                     <div class="card product-card">
                         <div class="product-img-box">
-                            <img src="https://images.pexels.com/photos/6231828/pexels-photo-6231828.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pupuk" class="card-image">
+                            <!-- Gambar Botol Semprot/Pupuk -->
+                            <img src="https://images.pexels.com/photos/7728185/pexels-photo-7728185.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pupuk Cair" class="card-image">
                             <button class="wishlist-btn"><i class="far fa-heart"></i></button>
                         </div>
                         <div class="card-content">
@@ -155,15 +159,18 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Produk 3 -->
+                    
+                    <!-- Produk 3: Alat Tanam (Link Gambar Diperbaiki) -->
                     <div class="card product-card">
                         <div class="product-img-box">
-                            <img src="https://images.pexels.com/photos/5529604/pexels-photo-5529604.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sekop" class="card-image">
+                            <!-- Gambar Sekop & Garpu Tanah -->
+                            <img src="https://images.pexels.com/photos/6231828/pexels-photo-6231828.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Alat Tanam" class="card-image">
                             <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            <span class="card-badge">Baru</span>
                         </div>
                         <div class="card-content">
                             <div class="rating"><i class="fas fa-star"></i> 5.0 (42)</div>
-                            <h3>Set Alat Tanam</h3>
+                            <h3>Set Alat Tanam Pro</h3>
                             <div class="price-row">
                                 <p class="product-price">Rp 120.000</p>
                                 <button class="btn-cart"><i class="fas fa-plus"></i></button>
@@ -190,16 +197,18 @@
                         <div class="card-content">
                             <h3>Cara Rawat Padi & Jagung</h3>
                             <p>Teknik pemupukan dan irigasi untuk tanaman pangan utama.</p>
+                            <a href="care.html" class="link-arrow" style="margin-top: 15px;">Baca Panduan</a>
                         </div>
                     </div>
                     <div class="card hover-card">
                         <div class="card-image-wrapper">
                             <img src="https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sayur" class="card-image">
-                            <span class="card-badge">Menengah</span>
+                            <span class="card-badge" style="background: var(--primary);">Menengah</span>
                         </div>
                         <div class="card-content">
                             <h3>Budidaya Hidroponik</h3>
                             <p>Panduan lengkap nutrisi AB Mix dan perawatan instalasi.</p>
+                            <a href="care.html" class="link-arrow" style="margin-top: 15px;">Baca Panduan</a>
                         </div>
                     </div>
                     <div class="card hover-card">
@@ -210,6 +219,7 @@
                         <div class="card-content">
                             <h3>Perawatan Tanaman Hias</h3>
                             <p>Tips agar Monstera dan Anggrek tumbuh subur di dalam rumah.</p>
+                            <a href="care.html" class="link-arrow" style="margin-top: 15px;">Baca Panduan</a>
                         </div>
                     </div>
                 </div>
@@ -220,8 +230,11 @@
         <section id="library" class="section-bg-alt">
             <div class="container">
                 <div class="section-header">
-                    <h2>Perpustakaan Digital</h2>
-                    <a href="#" class="link-arrow">Jelajahi Koleksi <i class="fas fa-arrow-right"></i></a>
+                    <div>
+                        <h2>Perpustakaan Digital</h2>
+                        <p>Sumber daya pengetahuan untuk pertanian masa depan.</p>
+                    </div>
+                    <a href="library.html" class="link-arrow">Jelajahi Koleksi <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="features-grid">
                     <div class="feature-card" style="text-align: left; display: flex; align-items: flex-start; gap: 20px;">
@@ -249,7 +262,7 @@
                         <div class="icon-wrapper-small" style="margin: 0;"><i class="fas fa-file-alt"></i></div>
                         <div>
                             <h3>Modul Pelatihan</h3>
-                            <p>Materi siap pakai untuk kelompok tani.</p>
+                            <p>Materi siap pakai.</p>
                         </div>
                     </div>
                 </div>
@@ -270,7 +283,7 @@
                             <span class="card-badge" style="background: var(--accent);">Live Segera</span>
                         </div>
                         <div class="card-content">
-                            <span class="news-date">Minggu, 24 Nov 2025</span>
+                            <span class="news-date" style="font-size: 0.8rem; font-weight: 700; color: var(--primary);">MINGGU, 24 NOV 2025</span>
                             <h3>Manajemen Hama Terpadu</h3>
                             <p>Pembicara: Dr. Ir. Santoso (IPB)</p>
                             <button class="btn btn-secondary" style="margin-top: 15px; width: 100%;">Daftar Gratis</button>
@@ -282,7 +295,7 @@
                             <span class="card-badge">Akan Datang</span>
                         </div>
                         <div class="card-content">
-                            <span class="news-date">Sabtu, 30 Nov 2025</span>
+                            <span class="news-date" style="font-size: 0.8rem; font-weight: 700; color: var(--primary);">SABTU, 30 NOV 2025</span>
                             <h3>Bisnis Tanaman Hias 2026</h3>
                             <p>Pembicara: Rina S. (Eksportir)</p>
                             <button class="btn btn-secondary" style="margin-top: 15px; width: 100%;">Ingatkan Saya</button>
@@ -294,7 +307,7 @@
                             <span class="card-badge">Rekaman</span>
                         </div>
                         <div class="card-content">
-                            <span class="news-date">15 Nov 2025</span>
+                            <span class="news-date" style="font-size: 0.8rem; font-weight: 700; color: var(--primary);">15 NOV 2025</span>
                             <h3>Teknologi Irigasi Tetes</h3>
                             <p>Tonton ulang rekaman sesi ini.</p>
                             <button class="btn btn-tertiary" style="margin-top: 15px; width: 100%;">Tonton Sekarang</button>
@@ -304,7 +317,7 @@
             </div>
         </section>
 
-        <!-- CTA ke About (DIPINDAHKAN KE ATAS) -->
+        <!-- CTA ke About -->
         <section id="about-banner">
             <div class="container">
                 <div class="banner-glass-box">
@@ -313,14 +326,14 @@
                         <p>Di balik teknologi Nigramesa, ada tim ahli agronomi, teknisi, dan komunitas petani yang berdedikasi memajukan pertanian Indonesia. Bergabunglah dengan perjalanan kami.</p>
                         <div class="banner-actions">
                             <a href="about.html" class="btn btn-primary">Lihat Tim Kami</a>
-                            <a href="#" class="btn btn-outline-white">Pelajari Visi Misi</a>
+                            <a href="about.html" class="btn btn-outline-white">Pelajari Visi Misi</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 8. BERITA (DIPINDAHKAN KE BAWAH CTA) -->
+        <!-- 8. BERITA -->
         <section id="news" class="section-bg-alt">
             <div class="container">
                 <div class="section-header">
@@ -329,8 +342,6 @@
                 </div>
                 
                 <div class="horizontal-scroll-wrapper">
-                    <!-- 5 Artikel untuk Demo Scroll -->
-                    
                     <!-- Artikel 1 -->
                     <div class="card news-card-mini">
                         <img src="https://images.pexels.com/photos/2132257/pexels-photo-2132257.jpeg?auto=compress&cs=tinysrgb&w=600" alt="News 1" class="card-image">
@@ -387,8 +398,8 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <a href="#" class="logo-footer">Nigramesa</a>
-                    <p>Platform digital pertanian terlengkap di Indonesia.</p>
+                    <a href="index.html" class="logo-footer">Nigramesa</a>
+                    <p>Platform digital pertanian terlengkap di Indonesia. Menghubungkan teknologi dan alam.</p>
                     <div class="social-icons">
                         <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
@@ -426,42 +437,22 @@
         </div>
     </footer>
 
-    <!-- Script Swiper -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        const swiper = new Swiper('.mySwiper', {
-            loop: true,
-            effect: "fade", 
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-                dynamicBullets: true,
-            },
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-        });
-    </script>
-
     <!-- ==================================================
          WIDGET CHAT TANPA JAVASCRIPT (PURE CSS)
          ================================================== -->
     
-    <!-- 1. Checkbox 'Otak' (Tersembunyi) -->
+    <!-- Checkbox 'Otak' -->
     <input type="checkbox" id="chat-toggle">
 
-    <!-- 2. Label sebagai Tombol Pemicu -->
+    <!-- Tombol Pemicu -->
     <label for="chat-toggle" class="chat-btn-label">
         <i class="fas fa-comment-dots icon-open"></i>
         <i class="fas fa-times icon-close"></i>
         <span class="notification-badge">1</span>
     </label>
 
-    <!-- 3. Kotak Chat Pop-up -->
+    <!-- Kotak Chat -->
     <div class="chat-popup">
-        
-        <!-- Header -->
         <div class="chat-header-box">
             <div class="agent-profile">
                 <div class="agent-img">
@@ -476,24 +467,18 @@
             <button class="header-options"><i class="fas fa-ellipsis-v"></i></button>
         </div>
 
-        <!-- Body (Hanya Tampilan) -->
         <div class="chat-body-box">
             <div class="time-divider">Hari Ini</div>
-            
             <div class="message received">
                 <p>Halo! Selamat datang di Nigramesa 🌱<br>Ada yang bisa saya bantu?</p>
                 <span class="time">09:41</span>
             </div>
-            
-            <!-- Contoh tampilan pesan terkirim (statis) -->
             <div class="message sent">
                 <p>Saya mau tanya soal stok pupuk.</p>
                 <span class="time">09:42</span>
             </div>
-             
         </div>
 
-        <!-- Footer (Input Dummy) -->
         <div class="chat-footer-box">
             <input type="text" id="chatInput" placeholder="Tulis pesan...">
             <button id="sendBtn"><i class="fas fa-paper-plane"></i></button>

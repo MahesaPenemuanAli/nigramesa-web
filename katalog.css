@@ -1,194 +1,680 @@
 /* ==========================================================================
-   STYLE KHUSUS KATALOG (RE-DESIGN MODERN)
-   Pastikan style.css (Global) sudah dimuat sebelumnya di HTML
+   STYLE KHUSUS KATALOG (REDESIGN PREMIUM)
+   Menggunakan variabel dari style.css
    ========================================================================== */
 
-/* 1. HEADER HALAMAN KATALOG */
+/* 1. HEADER HALAMAN (HERO) */
 .catalog-page-header {
-    background: var(--bg-soft); /* Warna abu lembut dari global */
-    padding: 60px 0 40px;
+    background: linear-gradient(135deg, var(--bg-body) 0%, #ECFDF5 100%);
+    padding: 80px 0 60px;
     text-align: center;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+/* Elemen Dekoratif Background (Lingkaran halus) */
+.bg-decoration {
+    position: absolute;
+    top: -50px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.relative-content {
+    position: relative;
+    z-index: 2;
+}
+
+.badge-header {
+    display: inline-block;
+    background: var(--primary-light);
+    color: var(--primary-dark);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .catalog-page-header h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: var(--secondary);
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    letter-spacing: -0.03em;
 }
 
 .catalog-page-header p {
     color: var(--text-muted);
-    font-size: 1.1rem;
-    margin-bottom: 30px;
+    font-size: 1.15rem;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Search Bar Modern (Pill Shape) */
+/* Search Bar Premium */
 .search-container {
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto;
     position: relative;
-}
-
-.search-container input {
-    width: 100%;
-    padding: 16px 25px 16px 55px;
-    border-radius: 50px;
-    border: 2px solid transparent; /* Border transparan untuk efek fokus */
+    display: flex;
+    align-items: center;
     background: white;
-    font-size: 1rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: 0.3s ease;
-    outline: none;
-    color: var(--text-main);
+    border-radius: 50px;
+    padding: 8px;
+    box-shadow: 0 10px 40px -10px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.search-container input:focus {
+.search-container:focus-within {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px -10px rgba(16, 185, 129, 0.2);
     border-color: var(--primary);
-    box-shadow: 0 4px 20px rgba(0, 184, 101, 0.2);
 }
 
 .search-icon-inside {
     position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+    left: 24px;
     color: var(--text-muted);
     font-size: 1.2rem;
+    pointer-events: none;
 }
 
-/* 2. LAYOUT UTAMA (GRID SYSTEM) */
+.search-container input {
+    width: 100%;
+    padding: 14px 14px 14px 50px;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    outline: none;
+    color: var(--text-main);
+}
+
+.search-btn {
+    background: var(--secondary);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-btn:hover {
+    background: var(--primary);
+}
+
+/* 2. LAYOUT GRID SYSTEM */
 .catalog-layout {
     display: grid;
-    grid-template-columns: 260px 1fr; /* Sidebar 260px, Produk ambil sisanya */
-    gap: 40px;
-    align-items: start; /* Penting agar sidebar tidak melar ke bawah */
+    grid-template-columns: 280px 1fr;
+    gap: 50px;
     padding-bottom: 80px;
+    align-items: start;
 }
 
-/* 3. SIDEBAR FILTER (STICKY) */
+/* 3. SIDEBAR STYLING */
 .filter-sidebar {
     background: white;
-    border: 1px solid #eee;
-    border-radius: 16px;
-    padding: 24px;
-    box-shadow: var(--shadow-sm);
-    
-    /* Sticky Magic */
-    position: -webkit-sticky;
+    border-radius: 20px;
+    padding: 30px;
     position: sticky;
-    top: 100px; /* Jarak dari atas saat scroll (sesuaikan tinggi navbar) */
-    z-index: 10;
+    top: 100px;
+    border: 1px solid rgba(0,0,0,0.04);
 }
 
 .filter-group {
-    margin-bottom: 25px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #f5f5f5;
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px dashed #eee;
 }
 
-.filter-group:last-child {
+.filter-group:last-of-type {
     border-bottom: none;
-    margin-bottom: 0;
 }
 
 .filter-title {
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 700;
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    margin-bottom: 20px;
     color: var(--secondary);
 }
 
-/* Checkbox Style yang Lebih Rapi */
-.filter-option {
+/* Custom Checkbox CSS (Tanpa Tampilan Default Browser) */
+.custom-check {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
+    position: relative;
+    margin-bottom: 14px;
     cursor: pointer;
     font-size: 0.95rem;
     color: var(--text-muted);
-    transition: 0.2s;
+    user-select: none;
+    transition: color 0.2s;
 }
 
-.filter-option:hover {
-    color: var(--primary);
+.custom-check:hover {
+    color: var(--secondary);
 }
 
-.filter-option input[type="checkbox"] {
-    accent-color: var(--primary); /* Mewarnai checkbox native */
-    width: 16px;
-    height: 16px;
+/* Sembunyikan checkbox asli */
+.custom-check input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
 }
 
-/* 4. GRID PRODUK */
-.product-grid {
-    display: grid;
-    /* Grid Responsif Otomatis */
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 25px;
-}
-
-/* Kustomisasi Kartu Katalog */
-.catalog-card {
-    height: 100%; /* Agar semua kartu tingginya sama */
-    display: flex;
-    flex-direction: column;
+/* Bikin kotak checkbox sendiri */
+.checkmark {
+    height: 20px;
+    width: 20px;
+    background-color: #f3f4f6;
+    border-radius: 6px;
+    margin-right: 12px;
     position: relative;
-    border: 1px solid rgba(0,0,0,0.03);
+    transition: all 0.2s;
 }
 
-.catalog-card .card-image-wrapper {
-    height: 200px; /* Tinggi gambar fix agar rapi */
-    background: #f0f0f0;
+.custom-check input:checked ~ .checkmark {
+    background-color: var(--primary);
 }
 
-.catalog-card .card-content {
-    padding: 20px;
-    flex-grow: 1; /* Isi kartu mengisi ruang kosong */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 11px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.custom-check input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Slider Harga Sederhana */
+.range-slider .slider {
+    width: 100%;
+    height: 6px;
+    background: #ddd;
+    outline: none;
+    border-radius: 5px;
+    appearance: none; /* Standar CSS modern */
+}
+
+.range-slider .slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--primary);
+    cursor: pointer;
+}
+
+.range-value {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--secondary);
 }
 
-.catalog-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-    line-height: 1.4;
+.sidebar-promo {
+    background: #ECFDF5;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    color: var(--primary-dark);
+    font-size: 0.9rem;
+    margin-top: 20px;
 }
 
-.category-tag {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+.sidebar-promo i {
+    font-size: 1.5rem;
     margin-bottom: 10px;
     display: block;
 }
 
-.catalog-card .price-row {
-    margin-top: auto; /* Harga selalu nempel di bawah */
-    padding-top: 15px;
-    border-top: 1px solid #f5f5f5;
+/* 4. KARTU PRODUK (CARD PREMIUM) */
+.product-grid {
+    display: grid;
+    /* Auto-fill yang lebih cerdas */
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 30px;
 }
 
-/* 5. RESPONSIVE (HP & Tablet) */
+.catalog-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efek pantul halus */
+}
+
+.catalog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1);
+}
+
+.catalog-card .card-image-wrapper {
+    height: 240px;
+    position: relative;
+    overflow: hidden; /* Penting untuk efek zoom */
+    border-bottom: 1px solid #f9f9f9;
+}
+
+.catalog-card .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.catalog-card:hover .card-image {
+    transform: scale(1.1); /* Zoom saat hover */
+}
+
+/* Badge (Best Seller, Promo) */
+.card-badge {
+    position: absolute;
+    top: 15px; left: 15px;
+    background: var(--secondary);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.bg-accent { background: var(--accent); }
+
+/* Tombol Wishlist (Checkbox Hack) */
+.wishlist-toggle {
+    position: absolute;
+    top: 15px; right: 15px;
+    z-index: 2;
+}
+
+.wishlist-toggle input {
+    display: none;
+}
+
+.wishlist-toggle label {
+    width: 36px; height: 36px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+.wishlist-toggle label:hover {
+    transform: scale(1.1);
+}
+
+/* Saat checkbox dicentang, ubah warna icon */
+.wishlist-toggle input:checked + label {
+    background: #FEF2F2;
+    color: #EF4444;
+}
+
+/* Konten Kartu */
+.catalog-card .card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.category-tag {
+    font-size: 0.75rem;
+    color: var(--primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.catalog-card h3 a {
+    color: var(--secondary);
+    text-decoration: none;
+    font-size: 1.15rem;
+    line-height: 1.4;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 8px;
+    transition: color 0.2s;
+}
+
+.catalog-card h3 a:hover {
+    color: var(--primary);
+}
+
+.rating-small {
+    font-size: 0.85rem;
+    color: var(--secondary);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.rating-small span { color: var(--text-muted); font-size: 0.8rem; }
+.text-warning { color: #F59E0B; }
+
+/* Baris Harga & Tombol Beli */
+.price-row {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px dashed #f0f0f0;
+}
+
+.price-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.price-old {
+    font-size: 0.8rem;
+    text-decoration: line-through;
+    color: #9CA3AF;
+}
+
+.product-price {
+    font-weight: 800;
+    color: var(--secondary);
+    font-size: 1.1rem;
+}
+
+/* Tombol Plus (+) */
+.btn-add-cart {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: #f3f4f6;
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.btn-add-cart:hover {
+    background: var(--primary);
+    color: white;
+    transform: rotate(90deg);
+}
+
+/* 5. PAGINATION (NEW) */
+.pagination-area {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Style Tombol Angka Bulat */
+.page-link {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: white;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid transparent;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* State Aktif (Hijau Penuh) */
+.page-link.active {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 8px 20px -5px rgba(16, 185, 129, 0.5);
+    transform: scale(1.1);
+}
+
+/* State Hover & Normal */
+.page-link:hover:not(.active) {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-3px);
+}
+
+/* Tombol Next (Panah) */
+.page-link.next {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+.page-link.next:hover {
+    color: var(--primary);
+}
+
+/* Text "Lihat Semua" */
+.view-all-text {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.view-all-text:hover {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+    padding-bottom: 2px;
+}
+
+/* 6. FEATURED SECTION BARU */
+.featured-section {
+    padding: 60px 0;
+    background: linear-gradient(to top, white, #FAFAFA);
+}
+
+.featured-card {
+    background: white;
+    border-radius: 24px;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    overflow: hidden;
+    min-height: 400px;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.featured-image {
+    flex: 1;
+    position: relative;
+}
+
+.featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.featured-content {
+    flex: 1;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2310B981' fill-opacity='0.03' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.tag-special {
+    display: inline-block;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.featured-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: var(--secondary);
+}
+
+.featured-content p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+.featured-specs {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.spec-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+.spec-item i {
+    color: var(--primary);
+    background: var(--primary-light);
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem;
+}
+
+.featured-action {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: auto;
+}
+
+.featured-action .price {
+    font-size: 1.8rem;
+    color: var(--primary);
+    font-weight: 800;
+}
+
+/* 7. RESPONSIVE DESIGN */
 @media (max-width: 992px) {
     .catalog-layout {
-        grid-template-columns: 1fr; /* Sidebar pindah ke atas/hilang */
-        gap: 30px;
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 
     .filter-sidebar {
-        position: relative; /* Tidak sticky lagi di mobile */
+        position: relative;
         top: 0;
         margin-bottom: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    
+    .filter-group {
+        flex: 1;
+        min-width: 200px;
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+    
+    .sidebar-promo {
+        display: none; /* Sembunyikan promo di tablet agar rapi */
+    }
+
+    .featured-card {
+        flex-direction: column;
+    }
+
+    .featured-image {
+        height: 300px;
+    }
+    
+    .featured-content {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .catalog-page-header h1 {
+        font-size: 2rem;
     }
     
     .search-container {
-        padding: 0 20px; /* Padding kiri kanan di HP */
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 20px;
+    }
+    
+    .search-container input {
+        padding: 10px 10px 10px 40px;
+        text-align: center;
+    }
+    
+    .search-icon-inside {
+        top: 22px;
+        left: 50%;
+        transform: translateX(-100px); /* Kira-kira agar pas di tengah */
+    }
+    
+    .search-btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .featured-action {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    /* Pagination Responsive */
+    .page-link {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
     }
 }
