@@ -5,12 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout - Nigramesa</title>
     
-    <!-- CSS UTAMA -->
     <link rel="stylesheet" href="style.css">
-    <!-- CSS CHECKOUT -->
     <link rel="stylesheet" href="checkout.css">
-    
-    <!-- Leaflet CSS (Untuk Peta) -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     
     <!-- Font & Icons -->
@@ -21,7 +17,6 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
     <header>
         <div class="container">
             <a href="index.html" class="logo">
@@ -47,24 +42,18 @@
     <main class="checkout-section">
         <div class="container">
             
-            <!-- Judul Halaman & Tombol Kembali -->
             <div style="margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
                 <div>
                     <h1 style="font-size:2rem; color:var(--secondary); margin-bottom: 5px;">Selesaikan Pesanan</h1>
                     <p style="color:var(--text-muted);">Lengkapi detail pengiriman dan pembayaran Anda.</p>
                 </div>
-                <!-- TOMBOL KEMBALI KE KATALOG -->
                 <a href="katalog.html" class="btn btn-white" style="font-size: 0.9rem;">
                     <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Lanjut Belanja
                 </a>
             </div>
 
             <form class="checkout-layout">
-                
-                <!-- KOLOM KIRI: DETAIL PENGIRIMAN -->
                 <div class="checkout-left">
-                    
-                    <!-- 1. Info Kontak -->
                     <div class="checkout-card">
                         <h3 class="checkout-title"><i class="far fa-id-card"></i> Informasi Kontak</h3>
                         <div class="form-row">
@@ -257,18 +246,17 @@
             </div>
         </div>
     </footer>
-
-    <!-- LEAFLET JS (Logic Peta) -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     
     <script>
         // 1. Inisialisasi Peta (Default: Jakarta/Monas)
         // Koordinat awal bisa diubah sesuai target pasar (misal Bogor: -6.5971, 106.8060)
-        var map = L.map('map').setView([-6.2088, 106.8456], 13);
+        var map = L.map('map').setView([3.5952, 98.6722], 13);
+
 
         // 2. Tambahkan Tile Layer (Peta Jalan OpenStreetMap)
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
+            maxZoom: 1000,
             attribution: '© OpenStreetMap'
         }).addTo(map);
 
@@ -281,9 +269,6 @@
         marker.on('dragend', function(event) {
             var position = marker.getLatLng();
             console.log("Lokasi Baru: " + position.lat + ", " + position.lng);
-            // Di sini nanti bisa ditambahkan logika untuk mengisi input koordinat tersembunyi
-            // document.getElementById('lat').value = position.lat;
-            // document.getElementById('lng').value = position.lng;
         });
 
         // 5. Event saat peta diklik (Pindah marker ke lokasi klik)

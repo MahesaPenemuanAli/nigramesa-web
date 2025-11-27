@@ -4,14 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katalog Tanaman - Nigramesa</title>
-    
-    <!-- 1. STYLE GLOBAL (TIDAK DIUBAH) -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- 2. STYLE KHUSUS KATALOG (DIUPDATE) -->
     <link rel="stylesheet" href="katalog.css">
     
-    <!-- Font & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,7 +14,6 @@
 </head>
 <body>
 
-    <!-- NAVBAR (Sama seperti sebelumnya) -->
     <header>
         <div class="container">
             <a href="index.html" class="logo">
@@ -48,7 +42,6 @@
         
         <!-- HEADER HALAMAN & PENCARIAN -->
         <section class="catalog-page-header">
-            <!-- Dekorasi Background CSS Murni -->
             <div class="bg-decoration"></div>
             
             <div class="container relative-content">
@@ -72,7 +65,6 @@
                 <aside class="filter-sidebar">
                     <div class="filter-group">
                         <h4 class="filter-title">Kategori</h4>
-                        <!-- Custom Checkbox CSS -->
                         <label class="custom-check">
                             <input type="checkbox" checked>
                             <span class="checkmark"></span>
@@ -118,8 +110,6 @@
                     
                     <!-- 2. GRID PRODUK -->
                     <div class="product-grid">
-
-                        <!-- Produk 5 -->
                         <div class="card catalog-card">
                             <div class="card-image-wrapper">
                                 <img src="asset/pupuk.jpg" alt="Pupuk" class="card-image">
@@ -138,8 +128,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Produk 6 -->
                         <div class="card catalog-card">
                             <div class="card-image-wrapper">
                                 <img src="asset/bibit cabe.jpg" alt="Bibit" class="card-image">
@@ -158,9 +146,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        
-                        <!-- Produk 1 -->
                         <div class="card catalog-card">
                             <div class="card-image-wrapper">
                                 <a href="product-detail.html">
@@ -168,7 +153,6 @@
                                 </a>
                                 <span class="card-badge">Best Seller</span>
                                 
-                                <!-- Wishlist Toggle Tanpa JS -->
                                 <div class="wishlist-toggle">
                                     <input type="checkbox" id="wish1">
                                     <label for="wish1" title="Simpan ke Wishlist"><i class="fas fa-heart"></i></label>
@@ -190,7 +174,6 @@
                             </div>
                         </div>
 
-                        <!-- Produk 2 -->
                         <div class="card catalog-card">
                             <div class="card-image-wrapper">
                                 <img src="https://images.pexels.com/photos/3097770/pexels-photo-3097770.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Monstera" class="card-image">
@@ -210,7 +193,6 @@
                             </div>
                         </div>
 
-                        <!-- Produk 3 -->
                         <div class="card catalog-card">
                             <div class="card-image-wrapper">
                                 <img src="https://images.pexels.com/photos/1084199/pexels-photo-1084199.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Kaktus" class="card-image">
@@ -230,7 +212,6 @@
                             </div>
                         </div>
 
-                        <!-- Produk 4 -->
                         <div class="card catalog-card">
                             <div class="card-image-wrapper">
                                 <img src="asset/lidah.jpg" alt="Lidah Mertua" class="card-image">
@@ -251,32 +232,24 @@
                             </div>
                         </div>
 
-                    </div> <!-- End Product Grid -->
+                    </div> 
 
-                    <!-- 3. PAGINATION (BARU) -->
                     <div class="pagination-area">
                         <div class="pagination">
-                            <!-- Link Aktif (Hijau Bulat) -->
                             <a href="#" class="page-link active">1</a>
-                            <!-- Link Biasa (Putih Bulat) -->
                             <a href="#" class="page-link">2</a>
                             <a href="#" class="page-link">3</a>
-                            <!-- Tombol Next -->
                             <a href="#" class="page-link next">
                                 <i class="fas fa-chevron-right"></i>
                             </a>
                         </div>
                         
-                        <!-- Link Lihat Semua -->
                         <a href="#" class="view-all-text">Lihat Semua Produk</a>
                     </div>
-
-                </div> <!-- End Content Area -->
-
+                </div>
             </div>
         </div>
 
-        <!-- FITUR SPESIAL: FEATURED PLANT -->
         <section class="featured-section">
             <div class="container">
                 <div class="featured-card">

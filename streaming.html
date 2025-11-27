@@ -5,11 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Webinar - Nigramesa</title>
     
-    <!-- CSS GLOBAL -->
     <link rel="stylesheet" href="style.css">
-    <!-- CSS KHUSUS STREAMING -->
     <link rel="stylesheet" href="streaming.css">
-    <!-- Re-use Webinar Card Style untuk rekomendasi -->
     <link rel="stylesheet" href="webinar.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +16,6 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
     <header>
         <div class="container">
             <a href="index.html" class="logo"><i class="fas fa-leaf"></i> Nigramesa</a>
@@ -42,8 +38,6 @@
 
     <main>
         <div class="container" style="padding-top: 30px;">
-            
-            <!-- BREADCRUMB -->
             <div style="margin-bottom: 20px; font-size: 0.9rem; color: #777;">
                 <a href="webinar.html" style="text-decoration:none; color:#777;">Webinar</a> 
                 <span style="margin:0 5px;">/</span> 
@@ -52,16 +46,11 @@
 
             <div class="stream-layout">
                 
-                <!-- KOLOM KIRI: PLAYER & INFO -->
                 <div class="stream-main">
-                    
-                    <!-- Video Player (Contoh Embed YouTube) -->
                     <div class="video-container">
                         <iframe class="video-frame" src="https://www.youtube.com/embed/video_id_here?autoplay=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <!-- Ganti "video_id_here" dengan ID video asli -->
                     </div>
 
-                    <!-- Info Webinar -->
                     <div class="stream-info">
                         <div class="stream-tags">
                             <span class="tag-live"><i class="fas fa-circle" style="font-size:0.5rem;"></i> Live Now</span>
@@ -82,8 +71,6 @@
                             </div>
                             <button class="btn-follow">+ Ikuti</button>
                         </div>
-
-                        <!-- Tabs: Deskripsi & Materi -->
                         <div class="stream-tabs">
                             <button class="tab-btn-stream active" onclick="openStreamTab('desc')">Deskripsi</button>
                             <button class="tab-btn-stream" onclick="openStreamTab('materi')">Materi (2)</button>
@@ -113,15 +100,12 @@
 
                     </div>
                 </div>
-
-                <!-- KOLOM KANAN: LIVE CHAT -->
                 <div class="chat-container">
                     <div class="chat-header">
                         Live Chat <span class="chat-count">342 Online</span>
                     </div>
                     
                     <div class="chat-messages">
-                        <!-- Pesan 1 -->
                         <div class="chat-msg">
                             <img src="https://randomuser.me/api/portraits/men/32.jpg" class="chat-avatar">
                             <div class="chat-bubble">
@@ -129,7 +113,6 @@
                                 <p class="chat-text">Selamat pagi Pak Dokter, materinya sangat menarik!</p>
                             </div>
                         </div>
-                        <!-- Pesan 2 -->
                         <div class="chat-msg">
                             <img src="https://randomuser.me/api/portraits/women/44.jpg" class="chat-avatar">
                             <div class="chat-bubble">
@@ -137,7 +120,6 @@
                                 <p class="chat-text">Apakah alat ini tahan air hujan jika ditaruh di luar?</p>
                             </div>
                         </div>
-                        <!-- Pesan 3 -->
                         <div class="chat-msg">
                             <img src="https://randomuser.me/api/portraits/men/12.jpg" class="chat-avatar">
                             <div class="chat-bubble">
@@ -145,7 +127,6 @@
                                 <p class="chat-text">Biaya listriknya kira-kira berapa per bulan?</p>
                             </div>
                         </div>
-                        <!-- Pesan Admin -->
                         <div class="chat-msg">
                             <div class="chat-avatar" style="background:var(--primary); display:flex; align-items:center; justify-content:center; color:white;"><i class="fas fa-leaf"></i></div>
                             <div class="chat-bubble" style="background:#e6fffa; border:1px solid #b2f5ea;">
@@ -163,7 +144,6 @@
 
             </div>
 
-            <!-- REKOMENDASI LAIN -->
             <div class="related-videos">
                 <h3 style="margin-bottom: 20px; color: var(--secondary);">Webinar Terkait</h3>
                 <div class="archive-grid">
@@ -178,7 +158,6 @@
                             <span style="font-size:0.8rem;">15 Okt 2025</span>
                         </div>
                     </div>
-                    <!-- Card 2 -->
                     <div class="archive-card">
                         <div class="play-thumb">
                             <img src="https://images.pexels.com/photos/256514/pexels-photo-256514.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Rec 2">

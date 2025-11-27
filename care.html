@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panduan Perawatan - Nigramesa</title>
-    
-    <!-- CSS GLOBAL (Wajib) -->
     <link rel="stylesheet" href="style.css">
-    <!-- CSS KHUSUS CARE -->
     <link rel="stylesheet" href="care.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +14,6 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
     <header>
         <div class="container">
             <a href="care.html" class="logo">
@@ -25,22 +21,11 @@
             </a>
             <nav>
                 <ul>
-                    <!-- Link ke Beranda -->
                     <li><a href="index.html">Beranda</a></li>
-                    
-                    <!-- Link ke Katalog (Belanja) -->
                     <li><a href="katalog.html">Katalog</a></li>
-                    
-                    <!-- Link ke Panduan Perawatan -->
                     <li><a href="care.html"class="active">Perawatan</a></li>
-                    
-                    <!-- Link ke Perpustakaan Digital -->
                     <li><a href="library.html">Perpustakaan</a></li>
-                    
-                    <!-- Link ke Webinar (Masih di halaman depan, gunakan ID) -->
                     <li><a href="webinar.html">Webinar</a></li>
-                    
-                    <!-- Link ke Tentang Kami -->
                     <li><a href="about.html">Tentang</a></li>
                 </ul>
             </nav>
@@ -51,7 +36,6 @@
         </div>
     </header>
     <main>
-        <!-- HEADER SECTION -->
         <section class="care-header-section">
             <div class="container">
                 <h1>Ensiklopedia Tanaman</h1>
@@ -72,11 +56,8 @@
             </div>
         </section>
 
-        <!-- GRID CONTENT -->
         <div class="container">
             <div class="care-grid" id="plantGrid">
-                <!-- Item akan digenerate oleh Javascript dibawah -->
-                <!-- Contoh Struktur Item (untuk referensi):
                 <a href="care-detail.html?id=monstera" class="care-card-item" data-cat="Hias">
                     <img src="..." class="care-thumb">
                     <div class="care-info">
@@ -85,7 +66,6 @@
                         <span class="care-tag">Hias</span>
                     </div>
                 </a> 
-                -->
             </div>
         </div>
     </main>
@@ -134,11 +114,8 @@
         </div>
     </footer>
 
-<!-- DATA SCRIPT (Sama dengan yang Anda berikan, tapi diadaptasi) -->
 <script>
-/* DATABASE TANAMAN (Diambil dari file Anda) */
 
-  /* -- HIAS -- */
   const PLANTS_DB = [
   /* -- HIAS -- */
   { 
@@ -385,7 +362,6 @@ function render(filterCat = 'All', filterText = '') {
     });
 }
 
-// Event Listeners
 btns.forEach(btn => {
     btn.addEventListener('click', () => {
         btns.forEach(b => b.classList.remove('active'));
@@ -399,7 +375,6 @@ searchInput.addEventListener('input', (e) => {
     render(activeCat, e.target.value);
 });
 
-// Initial Load
 render();
 </script>
 

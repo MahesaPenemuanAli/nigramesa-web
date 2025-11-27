@@ -15,7 +15,6 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
     <header>
         <div class="container">
             <a href="care-detail.html" class="logo">
@@ -23,22 +22,11 @@
             </a>
             <nav>
                 <ul>
-                    <!-- Link ke Beranda -->
                     <li><a href="index.html">Beranda</a></li>
-                    
-                    <!-- Link ke Katalog (Belanja) -->
                     <li><a href="katalog.html">Katalog</a></li>
-                    
-                    <!-- Link ke Panduan Perawatan -->
                     <li><a href="care.html"class="active">Perawatan</a></li>
-                    
-                    <!-- Link ke Perpustakaan Digital -->
                     <li><a href="library.html">Perpustakaan</a></li>
-                    
-                    <!-- Link ke Webinar (Masih di halaman depan, gunakan ID) -->
                     <li><a href="webinar.html">Webinar</a></li>
-                    
-                    <!-- Link ke Tentang Kami -->
                     <li><a href="about.html">Tentang</a></li>
                 </ul>
             </nav>
@@ -50,20 +38,15 @@
     </header>
     <main>
         <div class="detail-container">
-            <!-- Tombol Kembali -->
             <a href="care.html" class="back-link">
                 <i class="fas fa-arrow-left"></i> Kembali ke Indeks
             </a>
-
-            <!-- Konten Dinamis akan di-load di sini -->
             <div id="detailContent">
-                <!-- Loading State -->
                 <p style="text-align:center; padding: 50px;">Memuat data tanaman...</p>
             </div>
         </div>
     </main>
 
-    <!-- FOOTER -->
     <footer id="contact" class="site-footer">
         <div class="container">
             <div class="footer-top">
@@ -166,7 +149,6 @@ const PLANTS_DATA = {
   benefits:"Menenangkan perut, aroma segar untuk teh.",
   tips:["Tanam di pot terpisah karena akarnya invasif","Pangkas pucuk rutin agar rimbun"]
 },
-/* NOTE: Untuk demo ini saya masukkan sebagian data. Di produksi, masukkan semua 40 data dari file asli Anda ke sini. */
 };
 
 // LOGIKA RENDER HALAMAN

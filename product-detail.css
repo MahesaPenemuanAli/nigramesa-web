@@ -1,8 +1,4 @@
-/* ==========================================================================
-   STYLE KHUSUS HALAMAN DETAIL PRODUK (product-detail.html)
-   ========================================================================== */
 
-/* 1. BREADCRUMB (Navigasi Jalur) */
 .breadcrumb {
     padding: 20px 0;
     color: var(--text-muted);
@@ -12,7 +8,6 @@
 .breadcrumb a:hover { color: var(--primary); }
 .breadcrumb span { margin: 0 8px; color: #ccc; }
 
-/* 2. PRODUCT MAIN (Grid Kiri: Gambar, Kanan: Info) */
 .product-detail-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -20,10 +15,9 @@
     margin-bottom: 80px;
 }
 
-/* Galeri Gambar */
 .product-gallery {
     position: sticky;
-    top: 100px; /* Agar sticky saat scroll */
+    top: 100px; 
 }
 .main-image-box {
     width: 100%;
@@ -70,7 +64,6 @@
 .product-price { font-size: 1.8rem; color: var(--primary); font-weight: 800; margin-bottom: 20px; }
 .product-desc { color: var(--text-muted); line-height: 1.6; margin-bottom: 30px; }
 
-/* Pilihan Varian (Opsional) */
 .variant-option { margin-bottom: 25px; }
 .variant-label { display: block; font-weight: 600; margin-bottom: 10px; color: var(--secondary); }
 .size-btn {
@@ -81,7 +74,6 @@
     border-color: var(--primary); color: var(--primary); background: #f0fff4;
 }
 
-/* Action Buttons */
 .product-actions { display: flex; gap: 15px; align-items: center; margin-bottom: 30px; }
 .qty-input {
     display: flex; align-items: center; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;
@@ -116,7 +108,6 @@
 .service-item { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--text-main); }
 .service-item i { color: var(--primary); font-size: 1.2rem; }
 
-/* 3. TABS & ULASAN */
 .details-tab-section { background: var(--bg-soft); padding: 60px 0; }
 .tabs-header {
     display: flex; justify-content: center; gap: 30px; margin-bottom: 40px; border-bottom: 1px solid #ddd;
@@ -130,7 +121,6 @@
 .tab-content { max-width: 900px; margin: 0 auto; display: none; animation: fadeIn 0.5s; }
 .tab-content.active { display: block; }
 
-/* Review Card Style */
 .review-summary {
     background: white; padding: 30px; border-radius: 16px; text-align: center;
     margin-bottom: 40px; box-shadow: var(--shadow-sm);

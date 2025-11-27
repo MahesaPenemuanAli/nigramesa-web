@@ -1,22 +1,15 @@
-/* ==========================================================================
-   STYLE KHUSUS HALAMAN STREAMING (streaming.html)
-   ========================================================================== */
-
-/* 1. LAYOUT UTAMA (Grid Player & Chat) */
 .stream-layout {
     display: grid;
-    grid-template-columns: 1fr 350px; /* Kiri: Video, Kanan: Chat 350px */
+    grid-template-columns: 1fr 350px; 
     gap: 30px;
     margin-bottom: 60px;
     align-items: start;
 }
-
-/* 2. VIDEO PLAYER AREA */
 .video-container {
     background: #000;
     border-radius: 16px;
     overflow: hidden;
-    aspect-ratio: 16 / 9; /* Rasio standar video */
+    aspect-ratio: 16 / 9; 
     position: relative;
     box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
@@ -61,7 +54,6 @@
 }
 .btn-follow:hover { background: var(--primary); color: white; }
 
-/* Tab Menu di Bawah Video */
 .stream-tabs { display: flex; gap: 20px; border-bottom: 1px solid #eee; margin-top: 30px; margin-bottom: 20px; }
 .tab-btn-stream {
     padding: 10px 0; background: none; border: none; font-size: 1rem; 
@@ -72,20 +64,18 @@
 .tab-content-stream { display: none; font-size: 0.95rem; line-height: 1.6; color: var(--text-main); }
 .tab-content-stream.active { display: block; }
 
-/* List Materi Download */
 .resource-item {
     display: flex; justify-content: space-between; align-items: center;
     padding: 12px; background: var(--bg-soft); border-radius: 8px; margin-bottom: 10px;
 }
 .res-name { font-weight: 600; display: flex; align-items: center; gap: 10px; }
-.res-name i { color: #e74c3c; } /* Merah untuk PDF icon */
+.res-name i { color: #e74c3c; } 
 
-/* 3. LIVE CHAT AREA (Kanan) */
 .chat-container {
     background: white;
     border-radius: 16px;
     border: 1px solid #eee;
-    height: 600px; /* Tinggi fix agar scroll */
+    height: 600px; 
     display: flex;
     flex-direction: column;
     position: sticky; top: 100px;
@@ -120,13 +110,11 @@
     background: var(--primary); color: white; cursor: pointer; display: flex; align-items: center; justify-content: center;
 }
 
-/* 4. REKOMENDASI VIDEO (Bawah) */
 .related-videos { margin-top: 60px; }
 .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; }
 
-/* Responsif */
 @media (max-width: 992px) {
-    .stream-layout { grid-template-columns: 1fr; } /* Chat pindah ke bawah */
+    .stream-layout { grid-template-columns: 1fr; } 
     .chat-container { height: 400px; position: static; }
-    .video-container { border-radius: 0; width: 100vw; margin-left: -24px; } /* Full width di mobile */
+    .video-container { border-radius: 0; width: 100vw; margin-left: -24px; } 
 }

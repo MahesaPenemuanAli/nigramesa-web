@@ -1,9 +1,3 @@
-/* ==========================================================================
-   STYLE KHUSUS KATALOG (REDESIGN PREMIUM)
-   Menggunakan variabel dari style.css
-   ========================================================================== */
-
-/* 1. HEADER HALAMAN (HERO) */
 .catalog-page-header {
     background: linear-gradient(135deg, var(--bg-body) 0%, #ECFDF5 100%);
     padding: 80px 0 60px;
@@ -13,7 +7,6 @@
     margin-bottom: 50px;
 }
 
-/* Elemen Dekoratif Background (Lingkaran halus) */
 .bg-decoration {
     position: absolute;
     top: -50px; left: 50%;
@@ -59,7 +52,6 @@
     margin-right: auto;
 }
 
-/* Search Bar Premium */
 .search-container {
     max-width: 650px;
     margin: 0 auto;
@@ -113,7 +105,6 @@
     background: var(--primary);
 }
 
-/* 2. LAYOUT GRID SYSTEM */
 .catalog-layout {
     display: grid;
     grid-template-columns: 280px 1fr;
@@ -122,7 +113,6 @@
     align-items: start;
 }
 
-/* 3. SIDEBAR STYLING */
 .filter-sidebar {
     background: white;
     border-radius: 20px;
@@ -149,41 +139,31 @@
     color: var(--secondary);
 }
 
-/* Custom Checkbox CSS (Tanpa Tampilan Default Browser) */
 .custom-check {
     display: flex;
     align-items: center;
-    position: relative;
-    margin-bottom: 14px;
+    gap: 10px;
     cursor: pointer;
     font-size: 0.95rem;
     color: var(--text-muted);
-    user-select: none;
-    transition: color 0.2s;
+    transition: 0.2s;
 }
 
 .custom-check:hover {
-    color: var(--secondary);
+    color: var(--primary);
 }
 
-/* Sembunyikan checkbox asli */
 .custom-check input {
-    position: absolute;
-    opacity: 0;
+    position: static;
+    opacity: 1;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--primary);  
     cursor: pointer;
-    height: 0;
-    width: 0;
 }
 
-/* Bikin kotak checkbox sendiri */
 .checkmark {
-    height: 20px;
-    width: 20px;
-    background-color: #f3f4f6;
-    border-radius: 6px;
-    margin-right: 12px;
-    position: relative;
-    transition: all 0.2s;
+    display: none !important;
 }
 
 .custom-check input:checked ~ .checkmark {
@@ -207,14 +187,13 @@
     display: block;
 }
 
-/* Slider Harga Sederhana */
 .range-slider .slider {
     width: 100%;
     height: 6px;
     background: #ddd;
     outline: none;
     border-radius: 5px;
-    appearance: none; /* Standar CSS modern */
+    appearance: none; 
 }
 
 .range-slider .slider::-webkit-slider-thumb {
@@ -251,10 +230,8 @@
     display: block;
 }
 
-/* 4. KARTU PRODUK (CARD PREMIUM) */
 .product-grid {
     display: grid;
-    /* Auto-fill yang lebih cerdas */
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 30px;
 }
@@ -264,7 +241,7 @@
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(0,0,0,0.03);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efek pantul halus */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 }
 
 .catalog-card:hover {
@@ -275,7 +252,7 @@
 .catalog-card .card-image-wrapper {
     height: 240px;
     position: relative;
-    overflow: hidden; /* Penting untuk efek zoom */
+    overflow: hidden; 
     border-bottom: 1px solid #f9f9f9;
 }
 
@@ -287,10 +264,9 @@
 }
 
 .catalog-card:hover .card-image {
-    transform: scale(1.1); /* Zoom saat hover */
+    transform: scale(1.1); 
 }
 
-/* Badge (Best Seller, Promo) */
 .card-badge {
     position: absolute;
     top: 15px; left: 15px;
@@ -306,7 +282,6 @@
 
 .bg-accent { background: var(--accent); }
 
-/* Tombol Wishlist (Checkbox Hack) */
 .wishlist-toggle {
     position: absolute;
     top: 15px; right: 15px;
@@ -335,13 +310,11 @@
     transform: scale(1.1);
 }
 
-/* Saat checkbox dicentang, ubah warna icon */
 .wishlist-toggle input:checked + label {
     background: #FEF2F2;
     color: #EF4444;
 }
 
-/* Konten Kartu */
 .catalog-card .card-content {
     padding: 20px;
     flex-grow: 1;
@@ -384,7 +357,6 @@
 .rating-small span { color: var(--text-muted); font-size: 0.8rem; }
 .text-warning { color: #F59E0B; }
 
-/* Baris Harga & Tombol Beli */
 .price-row {
     margin-top: auto;
     display: flex;
@@ -411,7 +383,6 @@
     font-size: 1.1rem;
 }
 
-/* Tombol Plus (+) */
 .btn-add-cart {
     width: 40px; height: 40px;
     border-radius: 50%;
@@ -429,7 +400,6 @@
     transform: rotate(90deg);
 }
 
-/* 5. PAGINATION (NEW) */
 .pagination-area {
     margin-top: 50px;
     display: flex;
@@ -445,7 +415,6 @@
     gap: 12px;
 }
 
-/* Style Tombol Angka Bulat */
 .page-link {
     width: 50px;
     height: 50px;
@@ -463,7 +432,6 @@
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* State Aktif (Hijau Penuh) */
 .page-link.active {
     background: var(--primary);
     color: white;
@@ -471,14 +439,12 @@
     transform: scale(1.1);
 }
 
-/* State Hover & Normal */
 .page-link:hover:not(.active) {
     border-color: var(--primary);
     color: var(--primary);
     transform: translateY(-3px);
 }
 
-/* Tombol Next (Panah) */
 .page-link.next {
     font-size: 0.9rem;
     color: var(--text-muted);
@@ -487,7 +453,6 @@
     color: var(--primary);
 }
 
-/* Text "Lihat Semua" */
 .view-all-text {
     color: var(--text-muted);
     font-size: 0.9rem;
@@ -503,7 +468,6 @@
     padding-bottom: 2px;
 }
 
-/* 6. FEATURED SECTION BARU */
 .featured-section {
     padding: 60px 0;
     background: linear-gradient(to top, white, #FAFAFA);
@@ -598,7 +562,6 @@
     font-weight: 800;
 }
 
-/* 7. RESPONSIVE DESIGN */
 @media (max-width: 992px) {
     .catalog-layout {
         grid-template-columns: 1fr;
@@ -622,7 +585,7 @@
     }
     
     .sidebar-promo {
-        display: none; /* Sembunyikan promo di tablet agar rapi */
+        display: none; 
     }
 
     .featured-card {
@@ -657,7 +620,7 @@
     .search-icon-inside {
         top: 22px;
         left: 50%;
-        transform: translateX(-100px); /* Kira-kira agar pas di tengah */
+        transform: translateX(-100px);
     }
     
     .search-btn {
@@ -670,8 +633,6 @@
         align-items: flex-start;
         gap: 15px;
     }
-    
-    /* Pagination Responsive */
     .page-link {
         width: 40px;
         height: 40px;

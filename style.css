@@ -1,27 +1,21 @@
-/* ==========================================================================
-   STYLE GLOBAL (Digunakan di Semua Halaman)
-   Berisi: Reset, Variabel, Header, Footer, Tombol, Card Dasar, Chat Widget
-   ========================================================================== */
 
 /* 1. VARIABEL & SETUP GLOBAL */
 :root {
-  /* Warna Utama: Emerald Green yang lebih modern */
   --primary: #10B981;       
   --primary-dark: #047857;  
   --primary-light: #D1FAE5;
   
-  --secondary: #1F2937;     /* Dark Gray/Charcoal */
-  --accent: #F59E0B;        /* Amber/Orange */
+  --secondary: #1F2937;     
+  --accent: #F59E0B;        
   
-  --bg-body: #F9FAFB;       /* Tidak putih polos, agak abu sangat muda agar mata nyaman */
+  --bg-body: #F9FAFB;       
   --bg-white: #FFFFFF;
-  --bg-glass: rgba(255, 255, 255, 0.85); /* Efek kaca */
+  --bg-glass: rgba(255, 255, 255, 0.85);
   
   --text-main: #1F2937;     
   --text-muted: #6B7280;    
   --text-light: #F3F4F6;
 
-  /* Shadow yang lebih halus (Soft Shadows) */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -44,13 +38,13 @@ body {
   color: var(--text-main);
   background-color: var(--bg-body);
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased; /* Font lebih tajam di Mac/iOS */
+  -webkit-font-smoothing: antialiased; 
   overflow-x: hidden;
 }
 
 /* 2. LAYOUT & UTILITIES */
 .container { 
-  max-width: 1240px; /* Lebar kontainer ditambah sedikit */
+  max-width: 1240px; 
   margin: 0 auto; 
   padding: 0 24px; 
   width: 100%; 
@@ -61,13 +55,13 @@ ul { list-style: none; }
 
 h1, h2, h3, h4, h5 { 
   color: var(--secondary); 
-  font-weight: 800; /* Font lebih tebal untuk judul */
+  font-weight: 800;
   letter-spacing: -0.025em; 
   line-height: 1.25; 
 }
 
 section { padding: 20px 0; position: relative; }
-.section-bg-alt { background-color: #ECFDF5; /* Hijau sangat muda untuk selingan */ }
+.section-bg-alt { background-color: #ECFDF5; }
 
 .section-header { margin-bottom: 60px; display: flex; justify-content: space-between; align-items: flex-end; }
 .section-header.text-center { flex-direction: column; align-items: center; text-align: center; }
@@ -84,7 +78,7 @@ section { padding: 20px 0; position: relative; }
 }
 .link-arrow:hover { gap: 12px; color: var(--primary-dark); border-bottom-color: var(--primary-dark); }
 
-/* 3. TOMBOL (BUTTONS) - Desain Baru */
+/* 3. TOMBOL (BUTTONS) */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   padding: 14px 32px; border-radius: var(--radius-pill); font-weight: 600; font-size: 1rem;
@@ -133,7 +127,7 @@ section { padding: 20px 0; position: relative; }
 /* 4. HEADER & NAVIGASI */
 header {
   position: sticky; top: 0; z-index: 9999;
-  background: rgba(255, 255, 255, 0.85); /* Lebih transparan */
+  background: rgba(255, 255, 255, 0.85); 
   backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(0,0,0,0.05); 
   padding: 16px 0; width: 100%;
@@ -217,7 +211,6 @@ nav a:hover::after, nav a.active::after { width: 100%; }
   letter-spacing: 0.5px;
 }
 
-/* Icon Wrappers (Shared) */
 .icon-wrapper-small {
     width: 56px; height: 56px; 
     background: var(--primary-light); 
@@ -263,7 +256,7 @@ nav a:hover::after, nav a.active::after { width: 100%; }
 }
 .social-icon:hover { background: var(--primary); color: white; transform: translateY(-3px); }
 
-/* 7. WIDGET CHAT (PURE CSS) */
+/* 7. WIDGET CHAT*/
 #chat-toggle { display: none; }
 .chat-btn-label {
     position: fixed; bottom: 30px; right: 30px; width: 64px; height: 64px;
