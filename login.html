@@ -41,8 +41,8 @@
                     <p>Belum punya akun? <a href="register.html">Daftar Gratis</a></p>
                 </div>
 
-                <form action="index.html"> <!-- Action dummy ke index -->
-                    
+                <form id="loginForm"> 
+    
                     <div class="input-group">
                         <label for="email">Alamat Email</label>
                         <input type="email" id="email" class="input-field" placeholder="contoh@email.com" required>
@@ -65,7 +65,6 @@
 
                     <button type="submit" class="btn-submit">Masuk Sekarang</button>
                 </form>
-
                 <div class="divider"><span>Atau masuk dengan</span></div>
 
                 <button class="social-btn">
@@ -76,6 +75,44 @@
         </div>
 
     </div>
+<script>
+    // 1. Tangkap elemen form
+    const loginForm = document.getElementById('loginForm');
 
+    // 2. Tambahkan event listener saat tombol submit ditekan
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // Mencegah form refresh halaman
+
+        // Simulasi validasi sederhana (Bisa dihapus jika tidak perlu)
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        if(email && password) {
+            // 3. Cek apakah ada parameter 'next' di URL
+            // Contoh URL: login.html?next=checkout.html
+            const urlParams = new URLSearchParams(window.location.search);
+            const nextDestination = urlParams.get('next');
+
+            // 4. Logika Redirect
+            if (nextDestination) {
+                // Jika ada tujuan (checkout atau streaming), arahkan ke sana
+                window.location.href = nextDestination;
+            } else {
+                // Jika login biasa tanpa tujuan khusus, ke beranda
+                window.location.href = 'index.html';
+            }
+        }
+    });
+
+    // Script tambahan untuk Toggle Password (Mata)
+    const togglePassword = document.querySelector('.toggle-password');
+    const passwordInput = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', function () {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+    });
+</script>
 </body>
 </html>
