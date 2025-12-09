@@ -115,217 +115,293 @@
     </footer>
 
 <script>
-
-  const PLANTS_DB = [
-  /* -- HIAS -- */
-  { 
-    id: "monstera-deliciosa", 
-    name: "Monstera Deliciosa", 
-    desc: "Tanaman hias tropis daun berlubang.", 
-    cat: "Hias", 
-    img: "https://loremflickr.com/600/400/monstera?lock=1" 
+const PLANTS_DB = [
+  /* -- Tanaman Hias & Campuran (Sesuai urutan HTML) -- */
+  {
+    id: "monstera-deliciosa",
+    name: "Monstera Deliciosa",
+    desc: "Tanaman hias tropis — daun berlubang.",
+    cat: "Hias",
+    img: "https://images.pexels.com/photos/6297518/pexels-photo-6297518.jpeg"
   },
-  { 
-    id: "aglaonema-red", 
-    name: "Aglaonema Red", 
-    desc: "Daun merah menarik, cocok indoor.", 
-    cat: "Hias", 
-    img: "https://loremflickr.com/600/400/aglaonema?lock=2" 
+  {
+    id: "philodendron",
+    name: "Philodendron",
+    desc: "Mudah dirawat, daun lebar.",
+    cat: "Hias",
+    img: "https://images.pexels.com/photos/1383044/pexels-photo-1383044.jpeg"
   },
-  { 
-    id: "philodendron", 
-    name: "Philodendron", 
-    desc: "Mudah dirawat, daun lebar.", 
-    cat: "Hias", 
-    img: "https://loremflickr.com/600/400/philodendron?lock=3" 
+  {
+    id: "snake-plant",
+    name: "Kentang(Sansevieria)",
+    desc: "mudah ditanam — bagus pemula.",
+    cat: "Sayuran",
+    img: "https://images.pexels.com/photos/144248/potatoes-vegetables-erdfrucht-bio-144248.jpeg"
   },
-  { 
-    id: "snake-plant", 
-    name: "Lidah Mertua", 
-    desc: "Tahan kering, pembersih udara.", 
-    cat: "Hias", 
-    img: "https://loremflickr.com/600/400/sansevieria?lock=4" 
+  {
+    id: "pothos",
+    name: "Pothos",
+    desc: "Merambat, cocok pot gantung.",
+    cat: "Hias",
+    img: "https://images.pexels.com/photos/6913641/pexels-photo-6913641.jpeg"
   },
-  { 
-    id: "pothos", 
-    name: "Sirih Gading (Pothos)", 
-    desc: "Merambat, cocok pot gantung.", 
-    cat: "Hias", 
-    img: "https://loremflickr.com/600/400/epipremnum?lock=5" 
+  {
+    id: "fiddle-leaf-fig",
+    name: "kangkung",
+    desc: "Mudah tumbuh, cepat panen.",
+    cat: "Sayuran",
+    img: "https://images.pexels.com/photos/11064917/pexels-photo-11064917.jpeg"
   },
-  { 
-    id: "fiddle-leaf-fig", 
-    name: "Ketapang Biola", 
-    desc: "Ikonik, butuh cahaya terang.", 
-    cat: "Hias", 
-    img: "https://loremflickr.com/600/400/ficus,lyrata?lock=6" 
+  {
+    id: "zz-plant",
+    name: "Padi",
+    desc: "Tanaman berongga, tumbuh di sawah terngenang dan lahan kering.",
+    cat: "Tanaman pangan",
+    img: "https://images.pexels.com/photos/1509607/pexels-photo-1509607.jpeg"
   },
-  { 
-    id: "zz-plant", 
-    name: "ZZ Plant", 
-    desc: "Tahan minim cahaya.", 
-    cat: "Hias", 
-    img: "https://loremflickr.com/600/400/zamioculcas?lock=7" 
+  {
+    id: "rubber-plant",
+    name: "Rubber Plant",
+    desc: "Daun besar mengkilap.",
+    cat: "Hias",
+    img: "https://images.pexels.com/photos/17482244/pexels-photo-17482244.jpeg"
   },
-  { 
-    id: "rubber-plant", 
-    name: "Karet Kebo", 
-    desc: "Daun besar mengkilap.", 
-    cat: "Hias", 
-    img: "https://loremflickr.com/600/400/ficus,elastica?lock=8" 
+  {
+    id: "peace-lily",
+    name: "Peace Lily",
+    desc: "Bunga putih, filter udara alami.",
+    cat: "Hias",
+    img: "https://images.pexels.com/photos/23897962/pexels-photo-23897962.jpeg"
   },
-  { 
-    id: "peace-lily", 
-    name: "Peace Lily", 
-    desc: "Bunga putih, filter udara.", 
-    cat: "Hias", 
-    img: "https://loremflickr.com/600/400/spathiphyllum?lock=9" 
-  },
-
-  /* -- BUAH -- */
-  { 
-    id: "lemon-tree", 
-    name: "Pohon Lemon", 
-    desc: "Buah asam segar kaya vitamin C.", 
-    cat: "Buah", 
-    img: "https://loremflickr.com/600/400/lemon,tree?lock=10" 
-  },
-  { 
-    id: "strawberry", 
-    name: "Strawberry", 
-    desc: "Buah manis, bisa di pot.", 
-    cat: "Buah", 
-    img: "https://loremflickr.com/600/400/strawberry?lock=11" 
-  },
-  { 
-    id: "banana", 
-    name: "Pisang", 
-    desc: "Perlu ruang, panen banyak.", 
-    cat: "Buah", 
-    img: "https://loremflickr.com/600/400/banana,tree?lock=12" 
-  },
-  { 
-    id: "mango", 
-    name: "Mangga", 
-    desc: "Buah tropis manis.", 
-    cat: "Buah", 
-    img: "https://loremflickr.com/600/400/mango,fruit?lock=13" 
-  },
-  { 
-    id: "papaya", 
-    name: "Pepaya", 
-    desc: "Cepat panen, kaya serat.", 
-    cat: "Buah", 
-    img: "https://loremflickr.com/600/400/papaya?lock=14" 
-  },
-  { 
-    id: "avocado", 
-    name: "Alpukat", 
-    desc: "Lemak sehat, butuh waktu.", 
-    cat: "Buah", 
-    img: "https://loremflickr.com/600/400/avocado?lock=15" 
-  },
-  { 
-    id: "chili", 
-    name: "Cabai Rawit", 
-    desc: "Pedas, mudah tumbuh.", 
-    cat: "Buah", 
-    img: "https://loremflickr.com/600/400/chili,pepper?lock=16" 
-  },
-  { 
-    id: "tomato", 
-    name: "Tomat Cherry", 
-    desc: "Buah sayur serbaguna.", 
-    cat: "Buah", 
-    img: "https://loremflickr.com/600/400/cherry,tomato?lock=17" 
+  {
+    id: "spider-plant",
+    name: "kaktus",
+    desc: "memiliki duri,anak tanaman melimpah.",
+    cat: "Hias",
+    img: "https://images.pexels.com/photos/7167634/pexels-photo-7167634.jpeg"
   },
 
-  /* -- SAYURAN -- */
-  { 
-    id: "spinach", 
-    name: "Bayam", 
-    desc: "Hijau penuh zat besi.", 
-    cat: "Sayuran", 
-    img: "https://loremflickr.com/600/400/spinach?lock=18" 
+  /* -- Buah -- */
+  {
+    id: "jeruk",
+    name: "Jeruk",
+    desc: "Buah yang sangat kaya vitamin c dan manis.",
+    cat: "buah",
+    img: "https://images.pexels.com/photos/34900599/pexels-photo-34900599.jpeg"
   },
-  { 
-    id: "kale", 
-    name: "Kale", 
-    desc: "Superfood kaya vitamin.", 
-    cat: "Sayuran", 
-    img: "https://loremflickr.com/600/400/kale?lock=19" 
+  {
+    id: "lemon-tree",
+    name: "Lemon",
+    desc: "Buah asam untuk minuman & dapur.",
+    cat: "Buah",
+    img: "https://images.pexels.com/photos/129574/pexels-photo-129574.jpeg"
   },
-  { 
-    id: "lettuce", 
-    name: "Selada", 
-    desc: "Daun renyah untuk salad.", 
-    cat: "Sayuran", 
-    img: "https://loremflickr.com/600/400/lettuce?lock=20" 
+  {
+    id: "strawberry",
+    name: "Strawberry",
+    desc: "Buah kecil manis, tumbuh di pot.",
+    cat: "Buah",
+    img: "https://media.istockphoto.com/id/1412854156/id/foto/stroberi-terisolasi-stroberi-utuh-setengah-dengan-latar-belakang-putih-irisan-stroberi-dengan.jpg?b=1&s=612x612&w=0&k=20&c=eVxsQ5WRzrow7luYeKi3L5ci-3mzAxYuh7UJJZmUYlI="
   },
-  { 
-    id: "cucumber", 
-    name: "Mentimun", 
-    desc: "Segar, butuh rambatan.", 
-    cat: "Sayuran", 
-    img: "https://loremflickr.com/600/400/cucumber?lock=21" 
+  {
+    id: "banana",
+    name: "Pisang",
+    desc: "Perlu ruang; panen banyak.",
+    cat: "Buah",
+    img: "https://images.pexels.com/photos/802783/pexels-photo-802783.jpeg"
   },
-  { 
-    id: "carrot", 
-    name: "Wortel", 
-    desc: "Akar bergizi, tanah gembur.", 
-    cat: "Sayuran", 
-    img: "https://loremflickr.com/600/400/carrot?lock=22" 
+  {
+    id: "mango",
+    name: "Mango",
+    desc: "Buah tropis manis, pohon besar.",
+    cat: "Buah",
+    img: "https://images.pexels.com/photos/2667738/pexels-photo-2667738.jpeg"
   },
-  { 
-    id: "potato", 
-    name: "Kentang", 
-    desc: "Umbi karbohidrat.", 
-    cat: "Sayuran", 
-    img: "https://loremflickr.com/600/400/potato?lock=23" 
+  {
+    id: "papaya",
+    name: "Pepaya",
+    desc: "Buah cepat panen, banyak serat.",
+    cat: "Buah",
+    img: "https://images.pexels.com/photos/2104500/pexels-photo-2104500.jpeg"
   },
-  { 
-    id: "broccoli", 
-    name: "Brokoli", 
-    desc: "Vitamin C dan serat.", 
-    cat: "Sayuran", 
-    img: "https://loremflickr.com/600/400/broccoli?lock=24" 
+  {
+    id: "avocado",
+    name: "Avocado",
+    desc: "Kaya lemak sehat, pohon memerlukan waktu.",
+    cat: "Buah",
+    img: "https://images.pexels.com/photos/3687927/pexels-photo-3687927.jpeg"
+  },
+  {
+    id: "orange-tree",
+    name: "Bunga Matahari",
+    desc: "Bunga cantik seperti matahari.",
+    cat: "Bunga",
+    img: "https://images.pexels.com/photos/849403/pexels-photo-849403.jpeg"
+  },
+  {
+    id: "pineapple",
+    name: "Nanas",
+    desc: "Tumbuhan rendah, buah tropis.",
+    cat: "Buah",
+    img: "https://images.pexels.com/photos/1206597/pexels-photo-1206597.jpeg"
+  },
+  {
+    id: "chili",
+    name: "Cabai Rawit",
+    desc: "Buah pedas, mudah ditanam.",
+    cat: "Buah",
+    img: "https://images.pexels.com/photos/2253444/pexels-photo-2253444.jpeg"
+  },
+  {
+    id: "tomato",
+    name: "Tomat Cherry",
+    desc: "Buah sayur serbaguna.",
+    cat: "Buah",
+    img: "https://images.pexels.com/photos/34869959/pexels-photo-34869959.jpeg"
   },
 
-  /* -- HERBAL -- */
-  { 
-    id: "mint", 
-    name: "Mint", 
-    desc: "Aroma segar untuk teh.", 
-    cat: "Herbal", 
-    img: "https://loremflickr.com/600/400/mint,herb?lock=25" 
+  /* -- Sayuran -- */
+  {
+    id: "spinach",
+    name: "Spinach",
+    desc: "Sayur hijau penuh zat besi.",
+    cat: "Sayuran",
+    img: "https://images.pexels.com/photos/6824475/pexels-photo-6824475.jpeg"
   },
-  { 
-    id: "basil", 
-    name: "Basil", 
-    desc: "Wangi khas Italia.", 
-    cat: "Herbal", 
-    img: "https://loremflickr.com/600/400/basil,herb?lock=26" 
+  {
+    id: "kale",
+    name: "Kale",
+    desc: "Superfood, kaya vitamin.",
+    cat: "Sayuran",
+    img: "https://images.pexels.com/photos/51372/kale-vegetables-brassica-oleracea-var-sabellica-l-51372.jpeg"
   },
-  { 
-    id: "rosemary", 
-    name: "Rosemary", 
-    desc: "Aromatik kuat.", 
-    cat: "Herbal", 
-    img: "https://loremflickr.com/600/400/rosemary?lock=27" 
+  {
+    id: "lettuce",
+    name: "Selada",
+    desc: "Sayuran daun cepat panen.",
+    cat: "Sayuran",
+    img: "https://images.pexels.com/photos/89267/pexels-photo-89267.jpeg"
   },
-  { 
-    id: "ginger", 
-    name: "Jahe", 
-    desc: "Hangat untuk tubuh.", 
-    cat: "Herbal", 
-    img: "https://loremflickr.com/600/400/ginger,root?lock=28" 
+  {
+    id: "cucumber",
+    name: "Mentimun",
+    desc: "Sayuran segar, cocok merambat.",
+    cat: "Sayuran",
+    img: "https://images.pexels.com/photos/2329440/pexels-photo-2329440.jpeg"
   },
-  { 
-    id: "turmeric", 
-    name: "Kunyit", 
-    desc: "Anti-inflamasi alami.", 
-    cat: "Herbal", 
-    img: "https://loremflickr.com/600/400/turmeric,root?lock=29" 
+  {
+    id: "eggplant",
+    name: "Terong",
+    desc: "Sayuran buah, butuh sinar.",
+    cat: "Sayuran",
+    img: "https://images.pexels.com/photos/5529591/pexels-photo-5529591.jpeg"
+  },
+  {
+    id: "carrot",
+    name: "Wortel",
+    desc: "Akar bergizi, butuh tanah gembur.",
+    cat: "Sayuran",
+    img: "https://images.pexels.com/photos/143133/pexels-photo-143133.jpeg"
+  },
+  {
+    id: "potato",
+    name: "ubi ungu",
+    desc: "Umbi kaya karbohidrat.",
+    cat: "Ubi",
+    img: "https://images.pexels.com/photos/10652342/pexels-photo-10652342.jpeg"
+  },
+  {
+    id: "onion",
+    name: "Bawang Prei",
+    desc: "bumbu dasar banyak masakan.",
+    cat: "Sayuran",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb4U7zE32_HbTmJLvunhgIyGYYg5LtaGAVBw&s"
+  },
+  {
+    id: "broccoli",
+    name: "Brokoli",
+    desc: "Sumber vitamin dan serat.",
+    cat: "Sayuran",
+    img: "https://images.pexels.com/photos/34845330/pexels-photo-34845330.jpeg"
+  },
+  {
+    id: "cabbage",
+    name: "Kubis",
+    desc: "Sayur daun untuk salad & masak.",
+    cat: "Sayuran",
+    img: "https://images.pexels.com/photos/134877/pexels-photo-134877.jpeg"
+  },
+
+  /* -- Herbal -- */
+  {
+    id: "mint",
+    name: "Mint",
+    desc: "Herbal segar untuk teh & garnish.",
+    cat: "Herbal",
+    img: "https://images.pexels.com/photos/4621597/pexels-photo-4621597.jpeg"
+  },
+  {
+    id: "basil",
+    name: "Basil",
+    desc: "Saus, pesto, aromatik.",
+    cat: "Herbal",
+    img: "https://images.pexels.com/photos/3816343/pexels-photo-3816343.jpeg"
+  },
+  {
+    id: "rosemary",
+    name: "Rosemary",
+    desc: "Herbal aromatik & pengawet alami.",
+    cat: "Herbal",
+    img: "https://images.pexels.com/photos/135168/pexels-photo-135168.jpeg"
+  },
+  {
+    id: "thyme",
+    name: "Thyme",
+    desc: "Herbal kecil, kuat aromanya.",
+    cat: "Herbal",
+    img: "https://images.pexels.com/photos/4207793/pexels-photo-4207793.jpeg"
+  },
+  {
+    id: "sage",
+    name: "Sage",
+    desc: "Daun kuat, untuk masak & teh.",
+    cat: "Herbal",
+    img: "https://images.pexels.com/photos/6103379/pexels-photo-6103379.jpeg"
+  },
+  {
+    id: "lemongrass",
+    name: "Serai (serai)",
+    desc: "Herbal aromatik, teh & masakan.",
+    cat: "Herbal",
+    img: "https://media.istockphoto.com/id/157435666/id/foto/rumput-lemon-segar-pada-daun-pisang.webp?a=1&b=1&s=612x612&w=0&k=20&c=Bk_ShjyGJodA6i1p92oYg8GBlhaFlgG965pBdw6u6WI="
+  },
+  {
+    id: "oregano",
+    name: "Oregano",
+    desc: "Penyedap pizza & saus.",
+    cat: "Herbal",
+    img: "https://images.pexels.com/photos/3196523/pexels-photo-3196523.jpeg"
+  },
+  {
+    id: "ginger",
+    name: "Jahe",
+    desc: "Akar herbal, khasiat hangat.",
+    cat: "Herbal",
+    img: "https://images.unsplash.com/photo-1603431777782-912e3b76f60d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8amFoZXxlbnwwfHwwfHx8MA%3D%3D"
+  },
+  {
+    id: "turmeric",
+    name: "Kunyit",
+    desc: "Anti-inflamasi, akar herbal.",
+    cat: "Herbal",
+    img: "https://media.istockphoto.com/id/965503302/id/foto/bubuk-kunyit-dan-akar.jpg?s=1024x1024&w=is&k=20&c=CreS09oOJ1j6nuS4kmwhMS05fomnO3iMvqrKNA6svNs="
+  },
+  {
+    id: "cilantro",
+    name: "Cilantro",
+    desc: "Daun segar untuk garnish.",
+    cat: "Herbal",
+    img: "https://images.pexels.com/photos/3338495/pexels-photo-3338495.jpeg"
   }
 ];
     /* LOGIKA RENDER & FILTER */

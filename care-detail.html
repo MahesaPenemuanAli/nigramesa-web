@@ -92,88 +92,495 @@
 
 <!-- DATA SCRIPT LENGKAP -->
 <script>
-const PLANTS_DATA = {
-"monstera-deliciosa": {
-  name:"Monstera Deliciosa", latin:"Monstera deliciosa", category:"Hias", difficulty:"Mudah",
-  image:"https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=1400&auto=format&fit=crop",
-  care:["Cahaya: Terang tidak langsung","Penyiraman: Saat 1-2 cm tanah atas kering","Suhu: 18–27°C","Media: Tanah porous, drainase baik"],
-  benefits:"Mempercantik ruang, menyaring udara, daun besar sebagai focal point.",
-  tips:["Letakkan di sudut terang","Lap daun dari debu agar fotosintesis optimal"]
-},
-"aglaonema-red": {
-  name:"Aglaonema Red", latin:"Aglaonema spp.", category:"Hias", difficulty:"Mudah",
-  image:"https://images.unsplash.com/photo-1587502536263-9293e3d20809?q=80&w=1400&auto=format&fit=crop",
-  care:["Cahaya: Rendah–terang tidak langsung","Penyiraman: Moderat, jangan becek","Suhu: 18–26°C"],
-  benefits:"Estetika warna daun, tahan di ruang minim cahaya.",
-  tips:["Hindari sinar matahari langsung yang membakar daun","Bersihkan daun untuk pertumbuhan sehat"]
-},
-"philodendron": {
-  name:"Philodendron", latin:"Philodendron spp.", category:"Hias", difficulty:"Mudah",
-  image:"https://images.unsplash.com/photo-1598304109636-1d9f5b9a0b3f?q=80&w=1400&auto=format&fit=crop",
-  care:["Cahaya: Terang tidak langsung","Penyiraman: Saat tanah atas kering","Suhu: 18–26°C"],
-  benefits:"Memperindah ruangan, peresapan CO₂.",
-  tips:["Berikan turus/penopang untuk varian merambat"]
-},
-"snake-plant": {
-  name:"Lidah Mertua", latin:"Dracaena trifasciata", category:"Hias", difficulty:"Sangat mudah",
-  image:"https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?q=80&w=1400&auto=format&fit=crop",
-  care:["Cahaya: Rendah–terang","Penyiraman: Jarang (hemat air)","Suhu: 15–30°C"],
-  benefits:"Sangat tahan banting, membersihkan polusi udara.",
-  tips:["Jangan beri pupuk berlebih","Hindari penyiraman berlebih di musim hujan"]
-},
-"lemon-tree": {
-  name:"Pohon Lemon", latin:"Citrus limon", category:"Buah", difficulty:"Sedang",
-  image:"https://images.unsplash.com/photo-1506806732259-39c2d0268443?q=80&w=1400&auto=format&fit=crop",
-  care:["Cahaya: Penuh matahari (6+ jam)","Penyiraman: Teratur, jangan tergenang","Suhu: 15–30°C"],
-  benefits:"Buah kaya vitamin C, kulitnya harum untuk masakan.",
-  tips:["Gunakan pot besar untuk akar sehat","Pemangkasan rutin untuk bentuk pohon"]
-},
-"strawberry": {
-  name:"Strawberry", latin:"Fragaria × ananassa", category:"Buah", difficulty:"Mudah",
-  image:"https://images.unsplash.com/photo-1510627498534-cf7e9002facc?q=80&w=1400&auto=format&fit=crop",
-  care:["Cahaya: Penuh hingga setengah","Penyiraman: Konsisten agar buah tidak retak","Media: Kaya organik"],
-  benefits:"Buah antioksidan tinggi, enak segar atau jus.",
-  tips:["Jaga kelembaban tanah namun jangan becek","Berikan mulsa jerami agar buah tidak kena tanah"]
-},
-"spinach": {
-  name:"Bayam", latin:"Spinacia oleracea", category:"Sayuran", difficulty:"Mudah",
-  image:"https://images.unsplash.com/photo-1518976024611-5a3b8b6eb5f1?q=80&w=1400&auto=format&fit=crop",
-  care:["Cahaya: Setengah sampai terang","Penyiraman: Konsisten","Media: Subur & lembab"],
-  benefits:"Kaya zat besi, vitamin A & K.",
-  tips:["Panen daun luar lebih dahulu (cut-and-come-again)","Jaga tanah tetap lembab"]
-},
-"mint": {
-  name:"Mint", latin:"Mentha", category:"Herbal", difficulty:"Mudah",
-  image:"https://images.unsplash.com/photo-1601004890694-3d6733f8a5c8?q=80&w=1400&auto=format&fit=crop",
-  care:["Cahaya: Setengah hingga terang","Penyiraman: Konsisten","Media: Lembab"],
-  benefits:"Menenangkan perut, aroma segar untuk teh.",
-  tips:["Tanam di pot terpisah karena akarnya invasif","Pangkas pucuk rutin agar rimbun"]
-},
+// 1. DATA DATABASE (Pastikan ID/Key di sini sama persis dengan ?id=... di URL)
+const PLANTS = {
+  "monstera-deliciosa": {
+    name: "Monstera Deliciosa",
+    latin: "Monstera deliciosa",
+    category: "Hias",
+    difficulty: "Mudah",
+    image: "https://images.pexels.com/photos/6297518/pexels-photo-6297518.jpeg",
+    care: [
+      "Cahaya: Terang tidak langsung",
+      "Penyiraman: Saat 1-2 cm atas tanah kering",
+      "Suhu: 18–27°C",
+      "Media: Tanah porous, drainase baik"
+    ],
+    benefits: "Mempercantik ruang, menyaring udara, daun besar sebagai focal point.",
+    tips: ["Letakkan di sudut dengan cahaya tidak langsung", "Jaga drainase agar akar tidak tergenang", "Lap daun dari debu agar fotosintesis optimal"]
+  },
+
+  // Perbaikan ID: disesuaikan dengan link href="detail.html?id=jeruk"
+  "jeruk": { 
+    name: "Jeruk",
+    latin: "Citrus",
+    category: "Buah",
+    difficulty: "Mudah",
+    image: "https://images.unsplash.com/photo-1587502536263-9293e3d20809?q=80&w=1400&auto=format&fit=crop",
+    care: [
+      "Cahaya: Sinar matahari 4–6 jam/hari",
+      "Penyiraman: 2-3 kali seminggu",
+      "Suhu: 18–32°C",
+      "Media: Tanah gembur & kaya organik"
+    ],
+    // Perbaikan: Benefits dijadikan string agar render tidak error/aneh
+    benefits: "Sumber vitamin C tinggi, meningkatkan imun, baik untuk kulit dan pencernaan.", 
+    tips: ["Pangkas ranting kering", "Semprot pestisida nabati jika ada serangga"]
+  },
+
+  "philodendron": {
+    name: "Philodendron",
+    latin: "Philodendron spp.",
+    category: "Hias",
+    difficulty: "Sedang",
+    image: "https://images.pexels.com/photos/1383044/pexels-photo-1383044.jpeg",
+    care: ["Cahaya: Terang tidak langsung", "Penyiraman: Saat tanah atas kering", "Suhu: 18–26°C", "Media: Gembur"],
+    benefits: "Memperindah ruangan, peresapan CO₂.",
+    tips: ["Berikan ajir untuk varian merambat", "Pot lebih besar saat akar penuh"]
+  },
+
+  "snake-plant": {
+    name: "Lidah Mertua (Sansevieria)", // Diperbaiki namanya agar sesuai
+    latin: "Dracaena trifasciata",
+    category: "Hias",
+    difficulty: "Sangat mudah",
+    image: "https://images.pexels.com/photos/144248/potatoes-vegetables-erdfrucht-bio-144248.jpeg", 
+    care: ["Cahaya: Rendah–terang", "Penyiraman: Jarang (hemat air)", "Suhu: 15–30°C", "Media: Porous"],
+    benefits: "Penyaring polutan udara terbaik, penghasil oksigen malam hari.",
+    tips: ["Jangan beri pupuk berlebih", "Hindari penyiraman berlebih"]
+  },
+
+  "pothos": {
+    name: "Pothos",
+    latin: "Epipremnum aureum",
+    category: "Hias",
+    difficulty: "Mudah",
+    image: "https://images.pexels.com/photos/6913641/pexels-photo-6913641.jpeg",
+    care: ["Cahaya: Terang tidak langsung", "Penyiraman: Moderat", "Suhu: 16–28°C", "Media: Gembur"],
+    benefits: "Merambat indah, mudah diperbanyak dengan stek.",
+    tips: ["Pot gantung agar cantik", "Pangkas untuk kontrol pertumbuhan"]
+  },
+
+  "fiddle-leaf-fig": {
+    name: "Ketapang Biola", // Diperbaiki dari 'kangkung' karena Ficus lyrata itu Ketapang Biola
+    latin: "Ficus lyrata",
+    category: "Hias",
+    difficulty: "Sedang",
+    image: "https://images.pexels.com/photos/11064917/pexels-photo-11064917.jpeg",
+    care: ["Cahaya: Terang", "Penyiraman: Teratur tapi tidak tergenang", "Suhu: 18–25°C", "Media: Kaya organik"],
+    benefits: "Estetika ruangan modern.",
+    tips: ["Rotasi pot agar cahaya merata", "Waspadai perubahan cepat suhu"]
+  },
+
+  "zz-plant": {
+    name: "ZZ Plant", // Diperbaiki dari 'Padi' karena Zamioculcas bukan Padi
+    latin: "Zamioculcas zamiifolia",
+    category: "Hias",
+    difficulty: "Mudah",
+    image: "https://images.pexels.com/photos/1509607/pexels-photo-1509607.jpeg",
+    care: ["Cahaya: Rendah–terang", "Penyiraman: Jarang", "Suhu: 18–28°C"],
+    benefits: "Tahan banting, cocok untuk pemula.",
+    tips: ["Siram sedikit saat tanah benar-benar kering", "Gunakan pot dengan drainase"]
+  },
+
+  "rubber-plant": {
+    name: "Rubber Plant",
+    latin: "Ficus elastica",
+    category: "Hias",
+    difficulty: "Sedang",
+    image: "https://images.pexels.com/photos/17482244/pexels-photo-17482244.jpeg",
+    care: ["Cahaya: Terang tidak langsung", "Penyiraman: Moderat", "Suhu: 16–25°C"],
+    benefits: "Daun besar mengkilap, estetika tinggi.",
+    tips: ["Lap daun untuk mengkilap", "Pindah ke pot lebih besar saat perlu"]
+  },
+
+  "peace-lily": {
+    name: "Peace Lily",
+    latin: "Spathiphyllum spp.",
+    category: "Hias",
+    difficulty: "Mudah",
+    image: "https://images.pexels.com/photos/23897962/pexels-photo-23897962.jpeg",
+    care: ["Cahaya: Rendah–terang tidak langsung", "Penyiraman: Jaga kelembaban tanah", "Suhu: 18–26°C"],
+    benefits: "Membantu menyaring udara, bunga menarik.",
+    tips: ["Siram saat daun mulai layu", "Berikan pupuk cair tiap 1–2 bulan"]
+  },
+
+  "spider-plant": {
+    name: "Spider Plant", // Diperbaiki dari 'kaktus' karena Chlorophytum bukan kaktus
+    latin: "Chlorophytum comosum",
+    category: "Hias",
+    difficulty: "Mudah",
+    image: "https://images.pexels.com/photos/7167634/pexels-photo-7167634.jpeg",
+    care: ["Cahaya: Terang tidak langsung", "Penyiraman: Teratur", "Suhu: 15–24°C"],
+    benefits: "Pembersih udara, anak tanaman melimpah.",
+    tips: ["Pot gantung sangat cocok", "Pemisahan bayi untuk perbanyakan"]
+  },
+
+  "lemon-tree": {
+    name: "Lemon",
+    latin: "Citrus limon",
+    category: "Buah",
+    difficulty: "Sedang",
+    image: "https://images.pexels.com/photos/129574/pexels-photo-129574.jpeg",
+    care: ["Cahaya: Penuh matahari", "Penyiraman: Teratur", "Suhu: 15–30°C"],
+    benefits: "Buah asam untuk minuman & dapur.",
+    tips: ["Gunakan pot besar", "Pemangkasan teratur"]
+  },
+
+  "strawberry": {
+    name: "Strawberry",
+    latin: "Fragaria × ananassa",
+    category: "Buah",
+    difficulty: "Mudah",
+    image: "https://media.istockphoto.com/id/1412854156/id/foto/stroberi-terisolasi-stroberi-utuh-setengah-dengan-latar-belakang-putih-irisan-stroberi-dengan.jpg?b=1&s=612x612&w=0&k=20&c=eVxsQ5WRzrow7luYeKi3L5ci-3mzAxYuh7UJJZmUYlI=",
+    care: ["Cahaya: Penuh", "Penyiraman: Konsisten", "Media: Tanah kaya organik"],
+    benefits: "Buah kecil manis, tumbuh di pot.",
+    tips: ["Jaga kelembaban tanah", "Panen saat matang penuh"]
+  },
+
+  "banana": {
+    name: "Pisang",
+    latin: "Musa spp.",
+    category: "Buah",
+    difficulty: "Sedang",
+    image: "https://images.pexels.com/photos/802783/pexels-photo-802783.jpeg",
+    care: ["Cahaya: Penuh", "Penyiraman: Banyak saat panas", "Suhu: Hangat >20°C"],
+    benefits: "Perlu ruang; panen banyak.",
+    tips: ["Butuh ruang luas", "Jaga kelembaban dan nutrisi"]
+  },
+
+  "mango": {
+    name: "Mangga",
+    latin: "Mangifera indica",
+    category: "Buah",
+    difficulty: "Sedang",
+    image: "https://images.pexels.com/photos/2667738/pexels-photo-2667738.jpeg",
+    care: ["Cahaya: Penuh", "Penyiraman: Moderat", "Suhu: Tropis"],
+    benefits: "Buah tropis manis, pohon besar.",
+    tips: ["Pemangkasan untuk bentuk pohon", "Waspada hama"]
+  },
+
+  "papaya": {
+    name: "Pepaya",
+    latin: "Carica papaya",
+    category: "Buah",
+    difficulty: "Mudah",
+    image: "https://images.pexels.com/photos/2104500/pexels-photo-2104500.jpeg",
+    care: ["Cahaya: Penuh", "Penyiraman: Rutin", "Suhu: Tropis"],
+    benefits: "Buah cepat panen, melancarkan pencernaan.",
+    tips: ["Tanam di bawah sinar penuh", "Pastikan drainase baik"]
+  },
+
+  "avocado": {
+    name: "Alpukat",
+    latin: "Persea americana",
+    category: "Buah",
+    difficulty: "Sedang",
+    image: "https://images.pexels.com/photos/3687927/pexels-photo-3687927.jpeg",
+    care: ["Cahaya: Penuh", "Penyiraman: Moderat", "Suhu: Hangat"],
+    benefits: "Kaya lemak sehat.",
+    tips: ["Butuh waktu lama berbuah", "Gunakan pupuk kaya potasium"]
+  },
+
+  "orange-tree": {
+    name: "Bunga Matahari", // Sesuai data user, meski IDnya orange-tree
+    latin: "Helianthus annuus",
+    category: "Bunga",
+    difficulty: "Mudah",
+    image: "https://images.pexels.com/photos/849403/pexels-photo-849403.jpeg",
+    care: ["Cahaya: Penuh", "Penyiraman: Teratur", "Suhu: Hangat"],
+    benefits: "Bunga cantik seperti matahari.",
+    tips: ["Pemupukan berkala", "Cegah jamur dengan sirkulasi baik"]
+  },
+
+  "pineapple": {
+    name: "Nanas",
+    latin: "Ananas comosus",
+    category: "Buah",
+    difficulty: "Mudah",
+    image: "https://images.pexels.com/photos/1206597/pexels-photo-1206597.jpeg",
+    care: ["Cahaya: Penuh", "Penyiraman: Sedikit tapi rutin", "Media: Porous"],
+    benefits: "Tumbuhan rendah, buah tropis.",
+    tips: ["Tanam di pot dangkal", "Beri sinar penuh"]
+  },
+
+  "chili": {
+    name: "Cabai Rawit",
+    latin: "Capsicum frutescens",
+    category: "Buah",
+    difficulty: "Mudah",
+    image: "https://images.pexels.com/photos/2253444/pexels-photo-2253444.jpeg",
+    care: ["Cahaya: Penuh", "Penyiraman: Teratur", "Suhu: Hangat"],
+    benefits: "Buah pedas, mudah ditanam.",
+    tips: ["Pemangkasan untuk buah banyak", "Pupuk NPK seimbang"]
+  },
+
+  "tomato": {
+    name: "Tomat Cherry",
+    latin: "Solanum lycopersicum",
+    category: "Buah",
+    difficulty: "Mudah",
+    image: "https://images.pexels.com/photos/34869959/pexels-photo-34869959.jpeg",
+    care: ["Cahaya: Penuh", "Penyiraman: Konsisten", "Media: Kaya nutrisi"],
+    benefits: "Buah sayur serbaguna.",
+    tips: ["Ikat tanaman", "Jaga kelembaban tanah agar tidak retak"]
+  },
+
+  "spinach": {
+    name: "Bayam",
+    latin: "Spinacia oleracea",
+    category: "Sayuran",
+    difficulty: "Mudah",
+    image: "https://images.pexels.com/photos/6824475/pexels-photo-6824475.jpeg",
+    care: ["Cahaya: Setengah", "Penyiraman: Konsisten", "Media: Subur & lembab"],
+    benefits: "Sayur hijau penuh zat besi.",
+    tips: ["Panen daun luar dulu", "Jaga tanah lembab"]
+  },
+
+  "kale": {
+    name: "Kale",
+    latin: "Brassica oleracea",
+    category: "Sayuran",
+    difficulty: "Mudah",
+    image: "https://images.pexels.com/photos/51372/kale-vegetables-brassica-oleracea-var-sabellica-l-51372.jpeg",
+    care: ["Cahaya: Penuh–setengah", "Penyiraman: Moderat", "Suhu: Sejuk"],
+    benefits: "Superfood kaya vitamin.",
+    tips: ["Panen daun muda", "Lindungi dari ulat"]
+  },
+
+  "lettuce": {
+    name: "Selada",
+    latin: "Lactuca sativa",
+    category: "Sayuran",
+    difficulty: "Mudah",
+    image: "https://images.pexels.com/photos/89267/pexels-photo-89267.jpeg",
+    care: ["Cahaya: Setengah", "Penyiraman: Konsisten", "Media: Ringan"],
+    benefits: "Sayuran segar untuk salad.",
+    tips: ["Tanam beruntun", "Hindari kepadatan"]
+  },
+
+  "cucumber": {
+    name: "Mentimun",
+    latin: "Cucumis sativus",
+    category: "Sayuran",
+    difficulty: "Mudah",
+    image: "https://images.pexels.com/photos/2329440/pexels-photo-2329440.jpeg",
+    care: ["Cahaya: Penuh", "Penyiraman: Banyak", "Media: Lembab"],
+    benefits: "Tinggi air dan vitamin.",
+    tips: ["Sediakan rambatan", "Panen muda"]
+  },
+
+  "eggplant": {
+    name: "Terong",
+    latin: "Solanum melongena",
+    category: "Sayuran",
+    difficulty: "Sedang",
+    image: "https://images.pexels.com/photos/5529591/pexels-photo-5529591.jpeg",
+    care: ["Cahaya: Penuh", "Penyiraman: Moderat", "Suhu: Hangat"],
+    benefits: "Kaya serat.",
+    tips: ["Gunakan mulsa", "Pupuk sebelum berbunga"]
+  },
+
+  "carrot": {
+    name: "Wortel",
+    latin: "Daucus carota",
+    category: "Sayuran",
+    difficulty: "Mudah",
+    image: "https://images.pexels.com/photos/143133/pexels-photo-143133.jpeg",
+    care: ["Cahaya: Penuh", "Penyiraman: Rutin", "Media: Dalam & gembur"],
+    benefits: "Sumber beta-karoten.",
+    tips: ["Tanah harus gembur", "Panen saat ukuran sesuai"]
+  },
+
+  // Perbaikan ID: 'potato' agar sesuai link href="detail.html?id=potato"
+  "potato": { 
+    name: "Ubi Ungu / Kentang",
+    latin: "Solanum tuberosum",
+    category: "Umbi",
+    difficulty: "Sedang",
+    image: "https://images.pexels.com/photos/10652342/pexels-photo-10652342.jpeg",
+    care: ["Cahaya: Penuh", "Penyiraman: Moderat", "Media: Gembur"],
+    benefits: "Sumber karbohidrat.",
+    tips: ["Tutup batang (hilling)", "Rotasi tanaman"]
+  },
+
+  "onion": {
+    name: "Bawang",
+    latin: "Allium cepa",
+    category: "Sayuran",
+    difficulty: "Mudah",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb4U7zE32_HbTmJLvunhgIyGYYg5LtaGAVBw&s",
+    care: ["Cahaya: Penuh", "Penyiraman: Sedang", "Media: Drainase baik"],
+    benefits: "Bumbu dapur utama.",
+    tips: ["Jaga jarak tanam", "Keringkan sebelum simpan"]
+  },
+
+  "broccoli": {
+    name: "Brokoli",
+    latin: "Brassica oleracea var. italica",
+    category: "Sayuran",
+    difficulty: "Sedang",
+    image: "https://images.pexels.com/photos/34845330/pexels-photo-34845330.jpeg",
+    care: ["Cahaya: Penuh", "Penyiraman: Konsisten", "Suhu: Sejuk"],
+    benefits: "Kaya vitamin C dan serat.",
+    tips: ["Panen saat kepala rapat", "Pupuk fosfor"]
+  },
+
+  "cabbage": {
+    name: "Kubis",
+    latin: "Brassica oleracea",
+    category: "Sayuran",
+    difficulty: "Mudah",
+    image: "https://images.pexels.com/photos/134877/pexels-photo-134877.jpeg",
+    care: ["Cahaya: Penuh", "Penyiraman: Konsisten", "Media: Subur"],
+    benefits: "Baik untuk salad.",
+    tips: ["Jaga kelembaban tanah", "Cegah hama"]
+  },
+
+  "mint": {
+    name: "Mint",
+    latin: "Mentha",
+    category: "Herbal",
+    difficulty: "Mudah",
+    image: "https://images.pexels.com/photos/4621597/pexels-photo-4621597.jpeg",
+    care: ["Cahaya: Setengah", "Penyiraman: Konsisten", "Media: Lembab"],
+    benefits: "Menenangkan perut, aroma segar.",
+    tips: ["Tanam di pot agar tidak merajalela", "Pangkas rutin"]
+  },
+
+  "basil": {
+    name: "Basil",
+    latin: "Ocimum basilicum",
+    category: "Herbal",
+    difficulty: "Mudah",
+    image: "https://images.pexels.com/photos/3816343/pexels-photo-3816343.jpeg",
+    care: ["Cahaya: Terang", "Penyiraman: Moderat", "Suhu: Hangat"],
+    benefits: "Aromatik masakan.",
+    tips: ["Petik daun terluar", "Jaga agar tidak berbunga"]
+  },
+
+  "rosemary": {
+    name: "Rosemary",
+    latin: "Salvia rosmarinus",
+    category: "Herbal",
+    difficulty: "Sedang",
+    image: "https://images.pexels.com/photos/135168/pexels-photo-135168.jpeg",
+    care: ["Cahaya: Penuh", "Penyiraman: Sedikit", "Media: Drainase baik"],
+    benefits: "Aroma kuat, bumbu panggang.",
+    tips: ["Jangan terlalu basah", "Siram pagi hari"]
+  },
+
+  "thyme": {
+    name: "Thyme",
+    latin: "Thymus vulgaris",
+    category: "Herbal",
+    difficulty: "Mudah",
+    image: "https://images.pexels.com/photos/4207793/pexels-photo-4207793.jpeg",
+    care: ["Cahaya: Penuh", "Penyiraman: Sedikit", "Media: Porous"],
+    benefits: "Penyedap masakan.",
+    tips: ["Pot kecil cocok", "Pemangkasan rutin"]
+  },
+
+  "sage": {
+    name: "Sage",
+    latin: "Salvia officinalis",
+    category: "Herbal",
+    difficulty: "Mudah",
+    image: "https://images.pexels.com/photos/6103379/pexels-photo-6103379.jpeg",
+    care: ["Cahaya: Penuh", "Penyiraman: Teratur", "Media: Drainase baik"],
+    benefits: "Untuk masak & teh.",
+    tips: ["Potong bunga", "Jangan terlalu lembab"]
+  },
+
+  "lemongrass": { // Diperbaiki dari 'serai' agar sesuai link href="detail.html?id=lemongrass"
+    name: "Serai (Lemongrass)",
+    latin: "Cymbopogon citratus",
+    category: "Herbal",
+    difficulty: "Mudah",
+    image: "https://media.istockphoto.com/id/157435666/id/foto/rumput-lemon-segar-pada-daun-pisang.webp?a=1&b=1&s=612x612&w=0&k=20&c=Bk_ShjyGJodA6i1p92oYg8GBlhaFlgG965pBdw6u6WI=",
+    care: ["Cahaya: Penuh", "Penyiraman: Konsisten", "Suhu: Tropis"],
+    benefits: "Aroma bumbu, khasiat pencernaan.",
+    tips: ["Pot besar untuk akar", "Panen batang bawah"]
+  },
+
+  "oregano": {
+    name: "Oregano",
+    latin: "Origanum vulgare",
+    category: "Herbal",
+    difficulty: "Mudah",
+    image: "https://images.pexels.com/photos/3196523/pexels-photo-3196523.jpeg",
+    care: ["Cahaya: Penuh", "Penyiraman: Sedikit", "Media: Porous"],
+    benefits: "Penyedap pizza & saus.",
+    tips: ["Keringkan untuk awet", "Pemangkasan"]
+  },
+
+  "ginger": {
+    name: "Jahe",
+    latin: "Zingiber officinale",
+    category: "Herbal",
+    difficulty: "Sedang",
+    image: "https://images.unsplash.com/photo-1603431777782-912e3b76f60d?w=600&auto=format&fit=crop",
+    care: ["Cahaya: Setengah", "Penyiraman: Lembab", "Media: Kompos"],
+    benefits: "Hangatkan badan.",
+    tips: ["Tanam rimpang dalam", "Panen setelah 8-10 bulan"]
+  },
+
+  "turmeric": {
+    name: "Kunyit",
+    latin: "Curcuma longa",
+    category: "Herbal",
+    difficulty: "Sedang",
+    image: "https://media.istockphoto.com/id/965503302/id/foto/bubuk-kunyit-dan-akar.jpg?s=1024x1024&w=is&k=20&c=CreS09oOJ1j6nuS4kmwhMS05fomnO3iMvqrKNA6svNs=",
+    care: ["Cahaya: Setengah", "Penyiraman: Lembab", "Media: Organik"],
+    benefits: "Anti-inflamasi.",
+    tips: ["Panen saat daun kuning", "Keringkan rimpang"]
+  },
+
+  "cilantro": {
+    name: "Cilantro",
+    latin: "Coriandrum sativum",
+    category: "Herbal",
+    difficulty: "Mudah",
+    image: "https://images.pexels.com/photos/3338495/pexels-photo-3338495.jpeg",
+    care: ["Cahaya: Setengah", "Penyiraman: Konsisten", "Media: Subur"],
+    benefits: "Bumbu segar.",
+    tips: ["Tanam berkelompok", "Hindari panas terik"]
+  }
 };
 
-// LOGIKA RENDER HALAMAN
+// --- LOGIKA RENDER HALAMAN (SUDAH DIPERBAIKI) ---
 const params = new URLSearchParams(window.location.search);
 const id = params.get('id');
 const contentDiv = document.getElementById('detailContent');
 
-if(id && PLANTS_DATA[id]) {
-    const p = PLANTS_DATA[id];
+// PERBAIKAN: Gunakan 'PLANTS' bukan 'PLANTS_DATA'
+if(id && PLANTS[id]) {
+    const p = PLANTS[id];
     
     // Generate HTML Care List
     let careHTML = '';
-    p.care.forEach(c => {
-        careHTML += `
-        <div class="care-point">
-            <i class="fas fa-check-circle"></i>
-            <div>${c}</div>
-        </div>`;
-    });
+    // Pastikan p.care ada dan berbentuk array
+    if(Array.isArray(p.care)){
+        p.care.forEach(c => {
+            careHTML += `
+            <div class="care-point">
+                <i class="fas fa-check-circle"></i>
+                <div>${c}</div>
+            </div>`;
+        });
+    }
 
     // Generate HTML Tips
     let tipsHTML = '';
-    p.tips.forEach(t => {
-        tipsHTML += `<li>${t}</li>`;
-    });
+    // Pastikan p.tips ada
+    if(Array.isArray(p.tips)){
+        p.tips.forEach(t => {
+            tipsHTML += `<li>${t}</li>`;
+        });
+    }
+
+    // Handle Benefits (bisa string atau array, kita gabung jika array)
+    let benefitsText = Array.isArray(p.benefits) ? p.benefits.join(" ") : p.benefits;
 
     contentDiv.innerHTML = `
         <img src="${p.image}" class="detail-hero-img" alt="${p.name}">
@@ -196,12 +603,12 @@ if(id && PLANTS_DATA[id]) {
 
         <div class="care-content-box">
             <h3><i class="fas fa-heart"></i> Manfaat</h3>
-            <p>${p.benefits}</p>
+            <p>${benefitsText}</p>
         </div>
 
         <div class="care-content-box">
             <h3><i class="fas fa-lightbulb"></i> Tips Pro</h3>
-            <ul class="tips-list" style="list-style:none; padding:0;">
+            <ul class="tips-list" style="list-style-type: disc; padding-left: 20px;">
                 ${tipsHTML}
             </ul>
         </div>
@@ -209,13 +616,13 @@ if(id && PLANTS_DATA[id]) {
 } else {
     contentDiv.innerHTML = `
         <div style="text-align:center; padding:60px;">
+            <i class="fas fa-search" style="font-size: 3rem; color: #ccc; margin-bottom: 20px;"></i>
             <h2>Tanaman Tidak Ditemukan</h2>
-            <p>Maaf, data tanaman yang Anda cari belum tersedia di database kami.</p>
+            <p>Maaf, data untuk ID "<b>${id || 'kosong'}</b>" belum tersedia.</p>
             <a href="care.html" class="btn btn-primary" style="margin-top:20px;">Kembali ke Daftar</a>
         </div>
     `;
 }
 </script>
-
 </body>
 </html>
